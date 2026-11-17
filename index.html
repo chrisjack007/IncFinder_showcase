@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="IncFinder NTv3 650M 与两阶段随机森林：交互架构与软件说明。Interactive architecture and software guide.">
+<meta name="color-scheme" content="light dark"><title>IncFinder · 交互架构与软件说明</title>
+<style>
+:root{color-scheme:dark;--bg:#080f1d;--panel:#101b2c;--text:#e5eef9;--muted:#a7b7cc;--rule:#2a3c54;--active:#b8f3e0;--ink:#052f2b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}a{color:inherit}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible{outline:2px solid #68dcc0;outline-offset:4px}
+.app{height:100dvh;min-height:600px;display:flex;flex-direction:column}.header{display:flex;align-items:center;gap:24px;padding:14px 24px;border-bottom:1px solid var(--rule);flex-wrap:wrap}.brand{display:flex;align-items:baseline;gap:12px;white-space:nowrap}.brand strong{font-size:20px;letter-spacing:-.5px}.version{font-size:11px;color:var(--muted)}.tabs{display:flex;gap:5px;padding:4px;background:var(--panel);border:1px solid var(--rule);border-radius:10px}.tabs a{text-decoration:none;white-space:nowrap;border-radius:6px;padding:7px 14px;color:var(--muted)}.tabs a[aria-current="page"]{background:var(--active);color:var(--ink);font-weight:650}.languages{margin-left:auto;display:flex;gap:8px;align-items:center}.languages a{text-decoration:none;padding:6px 8px;color:var(--muted);border-radius:5px}.languages a[aria-current="page"]{color:var(--text);background:var(--panel);box-shadow:inset 0 -2px #68dcc0}.reader{border:0;display:block;background:#0b1020;width:100%;flex:1;min-height:0}.footer{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:7px 24px;font-size:11px;color:var(--muted);border-top:1px solid var(--rule)}.footer a{text-underline-offset:3px}.footer-links{display:flex;gap:16px}.status{white-space:nowrap}
+@media(max-width:700px){.header{gap:10px;padding:10px 12px}.brand{gap:8px}.brand strong{font-size:18px}.version{font-size:10px}.languages{order:1;margin-left:auto;gap:2px}.tabs{order:2;width:100%}.tabs a{flex:1;text-align:center;padding:6px 8px}.footer{padding:7px 12px;font-size:10px}.app{min-height:560px}.status{white-space:normal}}
+</style>
+</head>
+<body><div class="app">
+<header class="header"><div class="brand"><strong>IncFinder</strong><span class="version">NTv3 650M + TSRF · V2 / 0.4.0</span></div>
+<nav class="tabs" aria-label="内容 / Content"><a id="architecture-link" href="?lang=zh-CN&amp;view=architecture" aria-current="page">交互架构</a><a id="explainer-link" href="?lang=zh-CN&amp;view=explainer">软件说明</a></nav>
+<nav class="languages" aria-label="语言 / Language"><a id="zh-link" lang="zh-CN" href="?lang=zh-CN&amp;view=architecture" aria-current="page">中文</a><span aria-hidden="true">/</span><a id="en-link" lang="en" href="?lang=en&amp;view=architecture">English</a></nav></header>
+<iframe id="reader" class="reader" title="IncFinder 中文交互架构" src="architecture.zh-CN.html" allow="clipboard-write; fullscreen" allowfullscreen></iframe>
+<footer class="footer"><span class="status" id="scope">逐序列预测 · RESEARCH_PREVIEW / NOT_ESTABLISHED</span><span class="footer-links"><a id="direct-link" href="architecture.zh-CN.html" target="_blank" rel="noopener">独立打开 ↗</a><a id="notices-link" href="notices.html" target="_blank" rel="noopener">声明与许可</a></span></footer>
+</div>
+<script>
+(()=>{'use strict';
+const reader=document.getElementById('reader');
+const get=(id)=>document.getElementById(id);
+let loaded='';
+function state(){const p=new URLSearchParams(location.search);return {lang:p.get('lang')==='en'?'en':'zh-CN',view:p.get('view')==='explainer'?'explainer':'architecture',reader:p.get('reader')||''};}
+function address(lang,view){return '?'+new URLSearchParams({lang,view}).toString();}
+function select(link,on){if(on)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');}
+function render(){
+ const s=state(),zh=s.lang==='zh-CN',file=s.view+'.'+s.lang+'.html';
+ document.documentElement.lang=s.lang;
+ document.title='IncFinder · '+(zh?(s.view==='architecture'?'交互架构':'软件说明'):(s.view==='architecture'?'Interactive architecture':'Software guide'));
+ const arch=get('architecture-link'),expl=get('explainer-link');arch.textContent=zh?'交互架构':'Architecture';expl.textContent=zh?'软件说明':'Software guide';
+ arch.href=address(s.lang,'architecture');expl.href=address(s.lang,'explainer');
+ get('zh-link').href=address('zh-CN',s.view);get('en-link').href=address('en',s.view);
+ select(arch,s.view==='architecture');select(expl,s.view==='explainer');select(get('zh-link'),zh);select(get('en-link'),!zh);
+ get('scope').textContent=zh?'逐序列预测 · RESEARCH_PREVIEW / NOT_ESTABLISHED':'Sequence-level prediction · RESEARCH_PREVIEW / NOT_ESTABLISHED';
+ get('direct-link').textContent=zh?'独立打开 ↗':'Open separately ↗';get('direct-link').href=file+(s.reader?'#'+s.reader:'');
+ get('notices-link').textContent=zh?'声明与许可':'Notices & licenses';reader.title='IncFinder '+(zh?'中文':'English')+' '+(s.view==='architecture'?(zh?'交互架构':'architecture'):(zh?'软件说明':'software guide'));
+ const target=file+(s.reader?'#'+s.reader:'');if(loaded!==target){loaded=target;reader.src=target;}
+}
+for(const id of ['architecture-link','explainer-link','zh-link','en-link'])get(id).addEventListener('click',event=>{if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;event.preventDefault();history.pushState(null,'',get(id).getAttribute('href'));render();});
+reader.addEventListener('load',()=>{try{reader.contentWindow.addEventListener('hashchange',()=>{const p=new URLSearchParams(location.search),hash=reader.contentWindow.location.hash.slice(1);if(hash)p.set('reader',hash);else p.delete('reader');history.replaceState(null,'','?'+p.toString());get('direct-link').href=reader.contentWindow.location.href;loaded=state().view+'.'+state().lang+'.html'+(hash?'#'+hash:'');});}catch(error){/* The standalone link remains available. */}});
+window.addEventListener('popstate',render);render();
+})();
+</script></body></html>
