@@ -1,0 +1,46 @@
+{
+  "reference_rows": 200095,
+  "plasmid_groups": 9236,
+  "bootstrap_replicates": 1000,
+  "bootstrap_seed": 20261123,
+  "method": "percentile interval; sample plasmid groups with replacement; retain all rows and all 21 classes; zero_division=0",
+  "ordered_rows_sha256": "f15eb0de42adfcdd7f4fdfed116ef4c3d0cdfcf0233bb45729e775f74e51e250",
+  "label_matrix_sha256": "3e9e27cece1b0d8116c85db0843297de1c03c82c6555055675e87343610a584e",
+  "probabilities_sha256": "d21a23b06b42fb7f7c2e00a46182c748a70b5d84841ef242a175ff629cb826fb",
+  "modes": {
+    "ct": {
+      "TP": 42548,
+      "FP": 34994,
+      "FN": 26961,
+      "precision": 0.5487090866885043,
+      "recall": 0.612122171229625,
+      "micro_f1": 0.5786835859667734,
+      "macro_f1": 0.44518072711221407,
+      "micro_f1_95": [
+        0.5677199336762301,
+        0.5888623248040086
+      ],
+      "macro_f1_95": [
+        0.4288385639398598,
+        0.45979592862568147
+      ]
+    },
+    "u05": {
+      "TP": 28873,
+      "FP": 12472,
+      "FN": 40636,
+      "precision": 0.6983432095779417,
+      "recall": 0.41538505805003667,
+      "micro_f1": 0.5209194075089758,
+      "macro_f1": 0.35077947715013336,
+      "micro_f1_95": [
+        0.5087021755534913,
+        0.5324114942161955
+      ],
+      "macro_f1_95": [
+        0.3355590073218535,
+        0.3665604743932156
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+name: incfinder
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.12
+  - numpy=2.4.6
+  - scipy=1.17.1
+  - scikit-learn=1.9.0
+  - joblib=1.5.3
+  - pytorch=2.11.0=cpu*
+  - transformers=4.57.6
+  - huggingface_hub=0.36.0
+  - tokenizers=0.22.2
+  - safetensors=0.7.0
+  - openpyxl=3.1.5
+  - packaging
+  - pip
+  - setuptools>=64
+  - wheel

@@ -1,0 +1,145 @@
+{
+  "schema": 2,
+  "rf": {
+    "index_sha256": "642827ef2acc9b272ab97cfcc0545112b5d4c7dfc1ea85b46a0814f9e0eaa47c",
+    "sources": {
+      "stage1.joblib": {
+        "kind": "github",
+        "repository": "chrisjack007/IncFinder_showcase",
+        "tag": "v0.5.0rc2",
+        "access": "public"
+      },
+      "stage2.joblib": {
+        "kind": "github",
+        "repository": "chrisjack007/IncFinder_showcase",
+        "tag": "v0.5.0rc2",
+        "access": "public"
+      }
+    },
+    "parts": [
+      {
+        "name": "stage1.joblib",
+        "size_bytes": 1883287385,
+        "sha256": "c72909c77c219fce16a17b58439c00d140153065deb5017143d0060050b1396e"
+      },
+      {
+        "name": "stage2.joblib.part-001",
+        "size_bytes": 1073741824,
+        "sha256": "ebb699948a629c26aba5f83c4cd94e0560bc6965ef5ac9c0150b3b62d1d66974"
+      },
+      {
+        "name": "stage2.joblib.part-002",
+        "size_bytes": 1073741824,
+        "sha256": "47b688a3873e2b8deed9f0946e70358ea5130390b8eb94325a738036d2f6b948"
+      },
+      {
+        "name": "stage2.joblib.part-003",
+        "size_bytes": 1073741824,
+        "sha256": "ec02a2342221fdb19a291d920dfd791606f58afde7d02fc7cf4576c6f8ebc935"
+      },
+      {
+        "name": "stage2.joblib.part-004",
+        "size_bytes": 1073741824,
+        "sha256": "654863d78c68518d1cd14883e9623ada8ac6c50ae012061a158fc2ba4cdc2719"
+      },
+      {
+        "name": "stage2.joblib.part-005",
+        "size_bytes": 1073741824,
+        "sha256": "51e9b9b69120bc84adeff28756a6142cd26048cf9a0fb266f24729b7aed9d4c7"
+      },
+      {
+        "name": "stage2.joblib.part-006",
+        "size_bytes": 1073741824,
+        "sha256": "f270e418ff165c1070e596bd90b44cffb74a348e43811321061cedd2e6d4275d"
+      },
+      {
+        "name": "stage2.joblib.part-007",
+        "size_bytes": 1073741824,
+        "sha256": "87066f476d3ac2fbd1977957c7a287bcc25ffd49fc4a202fba96842930ed9528"
+      },
+      {
+        "name": "stage2.joblib.part-008",
+        "size_bytes": 1073741824,
+        "sha256": "62f28c3fa0217a3bf4a24ee6529a43e2156cbc4f4faf2957ca1f1a0462ba813f"
+      },
+      {
+        "name": "stage2.joblib.part-009",
+        "size_bytes": 1073741824,
+        "sha256": "085f7463c52d5bd49f9572f7372c5caaf5e3b30ee0d7a26d975d52f5080e1c9d"
+      },
+      {
+        "name": "stage2.joblib.part-010",
+        "size_bytes": 1073741824,
+        "sha256": "3fc1ed365724276951f592deb17ccae78455f6bdc6bd2a068183571eae3d8593"
+      },
+      {
+        "name": "stage2.joblib.part-011",
+        "size_bytes": 1073741824,
+        "sha256": "df1a098d7c55304ebe1b55e95ead2ace1f5c15c5868e4e6205740523d220db1f"
+      },
+      {
+        "name": "stage2.joblib.part-012",
+        "size_bytes": 1073741824,
+        "sha256": "90ad2d26d03126cb0f840b9ca7e5ba1c854ec35378c27ecf6c63cab9b0d6c1a3"
+      },
+      {
+        "name": "stage2.joblib.part-013",
+        "size_bytes": 1073741824,
+        "sha256": "62e12157906508a0ece49846c482eabc01eac302e997711743cff678d08a8c7a"
+      },
+      {
+        "name": "stage2.joblib.part-014",
+        "size_bytes": 1073741824,
+        "sha256": "1068ff17cf448a3392cec1ebed006aca5138aff0c3334e19564e2364a9879aaa"
+      },
+      {
+        "name": "stage2.joblib.part-015",
+        "size_bytes": 1073741824,
+        "sha256": "452785c7044e77bfb3cf77de2e8aac94c34b6fe12479d08432a0fcaf638c2e7f"
+      },
+      {
+        "name": "stage2.joblib.part-016",
+        "size_bytes": 1073741824,
+        "sha256": "267cd383d2e94069fca7dba60da09f1bbfb006561a296f641a5b33378cf33aae"
+      },
+      {
+        "name": "stage2.joblib.part-017",
+        "size_bytes": 1073741824,
+        "sha256": "5ee5b76b3d432b0077e8b5893d961ecfda97c928b049e24c1b65fde89f7e5f1e"
+      },
+      {
+        "name": "stage2.joblib.part-018",
+        "size_bytes": 1073741824,
+        "sha256": "65c99e909f4d366009d6a4a3d7499010ab726928f84560755657718289ce9820"
+      },
+      {
+        "name": "stage2.joblib.part-019",
+        "size_bytes": 1073741824,
+        "sha256": "f1672178a062f46ddd0c49240e641cbfb9707b8c8f9ac612f0937f71f572f399"
+      },
+      {
+        "name": "stage2.joblib.part-020",
+        "size_bytes": 1073741824,
+        "sha256": "4147754326ffdb620d7255830ad2b2cb9fb46fd9f3c843b536b858ba07671d6d"
+      },
+      {
+        "name": "stage2.joblib.part-021",
+        "size_bytes": 1073741824,
+        "sha256": "15fbdef2e607723528a6fa6a1b287675755e3ddda8c4323c1f24914f89de3eee"
+      },
+      {
+        "name": "stage2.joblib.part-022",
+        "size_bytes": 316253721,
+        "sha256": "28f8acfa49118ce49fa0f5a6c1b050922fcc8fc7eda0b47e29f871f4b4b9692b"
+      }
+    ]
+  },
+  "ntv3": {
+    "repository": "InstaDeepAI/NTv3_650M_pre",
+    "revision": "5e6050bed864a5a8fb32481096bf555495316b31"
+  },
+  "ntv3_code": {
+    "repository": "InstaDeepAI/ntv3_base_model",
+    "revision": "27682ed2f537a4c4fcc356b6b8201e7dfceca602"
+  }
+}

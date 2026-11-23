@@ -1,0 +1,13 @@
+{
+  "release_status": "RESEARCH_PREVIEW",
+  "new_sequence_scientific_equivalence": "NOT_ESTABLISHED",
+  "cpu_embedding_strict_tolerance": "FAIL",
+  "gpu_embedding_strict_tolerance": "FAIL",
+  "cpu_embedding_max_abs_difference": 0.1968994140625,
+  "gpu_embedding_max_abs_difference": 0.0301513671875,
+  "predeclared_atol": 0.0001,
+  "predeclared_rtol": 1e-05,
+  "reference_rows": 11,
+  "raw_input_requires_flag": "--allow-encoder-drift",
+  "details": "docs/scientific_validation.md"
+}

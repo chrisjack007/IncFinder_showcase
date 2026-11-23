@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "encoder_version": "ntv3_650m_cpu_fp32_v1",
+  "status": "RESEARCH_PREVIEW",
+  "baseline_commit": "32dbd00ce809086a4d6af43211b55d22b08ef0a2",
+  "source_manifest_sha256": "9520233de3bff50e9a5b8652e62c9e1c6d4e09b559fa3aad58af1ab367ac378f",
+  "baseline_scientific_contract_sha256": "5a409f2ab9f3c573bf0b2c2e78e8e040edeb564162793e1db3cce9557459ec7d",
+  "frozen_assets_manifest_sha256": "e022cdfef39a9c6c5656dfdb67bfba7477b5531b0b32d117ca08f900f9c43753",
+  "runtime_lock_sha256": {
+    "environments/win-64.lock": "3ec56c47cc6a0e207f930efb4d8ed6c2f3e9d058b0a2ce90a4b6840756abd5fa",
+    "environments/linux-64.lock": "e294c3734e939f549fec0cc91ae60f86260b8f07480ef5f5c277e3c2434a7c39"
+  },
+  "encoding": {
+    "python": "3.12.15",
+    "source_lock": [
+      "win-64.lock",
+      "linux-64.lock"
+    ],
+    "device": "cpu",
+    "dtype": "float32",
+    "batch_size": 1,
+    "threads": 4,
+    "rf_jobs": 1,
+    "runs_per_host": 2,
+    "feature_reference": "Windows run 1 on the locked test cohort",
+    "release_status": "RESEARCH_PREVIEW",
+    "encoder": "NTv3_650M_pre",
+    "encoding_semantics": {
+      "padding": "right_N_to_multiple_128",
+      "pooling": "hidden_states[-1]_mean_over_original_bases",
+      "original_N_included": true,
+      "artificial_N_included": false,
+      "strand": "mean_forward_and_reverse_complement",
+      "add_special_tokens": false,
+      "truncation": false,
+      "local_files_only": true
+    }
+  },
+  "validation": {
+    "status": "PASS",
+    "scope": "Locked retrospective test subset of the deployed RF input split",
+    "records": 82,
+    "records_with_original_n": 23,
+    "cohort_sha256": "355fbad649010767913c6a764dc064b61e37fca90fb3d7c08c3addd96da1d04f",
+    "protocol_sha256": "43259e61ee2fafb73ead2dc9700e1cb3e87c3c045018826844ae1e8f0505d20a",
+    "acceptance_receipt_sha256": "129f95fa1cb67f01b15bf7f83436f4cc2a662b4e2e94fa0085dd8d06803061ef",
+    "feature_reference": {
+      "platform": "Windows",
+      "run": 1,
+      "features_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+      "shape": [
+        82,
+        1536
+      ],
+      "dtype": "float32"
+    },
+    "checks": {
+      "same_host_feature_repeats_exact": true,
+      "cross_platform_cpu_tolerance": true,
+      "rf_decisions_equal": true,
+      "v2_fixture_exact": true,
+      "protected_before_after_and_across_platforms": true,
+      "unit_regressions": true
+    },
+    "feature_tolerance": {
+      "atol": 0.0001,
+      "rtol": 1e-05
+    },
+    "cross_platform_max_abs": 0.0006103515625,
+    "cross_platform_elements_outside_tolerance": 0,
+    "threshold_modes": [
+      "ct",
+      "u05"
+    ],
+    "max_probability_drift_vs_paired_frozen_features": {
+      "stage1": 0.0040000081062316895,
+      "stage2": 0.009999990463256836
+    }
+  }
+}

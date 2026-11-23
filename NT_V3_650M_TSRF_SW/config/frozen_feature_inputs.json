@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "source_archive_sha256": "2efb0d60c58cd1e17b94d0af57c2748bf2df2b0e7316453af982143f4409b14f",
+  "source_registry_sha256": "e022cdfef39a9c6c5656dfdb67bfba7477b5531b0b32d117ca08f900f9c43753",
+  "contract_sha256": "5a409f2ab9f3c573bf0b2c2e78e8e040edeb564162793e1db3cce9557459ec7d",
+  "encoder_assets": {
+    "models/ntv3/config.json": "2cc294adf8868f3f116e4a136ae06ac90d0d367edaecd56288ac11bd60bbe68a",
+    "models/ntv3/model.safetensors": "4052aeda062de895e3734e3fac2aea10d1b40149995543cf4f6a9fba0a996b8c",
+    "models/ntv3/tokenizer_config.json": "07019b4b8964bc28c08c23bf1e1704a2dcdf686d1b99ad211008429b34d1d0fb",
+    "models/ntv3/special_tokens_map.json": "4f98fb3de0902c87821f2e518a9f808ea1ffe3810882e4d429758a55dfbff009",
+    "models/ntv3/vocab.json": "dafebcb0654e403cc30269f52bed31f07fd8c55a1370be63a54d82b917c61153",
+    "models/ntv3/MODEL-LICENSE.md": "2c0ac3efbf59efbdfdf15bd0ac99d3093dfa87d50748d4635aef563cd46f76cb",
+    "models/ntv3/README.md": "720bf43edca9472a457d6e3e4cd3b4b9a2f49c15b92c2d55c85b81e1a23bd845",
+    "vendor/ntv3/__init__.py": "fc4dddbc65256840ee2b84a6be3f4662c4318b22b3bc1bf7878acbd6a7bfe380",
+    "vendor/ntv3/configuration_ntv3_pretrained.py": "e210b5ec18ebe626d8dd91b408a83fc20afc59bf6c5382084ee91b9b8be69df3",
+    "vendor/ntv3/modeling_ntv3_pretrained.py": "bc2157369fd9c73cc24323be8c38943871a2a7f1aaa1ca92a8945c1a65c4757a",
+    "vendor/ntv3/tokenization_ntv3.py": "59e507620a65cebaab59e977c8f2840ff2f208f0f1a6ec38ece6b53cb3eebda3"
+  },
+  "cases": [
+    {
+      "cohort": "c11",
+      "records": 11,
+      "features_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+      "metadata_sha256": "7c55087a8cef6083a55c70fbf03dcb8020f5ee41f5afa4bdad6f6afdf478dbbc"
+    },
+    {
+      "cohort": "c82",
+      "records": 82,
+      "features_sha256": "73b2cfdf4cb560fad0d3fdedb40b9482d9d0fe113b59f1f4fe34c82cdc408db4",
+      "metadata_sha256": "ccabde9cad271b8c8c2178bf115bdd4e103c2f3888ffdc0c66643d967aef04c0"
+    }
+  ]
+}

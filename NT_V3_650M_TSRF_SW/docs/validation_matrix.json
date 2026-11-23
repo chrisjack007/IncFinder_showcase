@@ -1,0 +1,2178 @@
+{
+  "schema": 1,
+  "source_commit": "f743f03f3e6ed9a991585c48c2c483b3f65e0abe",
+  "source_manifest_sha256": "5a83622cff5fdd11b4a46c0b5e11f5baa655c4e8eaeed28dfad8bc14b0362764",
+  "model_manifest_sha256": "e022cdfef39a9c6c5656dfdb67bfba7477b5531b0b32d117ca08f900f9c43753",
+  "science_contract_sha256": "5a409f2ab9f3c573bf0b2c2e78e8e040edeb564162793e1db3cce9557459ec7d",
+  "software": "IncFinder 0.4.0",
+  "scientific_status": "RESEARCH_PREVIEW",
+  "matrix": [
+    {
+      "platform": "windows",
+      "device": "cpu",
+      "input_path": "raw",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "20f890af3142dc4cce843ab0211914302b5b5cd154a8c610958c9b1e3e7b8c56",
+          "summary_sha256": "0f81b0a99a3864c3de641b79517556b156846c2c9ce5633503b22475793e6fbf",
+          "probabilities_sha256": "594b622b805680cae0e4c1bb732b3765e1feb23357a70778e299bfd8ee5cefaf",
+          "log_sha256": "8f81f1af22187e72d1e5d24eb442127c942aafcb5bcc95604f8f88eb5ff43d19",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.1968994140625,
+            "outside_elements": 294,
+            "outside_rows": 11,
+            "shape": [
+              11,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "V2 original frozen",
+          "reference_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+          "features_sha256": "eb7a9d88ae8b1e7333374439d4513df3e57bdb4371e5e79d38fd596aedc1e8f9",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "210a78d3d6821287556304b4a1796e3681273eefcd6a405a4a05b45902a1b3d5",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0059999823570251465,
+            "stage2_max_absolute_drift": 0.00599999725818634,
+            "shared_finite_stage2_elements": 126
+          },
+          "raw_decision_reference_sha256": "0e8d5b3b8960f8b2b4d47dc20f6e3de89e55b0366484115782cf57007e628dbd"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "PASS",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "dc61f0ffe142769938697389d0b45711370e0bfa2b341f8315cf55834caa760f",
+          "summary_sha256": "c71dbe823c90857ae5d26d298e8e8b8ebcdf52ac107434b4bf0b51583737bb60",
+          "probabilities_sha256": "ad61b40a67c029982d18fe69ec9e2c36e26db8b12dae81de251383ba6ef56799",
+          "log_sha256": "35db252b4aa15190df91f5364e4410a77d173c1291be7fc8ba3922cde7c41a12",
+          "embedding_comparison": {
+            "status": "PASS",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.0,
+            "outside_elements": 0,
+            "outside_rows": 0,
+            "shape": [
+              82,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "IF-004 Windows CPU run 1",
+          "reference_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "features_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "3f2e25eabcd63196722ad6e4c863672d8d812f0cc75a5ac791eefa3b7db77735",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0040000081062316895,
+            "stage2_max_absolute_drift": 0.009999990463256836,
+            "shared_finite_stage2_elements": 504
+          },
+          "raw_decision_reference_sha256": "bbb53bc4eccc0a5df4bae41c091acd88a22e7a439965d094b80bd4a85a90ee96"
+        }
+      }
+    },
+    {
+      "platform": "windows",
+      "device": "cpu",
+      "input_path": "raw",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "d9555d5ae03e3cf317859a784f616b8f4cc9bf64c501f709b7101cdba1bc5657",
+          "summary_sha256": "7a8cfa313a401e854ef3f9b3df93c3b2500e54040d515881f11c6be5bbb1f42e",
+          "probabilities_sha256": "2d6bdc590dfa7ab3518cef82272601af5bf22c8d124cc7a3d1e72a8f20c520da",
+          "log_sha256": "683c719121acd7ec23924bf185c1c3abfd50f40c446cbcb7fc53f188ef17a362",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.1968994140625,
+            "outside_elements": 294,
+            "outside_rows": 11,
+            "shape": [
+              11,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "V2 original frozen",
+          "reference_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+          "features_sha256": "eb7a9d88ae8b1e7333374439d4513df3e57bdb4371e5e79d38fd596aedc1e8f9",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "210a78d3d6821287556304b4a1796e3681273eefcd6a405a4a05b45902a1b3d5",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0059999823570251465,
+            "stage2_max_absolute_drift": 0.00599999725818634,
+            "shared_finite_stage2_elements": 126
+          },
+          "raw_decision_reference_sha256": "4115f70b112f864b7f92e335b97d5404879fd6c647a4cd7c993fa6376297745d"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "PASS",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "0981d1c91a86b063a9eb0d8f1e96087604b12408f308981a8330cdd104833ada",
+          "summary_sha256": "d0549df17aec8945eeb98824f063243d7efe41a54bd2d8490f94af10089433a0",
+          "probabilities_sha256": "0c30d9b0620f730cfb84ef85977cd72b524e386e2a73ca3211c13db7b3485c6f",
+          "log_sha256": "eab732d086c214ae5b1dbc8e48a6b51ed5649085d019f4b6bad2d5c34df31612",
+          "embedding_comparison": {
+            "status": "PASS",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.0,
+            "outside_elements": 0,
+            "outside_rows": 0,
+            "shape": [
+              82,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "IF-004 Windows CPU run 1",
+          "reference_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "features_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "3f2e25eabcd63196722ad6e4c863672d8d812f0cc75a5ac791eefa3b7db77735",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0040000081062316895,
+            "stage2_max_absolute_drift": 0.009999990463256836,
+            "shared_finite_stage2_elements": 504
+          },
+          "raw_decision_reference_sha256": "bcd278ce8d00c0f19267618fb7a7ccbe4fcdd7e3c9be9b44353442b084b01388"
+        }
+      }
+    },
+    {
+      "platform": "windows",
+      "device": "cpu",
+      "input_path": "frozen",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "d9cbfb79d06d5e365a54124aac06d64f341f07a1b3f8010e54fc7faeb6a5f5a1",
+          "summary_sha256": "4f0b03ae767e5003df71d50d82fdf558e9bed13986fb2d532d038d7926027fb0",
+          "probabilities_sha256": "0e8d5b3b8960f8b2b4d47dc20f6e3de89e55b0366484115782cf57007e628dbd",
+          "log_sha256": "5f52ee2df42e116429c735fb3998b160793e62df2b70c676b0bc65075544c361",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 126,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "d0bbb31faf9b7a6fee8c13e9b271a0a75dc01bae08853580e5f0c792f68fb03d"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "deab2a3dd283168ec231ded9d9760b5dfbf3fc6f8b7b5aa1362ea8113ca9369d",
+          "summary_sha256": "172b1c02d87e58c1146e2b40382b8051b031abf7ee26adbf6a2702695924e910",
+          "probabilities_sha256": "bbb53bc4eccc0a5df4bae41c091acd88a22e7a439965d094b80bd4a85a90ee96",
+          "log_sha256": "a3ecb34c6579ac79ee50e220d031a51e7b14e37189bf294ab2068ab2fbe78abc",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 504,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "86df71e944e3b209d3877fd9fb024541e8153b250df2bb974c585336293af97b"
+        }
+      }
+    },
+    {
+      "platform": "windows",
+      "device": "cpu",
+      "input_path": "frozen",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "7011691abfd90357bd8defbe9e662e0de3fdbbe6ee622c2693685e7f447f1198",
+          "summary_sha256": "66f47f88226bfb216daef2e45d24edc1bc5d7f53071ab731a853e1eab161164c",
+          "probabilities_sha256": "4115f70b112f864b7f92e335b97d5404879fd6c647a4cd7c993fa6376297745d",
+          "log_sha256": "3c8c0ab99713cef54608b25be8f1e2ce6982e54630be4d9885a4025c7d8e173b",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 126,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "c3db79e291219fa60dc4e18b899ffaa5344735001d100272a7824b30aabd780d"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "2a05606a6c2924faa3a4194c095a98a2281dd84b67f8bc70f020ee9e94f272f3",
+          "summary_sha256": "5b3df28428c04fdba133444dc688dcd93bad2c0dadac045125d5d0111c57285e",
+          "probabilities_sha256": "bcd278ce8d00c0f19267618fb7a7ccbe4fcdd7e3c9be9b44353442b084b01388",
+          "log_sha256": "65269d63ad606e6de5aca8fcdf2fe4f9adb5cb45de47a40b0bee691b61651733",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 504,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "274ed23a7515b09df7b778309b03040cb03a44a61f1c7b51f126a56a2a61d2ac"
+        }
+      }
+    },
+    {
+      "platform": "windows",
+      "device": "cuda",
+      "input_path": "raw",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "4f3e223f5c10783879b50f7af015edfa00cabe066c7d3d4c0bfaadc611c97e65",
+          "summary_sha256": "781d4ddb2c4ff356027882ae7d19704d950c50b248b1e207393b81dd0b341601",
+          "probabilities_sha256": "0ff2807a86edaa111f4fb3eb013bb73cd04cbd0c5c1e09b2ea2a5a5db85b9ed0",
+          "log_sha256": "fb5695d63e14ec6c8bf205c2c819c384a2ac2c4c9488a3b5a128525b6e48d2b3",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.0301513671875,
+            "outside_elements": 46,
+            "outside_rows": 7,
+            "shape": [
+              11,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "V2 original frozen",
+          "reference_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+          "features_sha256": "af9349b5786f4b713425fbd886bf364c496d065089a7def39991ea97d01ed3f4",
+          "embedding_environment": {
+            "gpu_name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+            "torch_build": "2.11.0+cu130",
+            "cuda_runtime": "13.0",
+            "cuda_matmul_allow_tf32": false,
+            "cudnn_allow_tf32": true
+          },
+          "embedding_metadata_sha256": "761cbc8087b54c0ed58261127af15e03fdd2cf685f12bf78a5c9bfe8cbd7224d",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0020000338554382324,
+            "stage2_max_absolute_drift": 0.003999978303909302,
+            "shared_finite_stage2_elements": 126
+          },
+          "raw_decision_reference_sha256": "0e8d5b3b8960f8b2b4d47dc20f6e3de89e55b0366484115782cf57007e628dbd"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "0f5951522e623d6f6239301d118e1834bc7cc67abb3eebb134d625789bd68dc1",
+          "summary_sha256": "b5b41f7d38aead0cbd9b927d1d84204a12159fbc5dafbb3e23e0cf8b0a2fc3ef",
+          "probabilities_sha256": "7261c51eb8708bc86322e9d0fb7c50fbd9b19c106ead7516506b1dbbf459a79e",
+          "log_sha256": "e00bdb8fd7460769c45ffa159dede3585b9e423306a3618ac9b932f2872ba9fc",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.2568359375,
+            "outside_elements": 2222,
+            "outside_rows": 82,
+            "shape": [
+              82,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "IF-004 Windows CPU run 1",
+          "reference_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "features_sha256": "68159261fe9f9b8f817c5264c37c8ddc3a12910119aa59787dae69609d523fc3",
+          "embedding_environment": {
+            "gpu_name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+            "torch_build": "2.11.0+cu130",
+            "cuda_runtime": "13.0",
+            "cuda_matmul_allow_tf32": false,
+            "cudnn_allow_tf32": true
+          },
+          "embedding_metadata_sha256": "d6f55f6ecb8e94ce284e8429d24b37552222cfc0147e7414054317779f4f19ec",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0020000040531158447,
+            "stage2_max_absolute_drift": 0.0040000081062316895,
+            "shared_finite_stage2_elements": 504
+          },
+          "raw_decision_reference_sha256": "bbb53bc4eccc0a5df4bae41c091acd88a22e7a439965d094b80bd4a85a90ee96"
+        }
+      }
+    },
+    {
+      "platform": "windows",
+      "device": "cuda",
+      "input_path": "raw",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "ad193694573cc9e7fd23d210cacfa7e8f32cf656b1037fb2ce7a238ea830b75f",
+          "summary_sha256": "b2996f5ef1c2c82396c8d606aaffc7536b21497bae2360f48a8efe393d22839e",
+          "probabilities_sha256": "d2f55efdc10d98767e88dbeec20b2eb5c367885dc172f79521fe4784938440e2",
+          "log_sha256": "bb78b3893d6e610dbd5c3bfe00a9028f405dfc0646168c46c6a515b5add527a3",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.0301513671875,
+            "outside_elements": 46,
+            "outside_rows": 7,
+            "shape": [
+              11,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "V2 original frozen",
+          "reference_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+          "features_sha256": "af9349b5786f4b713425fbd886bf364c496d065089a7def39991ea97d01ed3f4",
+          "embedding_environment": {
+            "gpu_name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+            "torch_build": "2.11.0+cu130",
+            "cuda_runtime": "13.0",
+            "cuda_matmul_allow_tf32": false,
+            "cudnn_allow_tf32": true
+          },
+          "embedding_metadata_sha256": "761cbc8087b54c0ed58261127af15e03fdd2cf685f12bf78a5c9bfe8cbd7224d",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0020000338554382324,
+            "stage2_max_absolute_drift": 0.003999978303909302,
+            "shared_finite_stage2_elements": 126
+          },
+          "raw_decision_reference_sha256": "4115f70b112f864b7f92e335b97d5404879fd6c647a4cd7c993fa6376297745d"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "e03ee67d2603eca91432280d59bfcc16002a9098950514de31153708d528040b",
+          "summary_sha256": "ede5960f2421789696ca3a279394749c00379b2e46ba31b887eacdcddfead24b",
+          "probabilities_sha256": "19ee3b2dd58503a748f717314ac65511c3def8a7c5dd24ec08edcb6d032b4e78",
+          "log_sha256": "697ff9c23ba5ee083267057361826aec8542308715b702760b6eb34d12e9dd7e",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.2568359375,
+            "outside_elements": 2222,
+            "outside_rows": 82,
+            "shape": [
+              82,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "IF-004 Windows CPU run 1",
+          "reference_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "features_sha256": "68159261fe9f9b8f817c5264c37c8ddc3a12910119aa59787dae69609d523fc3",
+          "embedding_environment": {
+            "gpu_name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+            "torch_build": "2.11.0+cu130",
+            "cuda_runtime": "13.0",
+            "cuda_matmul_allow_tf32": false,
+            "cudnn_allow_tf32": true
+          },
+          "embedding_metadata_sha256": "d6f55f6ecb8e94ce284e8429d24b37552222cfc0147e7414054317779f4f19ec",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0020000040531158447,
+            "stage2_max_absolute_drift": 0.0040000081062316895,
+            "shared_finite_stage2_elements": 504
+          },
+          "raw_decision_reference_sha256": "bcd278ce8d00c0f19267618fb7a7ccbe4fcdd7e3c9be9b44353442b084b01388"
+        }
+      }
+    },
+    {
+      "platform": "windows",
+      "device": "cuda",
+      "input_path": "frozen",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        }
+      },
+      "scope_reason": "Frozen features skip the encoder and both forests run on CPU."
+    },
+    {
+      "platform": "windows",
+      "device": "cuda",
+      "input_path": "frozen",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        }
+      },
+      "scope_reason": "Frozen features skip the encoder and both forests run on CPU."
+    },
+    {
+      "platform": "linux",
+      "device": "cpu",
+      "input_path": "raw",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "779206f32f1ef2bd20292a65017d1661532e7dd773d48ac4830ea21641ef5359",
+          "summary_sha256": "98d807be82856e76bfae9495b568082409eead6551ea7e53b8261cdca671c304",
+          "probabilities_sha256": "de5d98444c82411b70d87e8c4f0ff8f202a2054bf12b85d9bc8b36eca7a660d9",
+          "log_sha256": "1cfbba44d950ad93d2d7257f0eae21cfca8bda2e66cc74448aaed9f9a3e5aa9a",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.196533203125,
+            "outside_elements": 295,
+            "outside_rows": 11,
+            "shape": [
+              11,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "V2 original frozen",
+          "reference_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+          "features_sha256": "119ef5c66fbbfd098e1119a2f8decf807a729100f78edba603fc9df3716c8cdc",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "e73d807728016766cf7c470de8c4fa7e85e0e10b0b6a6f3da0ff238df9b69fe5",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0059999823570251465,
+            "stage2_max_absolute_drift": 0.00599999725818634,
+            "shared_finite_stage2_elements": 126
+          },
+          "raw_decision_reference_sha256": "956c42b69e10afcfbfe7ad158ed2afd6bb5db60fb90597ae048dbb0c4e98242e"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "PASS",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "8b7813d581be03c73df99a4725c75732967146702a6b48378813716e71026c9e",
+          "summary_sha256": "3e6529490c2579929141edfa2b4becc1e21902a91fdb7c24be2af927ed6a6eae",
+          "probabilities_sha256": "67c6c4601c2e7c74adaafaf3e4f3a07d7f17b348125b4a20b7014d5cf83e9a9b",
+          "log_sha256": "d53886ca9cc2c2ac7a0af6ad4aacd57cb1d9bac94245d853cd767ab298ce5163",
+          "embedding_comparison": {
+            "status": "PASS",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.0006103515625,
+            "outside_elements": 0,
+            "outside_rows": 0,
+            "shape": [
+              82,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "IF-004 Windows CPU run 1",
+          "reference_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "features_sha256": "1d675a4a46a83c92d6a3cf9f109a29a766b32c14eaaa7f5497409d9a5c9d9a52",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "b268171692342d84bd239de0443f38ee461db025b0126d5f5ef62e703adfdf1f",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0040000081062316895,
+            "stage2_max_absolute_drift": 0.009999990463256836,
+            "shared_finite_stage2_elements": 504
+          },
+          "raw_decision_reference_sha256": "4ae0e0dd4b7f96e1bc2ff8e3b06f2681c01f7cfced05185d989bd69f0e35c1ef"
+        }
+      }
+    },
+    {
+      "platform": "linux",
+      "device": "cpu",
+      "input_path": "raw",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "3ed74b65f7f9594e3c93e0dbecebb130a7f353baf6381578d609a25310727a93",
+          "summary_sha256": "8cbfc1d7d5e57091e5a2590c39436ce771437427e78838ccb36e7459a53e98c4",
+          "probabilities_sha256": "e46bb6a9b49ffdc6634e78d088fc5253cd9c14e87680d2dab2ade2e4a00d09ce",
+          "log_sha256": "40b014662e2bd04c6e9a06b03147a7aa09cb439dc7f12c9225c7c72f4f57796f",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.196533203125,
+            "outside_elements": 295,
+            "outside_rows": 11,
+            "shape": [
+              11,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "V2 original frozen",
+          "reference_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+          "features_sha256": "119ef5c66fbbfd098e1119a2f8decf807a729100f78edba603fc9df3716c8cdc",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "e73d807728016766cf7c470de8c4fa7e85e0e10b0b6a6f3da0ff238df9b69fe5",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0059999823570251465,
+            "stage2_max_absolute_drift": 0.00599999725818634,
+            "shared_finite_stage2_elements": 126
+          },
+          "raw_decision_reference_sha256": "738133858622335495cc21d959cffd14721a2eebe21972ea5430f0bf483f382d"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "PASS",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "73dc79929cae2378172a8ad9cac0811a26885c288f0985682c62e85888e3407f",
+          "summary_sha256": "594361328590d43f0ca34c89f61a7b608f4be4de1d8c046a30e452a8a4959b4d",
+          "probabilities_sha256": "840b31911d6a88f7077a9dd18063716b6b6238e72683607d17528ac40d6a5cd1",
+          "log_sha256": "788411401aee03a35f457bea980c484f054aff83efb474e4e688488c284a17f7",
+          "embedding_comparison": {
+            "status": "PASS",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.0006103515625,
+            "outside_elements": 0,
+            "outside_rows": 0,
+            "shape": [
+              82,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "IF-004 Windows CPU run 1",
+          "reference_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "features_sha256": "1d675a4a46a83c92d6a3cf9f109a29a766b32c14eaaa7f5497409d9a5c9d9a52",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "b268171692342d84bd239de0443f38ee461db025b0126d5f5ef62e703adfdf1f",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0040000081062316895,
+            "stage2_max_absolute_drift": 0.009999990463256836,
+            "shared_finite_stage2_elements": 504
+          },
+          "raw_decision_reference_sha256": "fcb76a2c2868fc0e8d2744c6f24c353ad500f1fa3153bdf75fb5b28339b931e1"
+        }
+      }
+    },
+    {
+      "platform": "linux",
+      "device": "cpu",
+      "input_path": "frozen",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "771789898f0df090b800945d7e602268ad7148e6cda406d000b5c2042025f4bb",
+          "summary_sha256": "ee258807cb2991586b917a371b890f62d28dfcbfe8e96efff79b12595744b7c1",
+          "probabilities_sha256": "956c42b69e10afcfbfe7ad158ed2afd6bb5db60fb90597ae048dbb0c4e98242e",
+          "log_sha256": "17315ec8190c9329f7fbf0c12ab3081045830e233bf43f94a1adbffbf7ada062",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 126,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "d0bbb31faf9b7a6fee8c13e9b271a0a75dc01bae08853580e5f0c792f68fb03d"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "455a34b1e92156c7dd0b3f1f65888b92e4ea4105003612fdebab3a31652c306f",
+          "summary_sha256": "f5b502d9d9335f0eac8879f8e5469e202c2682965104634f792b570faea6b154",
+          "probabilities_sha256": "4ae0e0dd4b7f96e1bc2ff8e3b06f2681c01f7cfced05185d989bd69f0e35c1ef",
+          "log_sha256": "d3f3848c1633886114fd2a51b8363db7aed3e9393381c3123b6ee452a1e1820a",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 504,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "86df71e944e3b209d3877fd9fb024541e8153b250df2bb974c585336293af97b"
+        }
+      }
+    },
+    {
+      "platform": "linux",
+      "device": "cpu",
+      "input_path": "frozen",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "6a5b1399a498606ec6da8d38737f2b89725f15509f8b66389f2d77d95011a4d1",
+          "summary_sha256": "7dda765e0713a29fbff222b33722bc6b6875f6086566b0124bb3a2e37ac5a457",
+          "probabilities_sha256": "738133858622335495cc21d959cffd14721a2eebe21972ea5430f0bf483f382d",
+          "log_sha256": "d7e11bb5a5cf17cfb4bdd4f3ea3f0776b25c89a881adc59f9a6aeb4be87062fe",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 126,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "c3db79e291219fa60dc4e18b899ffaa5344735001d100272a7824b30aabd780d"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "10e72b0be2dce8e5afbebb858f61d8e22471e0fff2f3dfacb019ce750de73ea9",
+          "summary_sha256": "fde40cb63ae44be72d9d9f832f1ad519b3007b25550631c8fbebe47c0aafd218",
+          "probabilities_sha256": "fcb76a2c2868fc0e8d2744c6f24c353ad500f1fa3153bdf75fb5b28339b931e1",
+          "log_sha256": "bd38d03d031a28f8a0eb7a4ba7f0d06931d80f0b38b3aee6ee9f4fce92d9987b",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 504,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "274ed23a7515b09df7b778309b03040cb03a44a61f1c7b51f126a56a2a61d2ac"
+        }
+      }
+    },
+    {
+      "platform": "linux",
+      "device": "cuda",
+      "input_path": "raw",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "2f999f2363a31cda656be0e404b0c3ffddbc95dc5bfb47cb7f9d72cc7b07b3fc",
+          "summary_sha256": "9343b3135cf0a0be5da158fffcafb3560d067537800d0dfc0f598fbec63993fa",
+          "probabilities_sha256": "42b48b0cfad07d65a19429f4a1925a402274dd9287c4a9d2188f37d8d1a604ef",
+          "log_sha256": "7fb8adbea855244fd2c6f03115a2a0bc88eb128bbd917400e06a98ce94c521da",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.1961669921875,
+            "outside_elements": 294,
+            "outside_rows": 11,
+            "shape": [
+              11,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "V2 original frozen",
+          "reference_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+          "features_sha256": "94649b0021905870939de2e357e17d117478d857edfb6166cedebab6178cfb72",
+          "embedding_environment": {
+            "gpu_name": "Tesla V100-SXM2-16GB",
+            "torch_build": "2.11.0+cu126",
+            "cuda_runtime": "12.6",
+            "cuda_matmul_allow_tf32": false,
+            "cudnn_allow_tf32": true
+          },
+          "embedding_metadata_sha256": "9ba9e492d0f9717842efeed4511dd7dca43442f0aced3abd89a4898dd569a235",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0059999823570251465,
+            "stage2_max_absolute_drift": 0.00599999725818634,
+            "shared_finite_stage2_elements": 126
+          },
+          "raw_decision_reference_sha256": "956c42b69e10afcfbfe7ad158ed2afd6bb5db60fb90597ae048dbb0c4e98242e"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "PASS",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "135446bcc21dd955fdabd8accce8623e1b7ec57b5c9bc05e748feacafbf1228a",
+          "summary_sha256": "c7bc1dadf52973d20369193b5fa3c456584ae42127601858e5d68e73ae582027",
+          "probabilities_sha256": "ce711ce46f46fafadf63a962df9c83a152e2bb5f5a504435c38e03dd28f6f270",
+          "log_sha256": "720872de1aa54faf335637f873bba17dae0f21ad806f09899a7b0adfb0482f98",
+          "embedding_comparison": {
+            "status": "PASS",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.00042724609375,
+            "outside_elements": 0,
+            "outside_rows": 0,
+            "shape": [
+              82,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "IF-004 Windows CPU run 1",
+          "reference_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "features_sha256": "5e867b3db453bf0f0ee3549d9892e7eb4b3b6ea0bb6cf6441355f9d25321a31c",
+          "embedding_environment": {
+            "gpu_name": "Tesla V100-SXM2-16GB",
+            "torch_build": "2.11.0+cu126",
+            "cuda_runtime": "12.6",
+            "cuda_matmul_allow_tf32": false,
+            "cudnn_allow_tf32": true
+          },
+          "embedding_metadata_sha256": "b55d6fe5b78483843a90ab33b5192249070a8328086e290e1b82685a0776b47b",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0040000081062316895,
+            "stage2_max_absolute_drift": 0.009999990463256836,
+            "shared_finite_stage2_elements": 504
+          },
+          "raw_decision_reference_sha256": "4ae0e0dd4b7f96e1bc2ff8e3b06f2681c01f7cfced05185d989bd69f0e35c1ef"
+        }
+      }
+    },
+    {
+      "platform": "linux",
+      "device": "cuda",
+      "input_path": "raw",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "91d2bb2778ed75f55692e6d5965ef26e618c086582291badcfda1d28e60d11a3",
+          "summary_sha256": "254659334e9aeae6dce4afed796e8e5f8361c081d343d0970d57aa8b81f5305f",
+          "probabilities_sha256": "cc5239331b89f3b605450178a2932ca76f30e3f4c9105261b48fe782a79696e8",
+          "log_sha256": "043550126b3da3f851b84586365bcaa00b9fd14b2f2a4541438c425a2ff2d288",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.1961669921875,
+            "outside_elements": 294,
+            "outside_rows": 11,
+            "shape": [
+              11,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "V2 original frozen",
+          "reference_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+          "features_sha256": "94649b0021905870939de2e357e17d117478d857edfb6166cedebab6178cfb72",
+          "embedding_environment": {
+            "gpu_name": "Tesla V100-SXM2-16GB",
+            "torch_build": "2.11.0+cu126",
+            "cuda_runtime": "12.6",
+            "cuda_matmul_allow_tf32": false,
+            "cudnn_allow_tf32": true
+          },
+          "embedding_metadata_sha256": "9ba9e492d0f9717842efeed4511dd7dca43442f0aced3abd89a4898dd569a235",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0059999823570251465,
+            "stage2_max_absolute_drift": 0.00599999725818634,
+            "shared_finite_stage2_elements": 126
+          },
+          "raw_decision_reference_sha256": "738133858622335495cc21d959cffd14721a2eebe21972ea5430f0bf483f382d"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "PASS",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "658a79c41fbf98dfab6128b62f89fafd86dd00ecdc166b20fa9bc378f03a34b1",
+          "summary_sha256": "857ad739264419c8e3ba16e602999cab86d775f8b56c4912ae5de7497020506f",
+          "probabilities_sha256": "ea212a06754bcabba1299b8680cd9e61de5db4a6331910636544064c1f28920c",
+          "log_sha256": "df7f1d5faf3d3f49dac1add9ec4ea8346a56d6ca9a6db0f3a9213a215e096317",
+          "embedding_comparison": {
+            "status": "PASS",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.00042724609375,
+            "outside_elements": 0,
+            "outside_rows": 0,
+            "shape": [
+              82,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "IF-004 Windows CPU run 1",
+          "reference_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "features_sha256": "5e867b3db453bf0f0ee3549d9892e7eb4b3b6ea0bb6cf6441355f9d25321a31c",
+          "embedding_environment": {
+            "gpu_name": "Tesla V100-SXM2-16GB",
+            "torch_build": "2.11.0+cu126",
+            "cuda_runtime": "12.6",
+            "cuda_matmul_allow_tf32": false,
+            "cudnn_allow_tf32": true
+          },
+          "embedding_metadata_sha256": "b55d6fe5b78483843a90ab33b5192249070a8328086e290e1b82685a0776b47b",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0040000081062316895,
+            "stage2_max_absolute_drift": 0.009999990463256836,
+            "shared_finite_stage2_elements": 504
+          },
+          "raw_decision_reference_sha256": "fcb76a2c2868fc0e8d2744c6f24c353ad500f1fa3153bdf75fb5b28339b931e1"
+        }
+      }
+    },
+    {
+      "platform": "linux",
+      "device": "cuda",
+      "input_path": "frozen",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        }
+      },
+      "scope_reason": "Frozen features skip the encoder and both forests run on CPU."
+    },
+    {
+      "platform": "linux",
+      "device": "cuda",
+      "input_path": "frozen",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        }
+      },
+      "scope_reason": "Frozen features skip the encoder and both forests run on CPU."
+    },
+    {
+      "platform": "wsl2",
+      "device": "cpu",
+      "input_path": "raw",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "fc10dd0985bf12d335887613886a052f4bbba04a4c7a5b7aac3bb68b0a355721",
+          "summary_sha256": "df37cf519e022627465e6bc978e9c503e92f1ca7f9e774015cc0a7d91c4e4363",
+          "probabilities_sha256": "0a4f37f97e0e542c4dad8085a93224f19378301c03d90be78db343f8dd1a05d5",
+          "log_sha256": "e5786c10b139dfb1e72eedb67d9a3e81c2f40da17b9381faaf1efee43166176b",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.19677734375,
+            "outside_elements": 294,
+            "outside_rows": 11,
+            "shape": [
+              11,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "V2 original frozen",
+          "reference_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+          "features_sha256": "0875d4c885efa6ba3d5ee383a470768f54567a55f461b7888140969ab71a8308",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "1abb3a2cd7d1d6ce809159cb2a48c10d4ac1dff9d3058321e3b9d2a3672988b2",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0059999823570251465,
+            "stage2_max_absolute_drift": 0.00599999725818634,
+            "shared_finite_stage2_elements": 126
+          },
+          "raw_decision_reference_sha256": "87de4f442577e883957fbde830a8801b0ac85e7213e6771c471207e8ab49e4f3"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "PASS",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "c691cc63a0cf2ef95f365a7c1c4969388afd5c02ddda0a5451ef60ebccf33a17",
+          "summary_sha256": "ab867328ecbc13d6bdb657c9af3e18398f2960e43d1d8393fa3f814e3244b8d6",
+          "probabilities_sha256": "9873e6d59296d7c433c02c2a9d9c5f47cf7d91039660008c4934c52d81e2d7e8",
+          "log_sha256": "b358a1e5f481fc28d8628275e0c0416c160d74fd28bc77fbfcfa4e603a091310",
+          "embedding_comparison": {
+            "status": "PASS",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.00048828125,
+            "outside_elements": 0,
+            "outside_rows": 0,
+            "shape": [
+              82,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "IF-004 Windows CPU run 1",
+          "reference_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "features_sha256": "21105a632b090e1c95ae130400db0dda2291c9f1f9837406328db68f4d696bf6",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "64fe2ed0c83fb269194109407e0cda84e74c59deaccc923aeac285a6d5bf3ab3",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0040000081062316895,
+            "stage2_max_absolute_drift": 0.009999990463256836,
+            "shared_finite_stage2_elements": 504
+          },
+          "raw_decision_reference_sha256": "22ba6d19b7e5b117e5d4644194a6177df76868b210d5ea93469a5fd12e02c546"
+        }
+      }
+    },
+    {
+      "platform": "wsl2",
+      "device": "cpu",
+      "input_path": "raw",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "a1383cd37c00113c6324d74ae3bdc79b408738d15460c5ace70f8d67afe98d73",
+          "summary_sha256": "5372a9dc68026286427f83beb44a10d7506b1f134bd78e2bafeabfdf0e492f26",
+          "probabilities_sha256": "0998c8605229f26ae8ba5075baa246c1c965f876922c586923def39ae3862e69",
+          "log_sha256": "8854e59943c79751f3b1d47e1da1032c58435429f145c0388689f4af475ed360",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.19677734375,
+            "outside_elements": 294,
+            "outside_rows": 11,
+            "shape": [
+              11,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "V2 original frozen",
+          "reference_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+          "features_sha256": "0875d4c885efa6ba3d5ee383a470768f54567a55f461b7888140969ab71a8308",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "1abb3a2cd7d1d6ce809159cb2a48c10d4ac1dff9d3058321e3b9d2a3672988b2",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0059999823570251465,
+            "stage2_max_absolute_drift": 0.00599999725818634,
+            "shared_finite_stage2_elements": 126
+          },
+          "raw_decision_reference_sha256": "e0252265ced241188204e0d7ec00b97064907c57ae51a0884733ed4ac23ee3c1"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "PASS",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "da0c7acb64b1f06222f7a219c759bbd528f7a7a248b8a18d3a073cc24f036113",
+          "summary_sha256": "1b94432007d552446fc8bb4fff18853c07ab137cf6680b130022ed366ab6d5b0",
+          "probabilities_sha256": "9725759441dbae01ab5feb0cb800c25e57c1fd2f433dff5afde396ce2ed8800b",
+          "log_sha256": "250a1b110a9c6e7fab04152d48b5967354ccf7dce16eb8c8823170c9828c73b9",
+          "embedding_comparison": {
+            "status": "PASS",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.00048828125,
+            "outside_elements": 0,
+            "outside_rows": 0,
+            "shape": [
+              82,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "IF-004 Windows CPU run 1",
+          "reference_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "features_sha256": "21105a632b090e1c95ae130400db0dda2291c9f1f9837406328db68f4d696bf6",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "64fe2ed0c83fb269194109407e0cda84e74c59deaccc923aeac285a6d5bf3ab3",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0040000081062316895,
+            "stage2_max_absolute_drift": 0.009999990463256836,
+            "shared_finite_stage2_elements": 504
+          },
+          "raw_decision_reference_sha256": "0511008eaf8dacd96e4a66df5155e948ac52ebf796f8f1e70b8b1d2a675aecc2"
+        }
+      }
+    },
+    {
+      "platform": "wsl2",
+      "device": "cpu",
+      "input_path": "frozen",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "f0922e4bde7d3fd687904ed311aab1bafd7f2a835935e791daf3246a3a53fa54",
+          "summary_sha256": "caf33e57c547cc97b2da11c70c55e624f2bf8e97cc410a07ecd084adb6232088",
+          "probabilities_sha256": "87de4f442577e883957fbde830a8801b0ac85e7213e6771c471207e8ab49e4f3",
+          "log_sha256": "f390a8fd0aec81b680f75725549be173da321a7ee306aa340691e9a2ce181538",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 126,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "d0bbb31faf9b7a6fee8c13e9b271a0a75dc01bae08853580e5f0c792f68fb03d"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "c2ae352ac32eb258d20e2082a44b8a6b1b9b5854d466e23c9989bcee9274fb65",
+          "summary_sha256": "68f68ddb3cacda9e7fb411f958a5f25bdba5bea64768e98bd4daac3fdfbd4f87",
+          "probabilities_sha256": "22ba6d19b7e5b117e5d4644194a6177df76868b210d5ea93469a5fd12e02c546",
+          "log_sha256": "b3739d949d57fe26513815c7a8135b808f6d4f1dde3051a42e4e783e3ffdde57",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 504,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "86df71e944e3b209d3877fd9fb024541e8153b250df2bb974c585336293af97b"
+        }
+      }
+    },
+    {
+      "platform": "wsl2",
+      "device": "cpu",
+      "input_path": "frozen",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "7976b52daabc9beda51d3dee5bba92e33043d08a14963da2368d330407a088be",
+          "summary_sha256": "2857776974052c9ba4ea32a11a78749377962da58f861b81e1c361d142b1bbf3",
+          "probabilities_sha256": "e0252265ced241188204e0d7ec00b97064907c57ae51a0884733ed4ac23ee3c1",
+          "log_sha256": "3b7e5e702f00f4638d5c6530b77954692a3c3e452f96ac13dc5ae462e56966d7",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 126,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "c3db79e291219fa60dc4e18b899ffaa5344735001d100272a7824b30aabd780d"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "a3da3a21ddad7b808ed0a90263333559348d479b697c928faf255ad395186261",
+          "summary_sha256": "87448d0e5a7463cf3fcf91b94e7128250fa8f6f0db799a13979bfd31363cab3b",
+          "probabilities_sha256": "0511008eaf8dacd96e4a66df5155e948ac52ebf796f8f1e70b8b1d2a675aecc2",
+          "log_sha256": "cd8424a4eb05cfe7116967bb55791dc794b12e60e48070abc50aa96175997dd3",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 504,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "274ed23a7515b09df7b778309b03040cb03a44a61f1c7b51f126a56a2a61d2ac"
+        }
+      }
+    },
+    {
+      "platform": "wsl2",
+      "device": "cuda",
+      "input_path": "raw",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        }
+      },
+      "scope_reason": "The WSL and repository Docker acceptance contexts are CPU."
+    },
+    {
+      "platform": "wsl2",
+      "device": "cuda",
+      "input_path": "raw",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        }
+      },
+      "scope_reason": "The WSL and repository Docker acceptance contexts are CPU."
+    },
+    {
+      "platform": "wsl2",
+      "device": "cuda",
+      "input_path": "frozen",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        }
+      },
+      "scope_reason": "Frozen features skip the encoder and both forests run on CPU."
+    },
+    {
+      "platform": "wsl2",
+      "device": "cuda",
+      "input_path": "frozen",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        }
+      },
+      "scope_reason": "Frozen features skip the encoder and both forests run on CPU."
+    },
+    {
+      "platform": "docker",
+      "device": "cpu",
+      "input_path": "raw",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "caebb2ebfe8fbb40af14d8a45c6c86db63aad4062d336015bec829f1bd2f8dd7",
+          "summary_sha256": "648b67129621844c82eadcfbd41d1371e333ee8383152f067d6ffb861e4b2e37",
+          "probabilities_sha256": "2337e1bd8d1d1309ed9796e9a46b5f1c870a0994fb3ff38ce36f44aaabd1d558",
+          "log_sha256": "4aee281f3db2b4b6c53af746397bd6b2a1f6e3990f6a1bbce52ec4eebf7d08b2",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.19677734375,
+            "outside_elements": 294,
+            "outside_rows": 11,
+            "shape": [
+              11,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "V2 original frozen",
+          "reference_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+          "features_sha256": "0875d4c885efa6ba3d5ee383a470768f54567a55f461b7888140969ab71a8308",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "1abb3a2cd7d1d6ce809159cb2a48c10d4ac1dff9d3058321e3b9d2a3672988b2",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0059999823570251465,
+            "stage2_max_absolute_drift": 0.00599999725818634,
+            "shared_finite_stage2_elements": 126
+          },
+          "raw_decision_reference_sha256": "58de0897afbe206f34fdf545891b3137da5d947204ade3223cdc477dc77e0cdb"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "PASS",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "61ba0e100f7f2cca5e9233cded338e966eb00760eadcac1bd05102a9a1636eae",
+          "summary_sha256": "b0a58cf2f804307327665250dd8771b3da35a2de5b938b2ea1ca3d86cb079be4",
+          "probabilities_sha256": "9ac083ac770a55955eba78189a2b598e0863b040b27183f46ce39e399cf78d4e",
+          "log_sha256": "8126ec01b1e713b0a43323c1e774594d2b058a6a16a5585b47b438aed9627b39",
+          "publication_recovery": {
+            "initial_windows_bind": "FAIL",
+            "initial_errno": 22,
+            "initial_log_sha256": "1111f842fa99b4e83dcf4ee31090bf766ed22e02820789df0934f0b9b78f56db",
+            "sealed_bytes_verified": true,
+            "published_output": "container POSIX filesystem"
+          },
+          "embedding_comparison": {
+            "status": "PASS",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.00048828125,
+            "outside_elements": 0,
+            "outside_rows": 0,
+            "shape": [
+              82,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "IF-004 Windows CPU run 1",
+          "reference_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "features_sha256": "21105a632b090e1c95ae130400db0dda2291c9f1f9837406328db68f4d696bf6",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "64fe2ed0c83fb269194109407e0cda84e74c59deaccc923aeac285a6d5bf3ab3",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0040000081062316895,
+            "stage2_max_absolute_drift": 0.009999990463256836,
+            "shared_finite_stage2_elements": 504
+          },
+          "raw_decision_reference_sha256": "c876212929e0bd8215ea5f2ffd66e58d3d25eb72e83af365437a07276d1d7cde"
+        }
+      }
+    },
+    {
+      "platform": "docker",
+      "device": "cpu",
+      "input_path": "raw",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "FAIL",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "4bcd2de9c67354510231ae77c85bbe0a7b2775ddfbd018cbbaf890bd3998c6a1",
+          "summary_sha256": "94c0d555cbbce8883f7a8b1a0f766c10c88a96172a764c01c023ecfa27a2c4c8",
+          "probabilities_sha256": "dec10478c35250f776d4a112bb11037828c647cb146eda537648f4c154468684",
+          "log_sha256": "9a29318a514fbccbf1adb0fb19e7bf3b5e34e1759a190aaaf670dcee754bf475",
+          "embedding_comparison": {
+            "status": "FAIL",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.19677734375,
+            "outside_elements": 294,
+            "outside_rows": 11,
+            "shape": [
+              11,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "V2 original frozen",
+          "reference_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+          "features_sha256": "0875d4c885efa6ba3d5ee383a470768f54567a55f461b7888140969ab71a8308",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "1abb3a2cd7d1d6ce809159cb2a48c10d4ac1dff9d3058321e3b9d2a3672988b2",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0059999823570251465,
+            "stage2_max_absolute_drift": 0.00599999725818634,
+            "shared_finite_stage2_elements": 126
+          },
+          "raw_decision_reference_sha256": "9eb4d3be23dbe11e77bf331327ee327942d8a9d3c8b891fadd8d819ed082a436"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "PASS",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "PASS",
+          "manifest_sha256": "f75d6b39b70197fa97b477eda341b44474ef06f04e385ecb5bbdd47b089e661c",
+          "summary_sha256": "2e7869b4df590c53dbeac50f3107603ee119d4276cd1c979cfd14b76f2d48072",
+          "probabilities_sha256": "b31db6915ae7d659c04f876882ee94b9cad111ecf7d6a5eca7e2740ba5ea5219",
+          "log_sha256": "3d8129bdacd67626ba9b350c6820879d471b2ac2491b788b76b08c0d9a20604f",
+          "publication_recovery": {
+            "initial_windows_bind": "FAIL",
+            "initial_errno": 22,
+            "initial_log_sha256": "b968cad069373c7478adc0918fe368e0d937c590f74752ed0ac94d83b2cd0752",
+            "sealed_bytes_verified": true,
+            "published_output": "container POSIX filesystem"
+          },
+          "embedding_comparison": {
+            "status": "PASS",
+            "atol": 0.0001,
+            "rtol": 1e-05,
+            "max_absolute_error": 0.00048828125,
+            "outside_elements": 0,
+            "outside_rows": 0,
+            "shape": [
+              82,
+              1536
+            ],
+            "dtype": "float32"
+          },
+          "embedding_reference": "IF-004 Windows CPU run 1",
+          "reference_sha256": "71bdfc9a0cdc0baab10a2bf3bc82019bed04b87eac48e47dbdb66ec717bb0d5d",
+          "features_sha256": "21105a632b090e1c95ae130400db0dda2291c9f1f9837406328db68f4d696bf6",
+          "embedding_environment": {
+            "gpu_name": null,
+            "torch_build": "2.11.0",
+            "cuda_runtime": null,
+            "cuda_matmul_allow_tf32": null,
+            "cudnn_allow_tf32": null
+          },
+          "embedding_metadata_sha256": "64fe2ed0c83fb269194109407e0cda84e74c59deaccc923aeac285a6d5bf3ab3",
+          "raw_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0040000081062316895,
+            "stage2_max_absolute_drift": 0.009999990463256836,
+            "shared_finite_stage2_elements": 504
+          },
+          "raw_decision_reference_sha256": "927153c7651c28355c3d58c055960d07f9c5f6bff1a5278daba278c4e519d81b"
+        }
+      }
+    },
+    {
+      "platform": "docker",
+      "device": "cpu",
+      "input_path": "frozen",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "1422d825155f591c5c6848ab5baa27903e0c05525639079378edccd70b9eaa33",
+          "summary_sha256": "0b2860f808255b3831caa61f33a5b8182a8d2af119a95d561d50f47cb934065f",
+          "probabilities_sha256": "58de0897afbe206f34fdf545891b3137da5d947204ade3223cdc477dc77e0cdb",
+          "log_sha256": "cb77a2527b7ac9602a73e2e23b25ee1e6a10c66f18daa0c1eb90e2f25d4ce571",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 126,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "d0bbb31faf9b7a6fee8c13e9b271a0a75dc01bae08853580e5f0c792f68fb03d"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "71734362da9a3fa2f4234019efc2c1a73a89ae1e01c2c45187240545339c6f76",
+          "summary_sha256": "ba5120e3206bc81fa4878dddd7e4b14e384ad70374c436880cc0a4eda68cea69",
+          "probabilities_sha256": "c876212929e0bd8215ea5f2ffd66e58d3d25eb72e83af365437a07276d1d7cde",
+          "log_sha256": "ada73cf464232856d2a0817f98decde49ffe914a5638b6f150e81e3adec35360",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 504,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "86df71e944e3b209d3877fd9fb024541e8153b250df2bb974c585336293af97b"
+        }
+      }
+    },
+    {
+      "platform": "docker",
+      "device": "cpu",
+      "input_path": "frozen",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "35a9c8c1338eeaffb0e7f00c627dddb44309a4a02313ae3bd3bd27997e1d0da0",
+          "summary_sha256": "d51c0042592bd3e17aa5be3d2c545a7fb87676cc43bfc873fc54b60ab730a831",
+          "probabilities_sha256": "9eb4d3be23dbe11e77bf331327ee327942d8a9d3c8b891fadd8d819ed082a436",
+          "log_sha256": "df9d62b2792f42393b6a6768f75d727174ad05c77b52bd3a8963fdc162a237a5",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 126,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "c3db79e291219fa60dc4e18b899ffaa5344735001d100272a7824b30aabd780d"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "PASS",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "PASS",
+          "raw_decisions": "NOT_TESTED",
+          "manifest_sha256": "59fd1cd6e50c6fbbdc444d705c05d3b2156515ba878a4c8a663f131e86d3f901",
+          "summary_sha256": "71a61689b870e0433805b2e4c48a665bafb5c5ef50c8716136c863e572a0962f",
+          "probabilities_sha256": "927153c7651c28355c3d58c055960d07f9c5f6bff1a5278daba278c4e519d81b",
+          "log_sha256": "5693cefba0e01c0e265519f875bcd5549a26652d529010cf2eca51e30ea477c9",
+          "frozen_comparison": {
+            "status": "PASS",
+            "decision_rows_changed": 0,
+            "gate_rows_changed": 0,
+            "stage2_na_masks_changed": 0,
+            "labels_changed": 0,
+            "label_rows_changed": 0,
+            "stage1_max_absolute_drift": 0.0,
+            "stage2_max_absolute_drift": 0.0,
+            "shared_finite_stage2_elements": 504,
+            "stage1_probabilities_exact": true,
+            "stage2_probabilities_exact": true
+          },
+          "reference_sha256": "274ed23a7515b09df7b778309b03040cb03a44a61f1c7b51f126a56a2a61d2ac"
+        }
+      }
+    },
+    {
+      "platform": "docker",
+      "device": "cuda",
+      "input_path": "raw",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        }
+      },
+      "scope_reason": "The WSL and repository Docker acceptance contexts are CPU."
+    },
+    {
+      "platform": "docker",
+      "device": "cuda",
+      "input_path": "raw",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        }
+      },
+      "scope_reason": "The WSL and repository Docker acceptance contexts are CPU."
+    },
+    {
+      "platform": "docker",
+      "device": "cuda",
+      "input_path": "frozen",
+      "threshold_mode": "ct",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        }
+      },
+      "scope_reason": "Frozen features skip the encoder and both forests run on CPU."
+    },
+    {
+      "platform": "docker",
+      "device": "cuda",
+      "input_path": "frozen",
+      "threshold_mode": "u05",
+      "cohorts": {
+        "c11": {
+          "rows": 11,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        },
+        "c82": {
+          "rows": 82,
+          "engineering": "NOT_TESTED",
+          "embedding": "NOT_TESTED",
+          "frozen_rf": "NOT_TESTED",
+          "raw_decisions": "NOT_TESTED"
+        }
+      },
+      "scope_reason": "Frozen features skip the encoder and both forests run on CPU."
+    }
+  ],
+  "environments": {
+    "windows:cpu": {
+      "os": "Windows-11-10.0.26200-SP0",
+      "python": "3.12.15",
+      "packages": {
+        "incfinder-ntv3-tsrf": "0.4.0",
+        "torch": "2.11.0",
+        "numpy": "2.4.6",
+        "scikit-learn": "1.9.0",
+        "joblib": "1.5.3",
+        "transformers": "4.57.6",
+        "openpyxl": "3.1.5"
+      },
+      "environment_receipt_sha256": "04aca843d94425e246fc547ffb94ee17f3ed516eae60217ff301cc4a29392662",
+      "cpu_base_lock_sha256": "3ec56c47cc6a0e207f930efb4d8ed6c2f3e9d058b0a2ce90a4b6840756abd5fa",
+      "wheel_sha256": "ff0c3668fe7899abe654f1c68b13e250d7bd03655ab7c86e91b7a72d410b755f"
+    },
+    "linux:cpu": {
+      "os": "Linux-5.15.0-185-generic-x86_64-with-glibc2.35",
+      "python": "3.12.15",
+      "packages": {
+        "incfinder-ntv3-tsrf": "0.4.0",
+        "torch": "2.11.0",
+        "numpy": "2.4.6",
+        "scikit-learn": "1.9.0",
+        "joblib": "1.5.3",
+        "transformers": "4.57.6",
+        "openpyxl": "3.1.5"
+      },
+      "environment_receipt_sha256": "fb99c59b25e980cba62cd7521102db7685594c72db492447138d980fa7ed8562",
+      "cpu_base_lock_sha256": "e294c3734e939f549fec0cc91ae60f86260b8f07480ef5f5c277e3c2434a7c39",
+      "wheel_sha256": "ff0c3668fe7899abe654f1c68b13e250d7bd03655ab7c86e91b7a72d410b755f"
+    },
+    "windows:cuda": {
+      "os": "Windows-11-10.0.26200-SP0",
+      "python": "3.12.15",
+      "packages": {
+        "incfinder-ntv3-tsrf": "0.4.0",
+        "torch": "2.11.0+cu130",
+        "numpy": "2.4.6",
+        "scikit-learn": "1.9.0",
+        "joblib": "1.5.3",
+        "transformers": "4.57.6",
+        "openpyxl": "3.1.5"
+      },
+      "environment_receipt_sha256": "fda8f7e54c99dea0ce215a6aef1d2d612b88f29b95e1927b441d7a4b36d12efd",
+      "cpu_base_lock_sha256": "3ec56c47cc6a0e207f930efb4d8ed6c2f3e9d058b0a2ce90a4b6840756abd5fa",
+      "wheel_sha256": "ff0c3668fe7899abe654f1c68b13e250d7bd03655ab7c86e91b7a72d410b755f",
+      "device": {
+        "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "compute_capability": [
+          12,
+          0
+        ],
+        "cudnn": 91900,
+        "arch_list": [
+          "sm_75",
+          "sm_80",
+          "sm_86",
+          "sm_90",
+          "sm_100",
+          "sm_120"
+        ],
+        "matmul_and_cudnn_conv": "PASS",
+        "cuda_runtime": "13.0",
+        "driver": "610.88"
+      },
+      "cuda_wheel_sha256": "ef8beae16d781c3244ef28dc7bee6d8871c26bbde65d5bf66e902cb61972c4ab"
+    },
+    "linux:cuda": {
+      "os": "Linux-5.15.0-185-generic-x86_64-with-glibc2.35",
+      "python": "3.12.15",
+      "packages": {
+        "incfinder-ntv3-tsrf": "0.4.0",
+        "torch": "2.11.0+cu126",
+        "numpy": "2.4.6",
+        "scikit-learn": "1.9.0",
+        "joblib": "1.5.3",
+        "transformers": "4.57.6",
+        "openpyxl": "3.1.5"
+      },
+      "environment_receipt_sha256": "050d343e2bcb1ab5ee63ecd4982a5ee45798a6d5439b92b3058a262da150d5b5",
+      "cpu_base_lock_sha256": "e294c3734e939f549fec0cc91ae60f86260b8f07480ef5f5c277e3c2434a7c39",
+      "wheel_sha256": "ff0c3668fe7899abe654f1c68b13e250d7bd03655ab7c86e91b7a72d410b755f",
+      "device": {
+        "name": "Tesla V100-SXM2-16GB",
+        "compute_capability": [
+          7,
+          0
+        ],
+        "cudnn": 91002,
+        "arch_list": [
+          "sm_50",
+          "sm_60",
+          "sm_70",
+          "sm_75",
+          "sm_80",
+          "sm_86",
+          "sm_90"
+        ],
+        "matmul_and_cudnn_conv": "PASS",
+        "cuda_runtime": "12.6",
+        "driver": "550.144.03"
+      },
+      "cuda_wheel_lock_sha256": "90f938b09029be5ae2f4f1db541c2773a0428be3666e2e48c345b7ea53d25a47"
+    },
+    "wsl2:cpu": {
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "python": "3.12.15",
+      "packages": {
+        "incfinder-ntv3-tsrf": "0.4.0",
+        "torch": "2.11.0",
+        "numpy": "2.4.6",
+        "scikit-learn": "1.9.0",
+        "joblib": "1.5.3",
+        "transformers": "4.57.6",
+        "openpyxl": "3.1.5"
+      },
+      "environment_receipt_sha256": "76fad4d20310cb3632ca33f0e9dcb9f9cfb87cec2175eb9da1252296758c92b9",
+      "cpu_base_lock_sha256": "e294c3734e939f549fec0cc91ae60f86260b8f07480ef5f5c277e3c2434a7c39",
+      "wheel_sha256": "ff0c3668fe7899abe654f1c68b13e250d7bd03655ab7c86e91b7a72d410b755f"
+    },
+    "docker:cpu": {
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "python": "3.12.15",
+      "packages": {
+        "torch": "2.11.0",
+        "numpy": "2.4.6",
+        "scikit-learn": "1.9.0",
+        "joblib": "1.5.3",
+        "transformers": "4.57.6"
+      },
+      "environment_receipt_sha256": "3f89b05e56caca349141958e3cab7c1fd72e817daab94e91e680421d58292938",
+      "image_id": "sha256:0fdc9e0276e3913c02c52e13963ccb1a701ab56b1e59f18e5136c35b6b1061fe",
+      "dockerfile_sha256": "c7707535f535357c4e2f99ddc92615b809ce3659c13a1e01791daeac3d158f7b",
+      "lock_sha256": "e294c3734e939f549fec0cc91ae60f86260b8f07480ef5f5c277e3c2434a7c39",
+      "wrapper_sha256": "150684f563a164e67742adf224e40ee53861190df957d2a8bd9fcaa8141c0277",
+      "package_sha256": "99dbda10105ed1891ef9d59da62e7d605388b8c15390ce3d65bf044acc9e75b1",
+      "output_filesystem": "container POSIX filesystem"
+    }
+  },
+  "cohorts": {
+    "c11": {
+      "rows": 11,
+      "embedding_reference": "V2 bundled frozen features"
+    },
+    "c82": {
+      "rows": 82,
+      "embedding_reference": "ntv3_650m_cpu_fp32_v1 Windows run 1",
+      "cohort_lock_sha256": "355fbad649010767913c6a764dc064b61e37fca90fb3d7c08c3addd96da1d04f"
+    }
+  },
+  "platform_probes": {
+    "docker_windows_output_bind": {
+      "publish_status": "FAIL",
+      "renameat2_reject_errno": 22,
+      "affected_runs": 2,
+      "recovery": "Verified on a temporary container POSIX filesystem"
+    }
+  },
+  "parameters": {
+    "tensor_dtype": "float32",
+    "batch_size": 1,
+    "threads": 4,
+    "rf_jobs": 1,
+    "original_feature_tolerance": {
+      "atol": 0.0001,
+      "rtol": 1e-05
+    },
+    "rf_decision_threshold_modes": [
+      "ct",
+      "u05"
+    ]
+  },
+  "limits": [
+    "Each result applies to the declared runtime and cohort.",
+    "The 82 records are a locked retrospective cohort.",
+    "No population accuracy estimate is provided."
+  ],
+  "c82_frozen_input_provenance": {
+    "original_sha256": "a845f28c14c2692019bbafce45bb1912e580ed88452e9dd4518dbcfc0fb4ed32",
+    "test_copy_sha256": "ccabde9cad271b8c8c2178bf115bdd4e103c2f3888ffdc0c66643d967aef04c0",
+    "features_unchanged_sha256": "73b2cfdf4cb560fad0d3fdedb40b9482d9d0fe113b59f1f4fe34c82cdc408db4",
+    "added_fields": [
+      "device",
+      "environment"
+    ],
+    "source_edit": false
+  }
+}

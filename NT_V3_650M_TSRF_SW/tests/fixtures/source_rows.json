@@ -1,0 +1,36 @@
+{
+  "source_project": "embedding_benchmark",
+  "source_features": "inputs/embedding4/src/nt_v3/rf/tsrf/sh/s01_qc/features/test.features.npy",
+  "source_features_sha256": "0d9b59a317f5f27555e6353a5d3bedbf898481e23877b92de0ee0fdf0dd11a38",
+  "source_rows": [
+    0,
+    1,
+    2,
+    3,
+    8,
+    42,
+    4296,
+    13082,
+    45141,
+    47566,
+    200091
+  ],
+  "lengths": [
+    889,
+    901,
+    912,
+    930,
+    1030,
+    865,
+    868,
+    1791,
+    9689,
+    10000,
+    212
+  ],
+  "expected_status_counts": {
+    "gate_rejected": 5,
+    "gate_passed": 6,
+    "no_call": 1
+  }
+}

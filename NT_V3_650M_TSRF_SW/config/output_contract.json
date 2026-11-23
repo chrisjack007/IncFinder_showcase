@@ -1,0 +1,26 @@
+{
+  "schema_version": 2,
+  "classification_policy_id": "external_unclassified_final21zero_v1",
+  "external_unclassified": "all 21 final Inc calls are zero",
+  "external_classified": "at least one final Inc call is one",
+  "external_display_label": "Inc Unclassified",
+  "final_status_values": ["Inc_unclassified", "Inc_classified"],
+  "internal_status_values": ["Unclassified", "Inc_no_call", "Inc_called"],
+  "internal_status_definitions": {
+    "Unclassified": "Stage1 probability is below 0.5",
+    "Inc_no_call": "Stage1 passes but no Stage2 label reaches its threshold",
+    "Inc_called": "Stage1 passes and at least one Stage2 label reaches its threshold"
+  },
+  "stage1_pred_scope": "native gate decision, not final classification",
+  "gate_operator": ">=",
+  "label_operator": ">=",
+  "rejected_stage2_probabilities": "NaN in NPZ; NA in CSV/XLSX",
+  "external_unclassified_continuous_score": null,
+  "prediction_is_ground_truth": false,
+  "invalid_or_missing_prediction": "fail; never replace with an all-zero prediction",
+  "npz_additions": {
+    "external_unclassified": "bool (N,)",
+    "external_classified": "bool (N,)",
+    "internal_status": "Unicode (N,); no object arrays"
+  }
+}

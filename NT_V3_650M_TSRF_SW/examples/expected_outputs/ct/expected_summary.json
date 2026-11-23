@@ -1,0 +1,20 @@
+{
+  "software_version": "0.5.0rc2",
+  "threshold_mode": "ct",
+  "scientific_equivalence": "FROZEN_REFERENCE",
+  "record_count": 11,
+  "counts": {
+    "Inc_classified": 4,
+    "Inc_unclassified": 7
+  },
+  "internal_counts": {
+    "Unclassified": 7,
+    "Inc_no_call": 0,
+    "Inc_called": 4
+  },
+  "gate_counts": {
+    "passed": 4,
+    "rejected": 7
+  },
+  "reference_npz_sha256": "d3fd1bf91fd96c25456aa910db3b835a42d6aeee93b16a618e52344a4ee7eb71"
+}

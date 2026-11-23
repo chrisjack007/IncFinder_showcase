@@ -1,0 +1,12 @@
+﻿row_index,Header,Result,final_status,predicted_label_count,predicted_labels,gate_pass,internal_status,Scientific_status
+0,test_frag_000000001,IncFIA;IncFIB;IncFII,Inc_classified,3,IncFIA;IncFIB;IncFII,1,Inc_called,FROZEN_REFERENCE
+1,test_frag_000000002,Inc Unclassified,Inc_unclassified,0,,0,Unclassified,FROZEN_REFERENCE
+2,test_frag_000000003,IncFIB;IncFII,Inc_classified,2,IncFIB;IncFII,1,Inc_called,FROZEN_REFERENCE
+3,test_frag_000000004,Inc Unclassified,Inc_unclassified,0,,0,Unclassified,FROZEN_REFERENCE
+4,test_frag_000000009,Inc Unclassified,Inc_unclassified,0,,0,Unclassified,FROZEN_REFERENCE
+5,test_frag_000000043,Inc Unclassified,Inc_unclassified,0,,0,Unclassified,FROZEN_REFERENCE
+6,test_frag_000004297,IncR,Inc_classified,1,IncR,1,Inc_called,FROZEN_REFERENCE
+7,test_frag_000013083,Inc Unclassified,Inc_unclassified,0,,0,Unclassified,FROZEN_REFERENCE
+8,test_frag_000045142,IncFIB;IncFII,Inc_classified,2,IncFIB;IncFII,1,Inc_called,FROZEN_REFERENCE
+9,test_frag_000047567,Inc Unclassified,Inc_unclassified,0,,0,Unclassified,FROZEN_REFERENCE
+10,test_short_plasmid_000092,Inc Unclassified,Inc_unclassified,0,,0,Unclassified,FROZEN_REFERENCE

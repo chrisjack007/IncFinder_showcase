@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "shape": [
+    11,
+    1536
+  ],
+  "dtype": "float32",
+  "features_sha256": "5f8bc5a7a46f6167c3e1e3db20808ed2572cfe84a786a32691879c43df69e96f",
+  "contract_sha256": "5a409f2ab9f3c573bf0b2c2e78e8e040edeb564162793e1db3cce9557459ec7d",
+  "assets_sha256": "e022cdfef39a9c6c5656dfdb67bfba7477b5531b0b32d117ca08f900f9c43753",
+  "records": [
+    {
+      "row_index": 0,
+      "record_id": "test_frag_000000001",
+      "header": "test_frag_000000001",
+      "length_bp": 889,
+      "input_format": "fasta",
+      "sequence_sha256": "cbe2b3a6fb02ca808d2511c3e99e40be70d4d05b682bb6874f43a9bb86406bd4"
+    },
+    {
+      "row_index": 1,
+      "record_id": "test_frag_000000002",
+      "header": "test_frag_000000002",
+      "length_bp": 901,
+      "input_format": "fasta",
+      "sequence_sha256": "1fcdd59984bebe105aca8ff8d35ecc2ad21b4c91374df5968667ba3142c1c516"
+    },
+    {
+      "row_index": 2,
+      "record_id": "test_frag_000000003",
+      "header": "test_frag_000000003",
+      "length_bp": 912,
+      "input_format": "fasta",
+      "sequence_sha256": "bdecabb451cb3681fc2f960097c43b2b20e92c35f095bb2798e5b9417ff257be"
+    },
+    {
+      "row_index": 3,
+      "record_id": "test_frag_000000004",
+      "header": "test_frag_000000004",
+      "length_bp": 930,
+      "input_format": "fasta",
+      "sequence_sha256": "02350c760774e3d799584b2d42fe218591d9c068c945971f607d54f2690c0615"
+    },
+    {
+      "row_index": 4,
+      "record_id": "test_frag_000000009",
+      "header": "test_frag_000000009",
+      "length_bp": 1030,
+      "input_format": "fasta",
+      "sequence_sha256": "16c32cb55476eefd50926d709b0c860b53f1728850e479ade5a15e2bbdcd177d"
+    },
+    {
+      "row_index": 5,
+      "record_id": "test_frag_000000043",
+      "header": "test_frag_000000043",
+      "length_bp": 865,
+      "input_format": "fasta",
+      "sequence_sha256": "05c130a660a9b518cefe7f9dcb8e77efd00efd325dc1bffe21bd3b9ff6c14913"
+    },
+    {
+      "row_index": 6,
+      "record_id": "test_frag_000004297",
+      "header": "test_frag_000004297",
+      "length_bp": 868,
+      "input_format": "fasta",
+      "sequence_sha256": "01ddb549a947e2928417869a4a39b77342d73ea2c96ca1840966e855b2619c79"
+    },
+    {
+      "row_index": 7,
+      "record_id": "test_frag_000013083",
+      "header": "test_frag_000013083",
+      "length_bp": 1791,
+      "input_format": "fasta",
+      "sequence_sha256": "bbcbf92923dc2e6d3a4326ebf22215815769736ad5a1d987adb41bd532eb8c4f"
+    },
+    {
+      "row_index": 8,
+      "record_id": "test_frag_000045142",
+      "header": "test_frag_000045142",
+      "length_bp": 9689,
+      "input_format": "fasta",
+      "sequence_sha256": "e06d3edb2505ac3bdbd324e99d2a6192941888b36f40957162bcbbc3f06fab3d"
+    },
+    {
+      "row_index": 9,
+      "record_id": "test_frag_000047567",
+      "header": "test_frag_000047567",
+      "length_bp": 10000,
+      "input_format": "fasta",
+      "sequence_sha256": "dc233b1570b26688a40d3e301798c1addc760934cc42f226b17a2aea7485fc28"
+    },
+    {
+      "row_index": 10,
+      "record_id": "test_short_plasmid_000092",
+      "header": "test_short_plasmid_000092",
+      "length_bp": 212,
+      "input_format": "fasta",
+      "sequence_sha256": "74ed539a7824da4cb4bb1117e24fcf699b39c48bfe622e139ba09811c873390c"
+    }
+  ],
+  "environment": {
+    "source": "accepted benchmark float32 features"
+  },
+  "device": "source_frozen",
+  "batch_size": null,
+  "threads": null,
+  "scientific_equivalence": "FROZEN_REFERENCE"
+}

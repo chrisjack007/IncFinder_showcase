@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "model": "NTv3_650M_pre",
+  "feature_dim": 1536,
+  "dtype": "float32",
+  "checkpoint_revision": "5e6050bed864a5a8fb32481096bf555495316b31",
+  "model_code_revision": "0ecff3637f0d3ba5b686d1095083218157c2ca34",
+  "embedding": {
+    "padding": "right_N_to_multiple_128",
+    "pooling": "hidden_states[-1]_mean_over_original_bases",
+    "original_N_included": true,
+    "artificial_N_included": false,
+    "strand": "mean_forward_and_reverse_complement",
+    "add_special_tokens": false,
+    "truncation": false,
+    "local_files_only": true
+  },
+  "rf": {
+    "stage1": "models/rf/stage1.joblib",
+    "stage2": "models/rf/stage2.joblib",
+    "grid": "grid_0001",
+    "n_estimators_each": 500,
+    "stage1_threshold": 0.5,
+    "threshold_operator": ">=",
+    "retraining": false,
+    "stage2_fit": "direct_multioutput",
+    "threshold_selection": "frozen_training_OOF"
+  },
+  "labels": [
+    "Inc18",
+    "IncC",
+    "IncFIA",
+    "IncFIB",
+    "IncFIC",
+    "IncFII",
+    "IncHI1",
+    "IncHI2",
+    "IncI",
+    "IncK",
+    "IncL",
+    "IncN",
+    "IncP",
+    "IncQ",
+    "IncR",
+    "IncU",
+    "IncX1",
+    "IncX3",
+    "IncX_other",
+    "IncY",
+    "Inc_other"
+  ],
+  "length_ranges": {
+    "train": [
+      200,
+      10000
+    ],
+    "test": [
+      212,
+      10000
+    ]
+  },
+  "validated_length_bp": [
+    200,
+    10000
+  ],
+  "environments": {
+    "embedding": {
+      "python": "3.12",
+      "torch": "2.11.0",
+      "transformers": "4.57.6",
+      "numpy": "2.4.3",
+      "safetensors": "0.7.0",
+      "huggingface-hub": "0.36.2",
+      "tokenizers": "0.22.2"
+    },
+    "rf": {
+      "python": "3.11",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.0",
+      "joblib": "1.5.3"
+    },
+    "report": {
+      "python": "3.12",
+      "openpyxl": "3.1.5"
+    }
+  },
+  "reference_tolerance": {
+    "embedding_atol": 0.0001,
+    "embedding_rtol": 1e-05,
+    "frozen_feature_probability_atol": 0.0,
+    "label_disagreement_allowed": 0
+  },
+  "benchmark_input_id": "dce1d70ee87ecdd593f67d43d71984fd6ee0e5df1cdb6a52ab5d4f48b93328ac",
+  "comparison_science_id": "7cbe8c21332730891bcabed76e805397e9c3254594b885303986dfe2c4b01d59"
+}

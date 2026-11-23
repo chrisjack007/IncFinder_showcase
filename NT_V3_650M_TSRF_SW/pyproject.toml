@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "incfinder-ntv3-tsrf"
+version = "0.5.0rc2"
+description = "Offline NT-v3 650M two-stage random forest Inc typing (research preview)"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "numpy==2.4.*", "scipy==1.17.*", "scikit-learn==1.9.0", "joblib==1.5.*",
+  "torch==2.11.*", "transformers==4.57.*", "openpyxl==3.1.*", "packaging>=20",
+]
+
+[project.scripts]
+incfinder = "ntv3_tsrf.cli:main"
+
+[tool.setuptools]
+license-files = ["LICENSE", "models/ntv3/MODEL-LICENSE.md"]
+packages = ["incfinder", "ntv3_tsrf"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+ntv3_tsrf = ["_resources/**/*"]

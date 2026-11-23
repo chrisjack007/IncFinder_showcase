@@ -1,0 +1,11 @@
+name: incfinder-ci-build
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12.15
+  - conda=25.11.1
+  - conda-build=25.11.1
+  - conda-index=0.7.0
+  - pip
+  - setuptools=81.0.0
+  - wheel=0.48.0

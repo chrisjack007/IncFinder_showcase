@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "candidate_id": "incfinder-0-5-0rc2",
+  "index_sha256": "642827ef2acc9b272ab97cfcc0545112b5d4c7dfc1ea85b46a0814f9e0eaa47c",
+  "assets": {
+    "models/rf/stage1.joblib": {
+      "sha256": "c72909c77c219fce16a17b58439c00d140153065deb5017143d0060050b1396e",
+      "size_bytes": 1883287385
+    },
+    "models/rf/stage2.joblib": {
+      "sha256": "e54dac5245b3f74281ae2c0243e956cfbc32202c0e51b4c35527886d1c8cb567",
+      "size_bytes": 22864832025
+    },
+    "models/ntv3/model.safetensors": {
+      "sha256": "4052aeda062de895e3734e3fac2aea10d1b40149995543cf4f6a9fba0a996b8c",
+      "size_bytes": 2607356620
+    },
+    "config/thresholds.tsv": {
+      "sha256": "29d6b71918a2a6eacb3d5ee6034b3d749617d0d4a98627c898953183cbd2260b",
+      "size_bytes": 458
+    }
+  }
+}

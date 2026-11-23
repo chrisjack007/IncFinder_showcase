@@ -1,0 +1,737 @@
+{
+  "schema": 1,
+  "candidate_id": "incfinder-0-5-0rc2",
+  "version": "0.5.0rc2",
+  "research_commit": "d174440bfe5a044eaa742575cd9d6a605ce490ac",
+  "engineering_base": "6a3b6d23738bd760e4cba007417904a5c87a8d79",
+  "archived_lineage_sha256": "49ecef95fb45c52886231833652514a3f57aadcc5fea08be868a00190b6548d1",
+  "stages": {
+    "prepare": {
+      "run_id": "rc1-prepare",
+      "attempt_id": "47ce7a4e8da14aa78f785cbcd08f4b03",
+      "research_commit": "d174440bfe5a044eaa742575cd9d6a605ce490ac",
+      "started_at": "2026-11-20T15:46:16.219606+00:00",
+      "finished_at": "2026-11-20T15:51:34.914314+00:00",
+      "entrypoint": "research/ntv3_tsrf/stage.py",
+      "entrypoint_identity": {
+        "sha256": "5de281107e00655592c2cc869402fb7fb6d769ca8292b66803c9212d9145c133",
+        "size_bytes": 5937
+      },
+      "start": {
+        "sha256": "23163f127a02f335f57b3d4155a8658847be2470c2198354a596010d77b851f3",
+        "size_bytes": 13681
+      },
+      "completion": {
+        "sha256": "043cd48cfe04e9ee34fe0a655a3f8c0d374e472760d6270865be267d116692d5",
+        "size_bytes": 3236
+      },
+      "inputs": {
+        "dated_source1": {
+          "sha256": "559934b867206f28beebb226b3d850d1376ab3b47f0f2e568d0ee85d4cce98d3",
+          "size_bytes": 26572145
+        },
+        "fold_source": {
+          "sha256": "0e1a930db620d3726d1a45b55c9e5e0763f9b57cef422e059853d665a00f42e5",
+          "size_bytes": 1600658
+        },
+        "holdout_label_source": {
+          "sha256": "3e9e27cece1b0d8116c85db0843297de1c03c82c6555055675e87343610a584e",
+          "size_bytes": 4402218
+        },
+        "holdout_metadata_source": {
+          "sha256": "16032a50daf5b8528dca882dadaa41182a42fd0c628811d0f22074b1b430bb0a",
+          "size_bytes": 110289048
+        },
+        "holdout_representative_fasta": {
+          "sha256": "05b1a6f5e2cae6345aa2ed110ade83c4d71d444a3d38c9b1cdb46d711c5b1187",
+          "size_bytes": 1041245971
+        },
+        "holdout_sequence_source": {
+          "sha256": "f7e1dde6c9863ce83c94c0e25da719d1341499b260f2ce8b6355ddcca6944d02",
+          "size_bytes": 1003315820
+        },
+        "label_source": {
+          "sha256": "7ae4e5c819056c4cdb4c9cd59222779f2149aa15c649b4f8b7f73c0a08808659",
+          "size_bytes": 240
+        },
+        "membership": {
+          "sha256": "d34a06c9e81d6752735822a318fe9a75a522cfc5685d4b5878420e4b87abe4c7",
+          "size_bytes": 41238735
+        },
+        "metasim_manifests": {
+          "sha256": "8ac39d16be756e25e39959f4646b9deca9a4ef551fa197536d7ac42b9f3f1dd9",
+          "size_bytes": 1732757
+        },
+        "ncbi_catalog": {
+          "sha256": "6c97ed04bc46aa1b52a27dfd501b82d78b76d05a3a5d836ff86e15ed161e5648",
+          "size_bytes": 21857852
+        },
+        "original_source1": {
+          "sha256": "4489e1d5c2078083cffd1bf45816cc262f7f604ef08b93ed12d9f8a7c69852f8",
+          "size_bytes": 25496795
+        },
+        "raw_inventory": {
+          "sha256": "18acd72dcef70eb3afceb6848dd34fe6747b066d6d29b305b56880a98c663585",
+          "size_bytes": 25134795
+        },
+        "raw_snapshot": {
+          "sha256": "ab9c4236085bd2e2654c9f0a9fdf1a61a17b6678ae2c18b757353d8c94e762cf",
+          "size_bytes": 773
+        },
+        "reference_labels": {
+          "sha256": "dcce73d135bd56704f09d289c1a95c2b3ce3083b5c3a94efaaae9f0d374340d8",
+          "size_bytes": 8094755
+        },
+        "representatives": {
+          "sha256": "8d122fca6935aee5a355cc13d021bed5dc735ec391ee726117bb4ac8f7eface2",
+          "size_bytes": 12533449
+        },
+        "split_definition": {
+          "sha256": "6a4ad658c3f2d9abc3e4ca8bc0df4efed0d27810265e2fb7349b5b11993f2e63",
+          "size_bytes": 1525
+        },
+        "train_label_source": {
+          "sha256": "896f520a696d061e95e143e472fce96c6c344d52e81fc025770d9f4b0f78807d",
+          "size_bytes": 17605958
+        },
+        "train_metadata_source": {
+          "sha256": "442fef86f25d4737dad4191affd727fcd983ae624887399c38be767a28b9dfa7",
+          "size_bytes": 440810618
+        },
+        "train_representative_fasta": {
+          "sha256": "0ecb7ddefe4f6b11cbc23eeb9eb66865b5b3e340e8c820b143949a49ddeff953",
+          "size_bytes": 4121098381
+        },
+        "train_sequence_source": {
+          "sha256": "53eda40b9de6a595e1e91dd44cfaba244180e6d8bc36085aee3e5bf9229c7fbb",
+          "size_bytes": 4014824122
+        },
+        "typing_basis": {
+          "sha256": "0b5c01cb55569c03046885509c3d1dc7e93a3de8ebbccca4b6d93f348f09f3b8",
+          "size_bytes": 3584
+        },
+        "typing_report": {
+          "sha256": "ec92af357fcc3cdab0fb670355ecaca310baee9342ade8d04e76e7dc7d494846",
+          "size_bytes": 1256365
+        }
+      },
+      "parents": {},
+      "outputs": {
+        "folds": {
+          "sha256": "0e1a930db620d3726d1a45b55c9e5e0763f9b57cef422e059853d665a00f42e5",
+          "size_bytes": 1600658
+        },
+        "holdout_labels": {
+          "sha256": "3e9e27cece1b0d8116c85db0843297de1c03c82c6555055675e87343610a584e",
+          "size_bytes": 4402218
+        },
+        "holdout_rows": {
+          "sha256": "f15eb0de42adfcdd7f4fdfed116ef4c3d0cdfcf0233bb45729e775f74e51e250",
+          "size_bytes": 23860166
+        },
+        "holdout_sequences": {
+          "sha256": "f7e1dde6c9863ce83c94c0e25da719d1341499b260f2ce8b6355ddcca6944d02",
+          "size_bytes": 1003315820
+        },
+        "label_order": {
+          "sha256": "7ae4e5c819056c4cdb4c9cd59222779f2149aa15c649b4f8b7f73c0a08808659",
+          "size_bytes": 240
+        },
+        "row_lineage": {
+          "sha256": "2293ce0be6df723734143e75ff7e39b91a899b69be7d3cc3a68b1cd82efc097c",
+          "size_bytes": 387161653
+        },
+        "split_audit": {
+          "sha256": "24a8da8871a5af60d243352cca2af4050acd69166bf269da74b96807e745c12a",
+          "size_bytes": 621
+        },
+        "train_labels": {
+          "sha256": "896f520a696d061e95e143e472fce96c6c344d52e81fc025770d9f4b0f78807d",
+          "size_bytes": 17605958
+        },
+        "train_rows": {
+          "sha256": "67c4b0ab745550d06112346712d8751f1948e90ab9c01828edffbc2098f015c4",
+          "size_bytes": 93598596
+        },
+        "train_sequences": {
+          "sha256": "53eda40b9de6a595e1e91dd44cfaba244180e6d8bc36085aee3e5bf9229c7fbb",
+          "size_bytes": 4014824122
+        }
+      },
+      "config": {
+        "sha256": "48bcf4e30549cc282d4c82382414e20c146730c814d136c7e754ec0d6065ad80",
+        "size_bytes": 109
+      }
+    },
+    "encode_train": {
+      "run_id": "rc1-encode_train",
+      "attempt_id": "e7901153db2745ad82612f0959b2479e",
+      "research_commit": "d174440bfe5a044eaa742575cd9d6a605ce490ac",
+      "started_at": "2026-11-20T15:52:15.781594+00:00",
+      "finished_at": "2026-11-22T06:29:12.264586+00:00",
+      "entrypoint": "research/ntv3_tsrf/stage.py",
+      "entrypoint_identity": {
+        "sha256": "5de281107e00655592c2cc869402fb7fb6d769ca8292b66803c9212d9145c133",
+        "size_bytes": 5937
+      },
+      "start": {
+        "sha256": "1fccaf4b0a5a7220a5b9e5856bad66957e418445a155bc0c2f14a99544a80420",
+        "size_bytes": 3564
+      },
+      "completion": {
+        "sha256": "89d0fadc531f0215ea0195f8b783d5c97cc535a76b61b41f5cccb5e1404056e2",
+        "size_bytes": 1528
+      },
+      "inputs": {
+        "encoder_release": {
+          "sha256": "e022cdfef39a9c6c5656dfdb67bfba7477b5531b0b32d117ca08f900f9c43753",
+          "size_bytes": 4521
+        },
+        "encoder_weights": {
+          "sha256": "4052aeda062de895e3734e3fac2aea10d1b40149995543cf4f6a9fba0a996b8c",
+          "size_bytes": 2607356620
+        },
+        "train_rows": {
+          "sha256": "67c4b0ab745550d06112346712d8751f1948e90ab9c01828edffbc2098f015c4",
+          "size_bytes": 93598596
+        },
+        "train_sequences": {
+          "sha256": "53eda40b9de6a595e1e91dd44cfaba244180e6d8bc36085aee3e5bf9229c7fbb",
+          "size_bytes": 4014824122
+        }
+      },
+      "parents": {
+        "prepare": {
+          "sha256": "043cd48cfe04e9ee34fe0a655a3f8c0d374e472760d6270865be267d116692d5",
+          "size_bytes": 3236
+        }
+      },
+      "outputs": {
+        "encoder_report": {
+          "sha256": "d8b773b9271f90982eed5b62f6e624fbb6ad5aee2a8778abf38e2b6b3fa7b5a6",
+          "size_bytes": 940
+        },
+        "train_feature_rows": {
+          "sha256": "4cad3aaf6cf2f42ed2a239752030d1a14affd845b1653f6fe2111e509832d3cf",
+          "size_bytes": 74315161
+        },
+        "train_features": {
+          "sha256": "ab637c90f49537c8025e55f1d54b75bbe9ee4e3e9735be0c710825b5611e3005",
+          "size_bytes": 4916828288
+        }
+      },
+      "config": {
+        "sha256": "58c4bfcb8ba015214bdac80214ec6a6c2338e058be8093e90be35fd324299da7",
+        "size_bytes": 110
+      }
+    },
+    "encode_holdout": {
+      "run_id": "rc1-encode_holdout",
+      "attempt_id": "8c0553b910ac4727a435d18424aa6842",
+      "research_commit": "d174440bfe5a044eaa742575cd9d6a605ce490ac",
+      "started_at": "2026-11-22T06:29:46.077252+00:00",
+      "finished_at": "2026-11-22T16:11:28.196644+00:00",
+      "entrypoint": "research/ntv3_tsrf/stage.py",
+      "entrypoint_identity": {
+        "sha256": "5de281107e00655592c2cc869402fb7fb6d769ca8292b66803c9212d9145c133",
+        "size_bytes": 5937
+      },
+      "start": {
+        "sha256": "409d93ae3dfa182f68896343f607d8f17abaae9214d973278998572dacc38a00",
+        "size_bytes": 3602
+      },
+      "completion": {
+        "sha256": "f9f18d2e40097c3915e353092f54b16741a380605c84ca19fa848e51e8c08225",
+        "size_bytes": 1549
+      },
+      "inputs": {
+        "encoder_release": {
+          "sha256": "e022cdfef39a9c6c5656dfdb67bfba7477b5531b0b32d117ca08f900f9c43753",
+          "size_bytes": 4521
+        },
+        "encoder_weights": {
+          "sha256": "4052aeda062de895e3734e3fac2aea10d1b40149995543cf4f6a9fba0a996b8c",
+          "size_bytes": 2607356620
+        },
+        "holdout_rows": {
+          "sha256": "f15eb0de42adfcdd7f4fdfed116ef4c3d0cdfcf0233bb45729e775f74e51e250",
+          "size_bytes": 23860166
+        },
+        "holdout_sequences": {
+          "sha256": "f7e1dde6c9863ce83c94c0e25da719d1341499b260f2ce8b6355ddcca6944d02",
+          "size_bytes": 1003315820
+        }
+      },
+      "parents": {
+        "prepare": {
+          "sha256": "043cd48cfe04e9ee34fe0a655a3f8c0d374e472760d6270865be267d116692d5",
+          "size_bytes": 3236
+        }
+      },
+      "outputs": {
+        "encoder_report": {
+          "sha256": "5bced86805a0027036e20ccbe5fd726fd171cca62354ce4da5fc14ebf2dde20d",
+          "size_bytes": 940
+        },
+        "holdout_feature_rows": {
+          "sha256": "685a5648807ce92e3bdcdc985bb12baf819409c91b0bebc4e396e53cb9f59170",
+          "size_bytes": 18298236
+        },
+        "holdout_features": {
+          "sha256": "05c8ab979a1e72e4a9d6985b34012ec7d7a8a82f2b560bbf8fce26c7a3818471",
+          "size_bytes": 1229383808
+        }
+      },
+      "config": {
+        "sha256": "58c4bfcb8ba015214bdac80214ec6a6c2338e058be8093e90be35fd324299da7",
+        "size_bytes": 110
+      }
+    },
+    "train_stage1": {
+      "run_id": "rc1-train_stage1",
+      "attempt_id": "c7cd8b4949c04465a176d7879fca1b22",
+      "research_commit": "d174440bfe5a044eaa742575cd9d6a605ce490ac",
+      "started_at": "2026-11-22T16:19:28.658456+00:00",
+      "finished_at": "2026-11-23T00:17:37.152181+00:00",
+      "entrypoint": "research/ntv3_tsrf/stage.py",
+      "entrypoint_identity": {
+        "sha256": "5de281107e00655592c2cc869402fb7fb6d769ca8292b66803c9212d9145c133",
+        "size_bytes": 5937
+      },
+      "start": {
+        "sha256": "04e6351f2f625d1efd2a9de811b0f936234631f4fca86682d8031a893add71d4",
+        "size_bytes": 4077
+      },
+      "completion": {
+        "sha256": "d987cfad134caf6cf4bd2c8cc6a075af66876eb4fd3fb1f5289e118255a80b5b",
+        "size_bytes": 1764
+      },
+      "inputs": {
+        "folds": {
+          "sha256": "0e1a930db620d3726d1a45b55c9e5e0763f9b57cef422e059853d665a00f42e5",
+          "size_bytes": 1600658
+        },
+        "label_order": {
+          "sha256": "7ae4e5c819056c4cdb4c9cd59222779f2149aa15c649b4f8b7f73c0a08808659",
+          "size_bytes": 240
+        },
+        "train_feature_rows": {
+          "sha256": "4cad3aaf6cf2f42ed2a239752030d1a14affd845b1653f6fe2111e509832d3cf",
+          "size_bytes": 74315161
+        },
+        "train_features": {
+          "sha256": "ab637c90f49537c8025e55f1d54b75bbe9ee4e3e9735be0c710825b5611e3005",
+          "size_bytes": 4916828288
+        },
+        "train_labels": {
+          "sha256": "896f520a696d061e95e143e472fce96c6c344d52e81fc025770d9f4b0f78807d",
+          "size_bytes": 17605958
+        },
+        "train_rows": {
+          "sha256": "67c4b0ab745550d06112346712d8751f1948e90ab9c01828edffbc2098f015c4",
+          "size_bytes": 93598596
+        }
+      },
+      "parents": {
+        "encode_train": {
+          "sha256": "89d0fadc531f0215ea0195f8b783d5c97cc535a76b61b41f5cccb5e1404056e2",
+          "size_bytes": 1528
+        },
+        "prepare": {
+          "sha256": "043cd48cfe04e9ee34fe0a655a3f8c0d374e472760d6270865be267d116692d5",
+          "size_bytes": 3236
+        }
+      },
+      "outputs": {
+        "stage1_oof": {
+          "sha256": "8c6e0ccd63847629364fdc67b5ccfe41932eb3c9e1a24e87f7d84fe9f33f5544",
+          "size_bytes": 3201188
+        },
+        "stage1_oof_rows": {
+          "sha256": "75f9a79352bc7355b14984880684c44dfb2a8f211bd038709a510bf68c9988c8",
+          "size_bytes": 23978526
+        },
+        "training_report": {
+          "sha256": "c22fbfb321a46abc6d68c7dcdc6571a6923b3945e90edd99260e10be1c1fc1d4",
+          "size_bytes": 2272
+        },
+        "weight": {
+          "sha256": "c72909c77c219fce16a17b58439c00d140153065deb5017143d0060050b1396e",
+          "size_bytes": 1883287385
+        }
+      },
+      "config": {
+        "sha256": "48bcf4e30549cc282d4c82382414e20c146730c814d136c7e754ec0d6065ad80",
+        "size_bytes": 109
+      }
+    },
+    "train_stage2": {
+      "run_id": "rc1-train_stage2",
+      "attempt_id": "55afe6be9045472a9a65da40f0440f6a",
+      "research_commit": "d174440bfe5a044eaa742575cd9d6a605ce490ac",
+      "started_at": "2026-11-23T00:17:56.660300+00:00",
+      "finished_at": "2026-11-23T03:59:39.086551+00:00",
+      "entrypoint": "research/ntv3_tsrf/stage.py",
+      "entrypoint_identity": {
+        "sha256": "5de281107e00655592c2cc869402fb7fb6d769ca8292b66803c9212d9145c133",
+        "size_bytes": 5937
+      },
+      "start": {
+        "sha256": "46ca86c183e665489bd3867edcb158d1b26778c00d62a75cddd59b4093e5a704",
+        "size_bytes": 4077
+      },
+      "completion": {
+        "sha256": "9229212784c7e9b7c43149f3ab7a69b86db51291f0fb8a08ad82638b2b4df6b9",
+        "size_bytes": 1765
+      },
+      "inputs": {
+        "folds": {
+          "sha256": "0e1a930db620d3726d1a45b55c9e5e0763f9b57cef422e059853d665a00f42e5",
+          "size_bytes": 1600658
+        },
+        "label_order": {
+          "sha256": "7ae4e5c819056c4cdb4c9cd59222779f2149aa15c649b4f8b7f73c0a08808659",
+          "size_bytes": 240
+        },
+        "train_feature_rows": {
+          "sha256": "4cad3aaf6cf2f42ed2a239752030d1a14affd845b1653f6fe2111e509832d3cf",
+          "size_bytes": 74315161
+        },
+        "train_features": {
+          "sha256": "ab637c90f49537c8025e55f1d54b75bbe9ee4e3e9735be0c710825b5611e3005",
+          "size_bytes": 4916828288
+        },
+        "train_labels": {
+          "sha256": "896f520a696d061e95e143e472fce96c6c344d52e81fc025770d9f4b0f78807d",
+          "size_bytes": 17605958
+        },
+        "train_rows": {
+          "sha256": "67c4b0ab745550d06112346712d8751f1948e90ab9c01828edffbc2098f015c4",
+          "size_bytes": 93598596
+        }
+      },
+      "parents": {
+        "encode_train": {
+          "sha256": "89d0fadc531f0215ea0195f8b783d5c97cc535a76b61b41f5cccb5e1404056e2",
+          "size_bytes": 1528
+        },
+        "prepare": {
+          "sha256": "043cd48cfe04e9ee34fe0a655a3f8c0d374e472760d6270865be267d116692d5",
+          "size_bytes": 3236
+        }
+      },
+      "outputs": {
+        "stage2_oof": {
+          "sha256": "c9005141965638923fec8ab5f498e5e944750f871f69d2db526e499fc39b7d68",
+          "size_bytes": 14167316
+        },
+        "stage2_oof_rows": {
+          "sha256": "63471dd4bd8b034116e46491d5301dae129448b10f6b4b7ae2936bba25312105",
+          "size_bytes": 5074662
+        },
+        "training_report": {
+          "sha256": "bb2a172e73d9e9d69224ba32683ba11dc3c30c4ff150e3b4bf22dd7f92541a6e",
+          "size_bytes": 2274
+        },
+        "weight": {
+          "sha256": "e54dac5245b3f74281ae2c0243e956cfbc32202c0e51b4c35527886d1c8cb567",
+          "size_bytes": 22864832025
+        }
+      },
+      "config": {
+        "sha256": "48bcf4e30549cc282d4c82382414e20c146730c814d136c7e754ec0d6065ad80",
+        "size_bytes": 109
+      }
+    },
+    "thresholds": {
+      "run_id": "rc1-thresholds",
+      "attempt_id": "e140ff1459df48c79f7946eb8593253d",
+      "research_commit": "d174440bfe5a044eaa742575cd9d6a605ce490ac",
+      "started_at": "2026-11-23T04:09:15.711988+00:00",
+      "finished_at": "2026-11-23T04:09:30.769790+00:00",
+      "entrypoint": "research/ntv3_tsrf/stage.py",
+      "entrypoint_identity": {
+        "sha256": "5de281107e00655592c2cc869402fb7fb6d769ca8292b66803c9212d9145c133",
+        "size_bytes": 5937
+      },
+      "start": {
+        "sha256": "c71488434420a1313b2cee47176f282fcd8df8606ca5987e7106767850bfcd17",
+        "size_bytes": 4984
+      },
+      "completion": {
+        "sha256": "68272f4286f0bdb862a1b8bc3a5053a0a6895113534cf757358786f107351c2c",
+        "size_bytes": 1232
+      },
+      "inputs": {
+        "folds": {
+          "sha256": "0e1a930db620d3726d1a45b55c9e5e0763f9b57cef422e059853d665a00f42e5",
+          "size_bytes": 1600658
+        },
+        "label_order": {
+          "sha256": "7ae4e5c819056c4cdb4c9cd59222779f2149aa15c649b4f8b7f73c0a08808659",
+          "size_bytes": 240
+        },
+        "stage1_oof": {
+          "sha256": "8c6e0ccd63847629364fdc67b5ccfe41932eb3c9e1a24e87f7d84fe9f33f5544",
+          "size_bytes": 3201188
+        },
+        "stage1_oof_rows": {
+          "sha256": "75f9a79352bc7355b14984880684c44dfb2a8f211bd038709a510bf68c9988c8",
+          "size_bytes": 23978526
+        },
+        "stage2_oof": {
+          "sha256": "c9005141965638923fec8ab5f498e5e944750f871f69d2db526e499fc39b7d68",
+          "size_bytes": 14167316
+        },
+        "stage2_oof_rows": {
+          "sha256": "63471dd4bd8b034116e46491d5301dae129448b10f6b4b7ae2936bba25312105",
+          "size_bytes": 5074662
+        },
+        "train_labels": {
+          "sha256": "896f520a696d061e95e143e472fce96c6c344d52e81fc025770d9f4b0f78807d",
+          "size_bytes": 17605958
+        },
+        "train_rows": {
+          "sha256": "67c4b0ab745550d06112346712d8751f1948e90ab9c01828edffbc2098f015c4",
+          "size_bytes": 93598596
+        }
+      },
+      "parents": {
+        "prepare": {
+          "sha256": "043cd48cfe04e9ee34fe0a655a3f8c0d374e472760d6270865be267d116692d5",
+          "size_bytes": 3236
+        },
+        "train_stage1": {
+          "sha256": "d987cfad134caf6cf4bd2c8cc6a075af66876eb4fd3fb1f5289e118255a80b5b",
+          "size_bytes": 1764
+        },
+        "train_stage2": {
+          "sha256": "9229212784c7e9b7c43149f3ab7a69b86db51291f0fb8a08ad82638b2b4df6b9",
+          "size_bytes": 1765
+        }
+      },
+      "outputs": {
+        "selection_report": {
+          "sha256": "7df3bbdfd09dd55d941279de66b2e1ac73dbc16ece8e3da0f861cec419fd2285",
+          "size_bytes": 4386
+        },
+        "threshold_table": {
+          "sha256": "29d6b71918a2a6eacb3d5ee6034b3d749617d0d4a98627c898953183cbd2260b",
+          "size_bytes": 458
+        }
+      },
+      "config": {
+        "sha256": "48bcf4e30549cc282d4c82382414e20c146730c814d136c7e754ec0d6065ad80",
+        "size_bytes": 109
+      }
+    },
+    "evaluate": {
+      "run_id": "rc1-evaluate",
+      "attempt_id": "e9f31d7e8786487ba11101baeec9bac5",
+      "research_commit": "d174440bfe5a044eaa742575cd9d6a605ce490ac",
+      "started_at": "2026-11-23T04:15:48.513660+00:00",
+      "finished_at": "2026-11-23T04:34:10.719741+00:00",
+      "entrypoint": "research/ntv3_tsrf/stage.py",
+      "entrypoint_identity": {
+        "sha256": "5de281107e00655592c2cc869402fb7fb6d769ca8292b66803c9212d9145c133",
+        "size_bytes": 5937
+      },
+      "start": {
+        "sha256": "0a0b57d00bd187e26208da479bb295cf68b198a0122bc47b9f1058504b9e7cbf",
+        "size_bytes": 9722
+      },
+      "completion": {
+        "sha256": "77054b82c67445769eea696e1c78aa2dbbbc6d3f34324e9bb9f5021098c5d6e2",
+        "size_bytes": 1739
+      },
+      "inputs": {
+        "baseline_ct": {
+          "sha256": "2ec6e3c62c45cc42494220d4a2ae0023726e383999a84457a75b55d8243c7b37",
+          "size_bytes": 4202123
+        },
+        "baseline_index": {
+          "sha256": "922457387b931e76c1b65dfc88769e313a5efc2a7779050309e814f860688a7a",
+          "size_bytes": 1600888
+        },
+        "baseline_inference_manifest": {
+          "sha256": "7cbec4ae58089bfab818c02dff6ec2e60cfa6e5640657a1f5ff13e37d597ab54",
+          "size_bytes": 8223
+        },
+        "baseline_stage1": {
+          "sha256": "043d8b9630adcb0d54a93e3be14785583f0096a9bd1061a45500d7464e0a61ac",
+          "size_bytes": 800508
+        },
+        "baseline_stage2": {
+          "sha256": "7a257cfc7474a628df112532ddb106e4a3f942161ed3613547dae0a911b6bb28",
+          "size_bytes": 16808108
+        },
+        "baseline_thresholds": {
+          "sha256": "2f81f46ed6180159f8bad16bb92536fa2e085aa7a904df176b6cd0455d728470",
+          "size_bytes": 296
+        },
+        "baseline_u05": {
+          "sha256": "b6ccef3135d91f34a05ce91fee60a37d2da4111815f6b8eac3a9873478fab89e",
+          "size_bytes": 4202123
+        },
+        "evaluation_protocol": {
+          "sha256": "6a4ad658c3f2d9abc3e4ca8bc0df4efed0d27810265e2fb7349b5b11993f2e63",
+          "size_bytes": 1525
+        },
+        "holdout_feature_rows": {
+          "sha256": "685a5648807ce92e3bdcdc985bb12baf819409c91b0bebc4e396e53cb9f59170",
+          "size_bytes": 18298236
+        },
+        "holdout_features": {
+          "sha256": "05c8ab979a1e72e4a9d6985b34012ec7d7a8a82f2b560bbf8fce26c7a3818471",
+          "size_bytes": 1229383808
+        },
+        "holdout_labels": {
+          "sha256": "3e9e27cece1b0d8116c85db0843297de1c03c82c6555055675e87343610a584e",
+          "size_bytes": 4402218
+        },
+        "holdout_rows": {
+          "sha256": "f15eb0de42adfcdd7f4fdfed116ef4c3d0cdfcf0233bb45729e775f74e51e250",
+          "size_bytes": 23860166
+        },
+        "label_order": {
+          "sha256": "7ae4e5c819056c4cdb4c9cd59222779f2149aa15c649b4f8b7f73c0a08808659",
+          "size_bytes": 240
+        },
+        "stage1_weight": {
+          "sha256": "c72909c77c219fce16a17b58439c00d140153065deb5017143d0060050b1396e",
+          "size_bytes": 1883287385
+        },
+        "stage2_weight": {
+          "sha256": "e54dac5245b3f74281ae2c0243e956cfbc32202c0e51b4c35527886d1c8cb567",
+          "size_bytes": 22864832025
+        },
+        "threshold_table": {
+          "sha256": "29d6b71918a2a6eacb3d5ee6034b3d749617d0d4a98627c898953183cbd2260b",
+          "size_bytes": 458
+        }
+      },
+      "parents": {
+        "encode_holdout": {
+          "sha256": "f9f18d2e40097c3915e353092f54b16741a380605c84ca19fa848e51e8c08225",
+          "size_bytes": 1549
+        },
+        "prepare": {
+          "sha256": "043cd48cfe04e9ee34fe0a655a3f8c0d374e472760d6270865be267d116692d5",
+          "size_bytes": 3236
+        },
+        "thresholds": {
+          "sha256": "68272f4286f0bdb862a1b8bc3a5053a0a6895113534cf757358786f107351c2c",
+          "size_bytes": 1232
+        },
+        "train_stage1": {
+          "sha256": "d987cfad134caf6cf4bd2c8cc6a075af66876eb4fd3fb1f5289e118255a80b5b",
+          "size_bytes": 1764
+        },
+        "train_stage2": {
+          "sha256": "9229212784c7e9b7c43149f3ab7a69b86db51291f0fb8a08ad82638b2b4df6b9",
+          "size_bytes": 1765
+        }
+      },
+      "outputs": {
+        "metrics": {
+          "sha256": "362003feea504adaf438b1b2759a008358a7880889aeb928077c0542cd0f35ac",
+          "size_bytes": 3871
+        },
+        "pair_differences": {
+          "sha256": "c6af09277d4a99150a012a3aa849e9e918167bcae9fd31996793f31310a7c04c",
+          "size_bytes": 537952
+        },
+        "probabilities": {
+          "sha256": "d21a23b06b42fb7f7c2e00a46182c748a70b5d84841ef242a175ff629cb826fb",
+          "size_bytes": 26213693
+        },
+        "probability_layout": {
+          "sha256": "31567d1f81368984e856cdb1b8ba277d254813a05d288438dcff9f27296131dd",
+          "size_bytes": 559
+        }
+      },
+      "config": {
+        "sha256": "48bcf4e30549cc282d4c82382414e20c146730c814d136c7e754ec0d6065ad80",
+        "size_bytes": 109
+      }
+    },
+    "report": {
+      "run_id": "rc1-report",
+      "attempt_id": "8a79076e888c4e628bae98169018e305",
+      "research_commit": "d174440bfe5a044eaa742575cd9d6a605ce490ac",
+      "started_at": "2026-11-23T04:34:12.644567+00:00",
+      "finished_at": "2026-11-23T04:34:13.387757+00:00",
+      "entrypoint": "research/ntv3_tsrf/stage.py",
+      "entrypoint_identity": {
+        "sha256": "5de281107e00655592c2cc869402fb7fb6d769ca8292b66803c9212d9145c133",
+        "size_bytes": 5937
+      },
+      "start": {
+        "sha256": "a6ec513860a093d67095bb7115ef006e2b4f0baaf3d191b1aaddeaf18fc899d7",
+        "size_bytes": 3075
+      },
+      "completion": {
+        "sha256": "5ba5d6285d784f22a62564cd42d7d9abf52c316f985a8502c95109ed32aec78b",
+        "size_bytes": 947
+      },
+      "inputs": {
+        "evaluation_protocol": {
+          "sha256": "6a4ad658c3f2d9abc3e4ca8bc0df4efed0d27810265e2fb7349b5b11993f2e63",
+          "size_bytes": 1525
+        },
+        "metrics": {
+          "sha256": "362003feea504adaf438b1b2759a008358a7880889aeb928077c0542cd0f35ac",
+          "size_bytes": 3871
+        },
+        "probabilities": {
+          "sha256": "d21a23b06b42fb7f7c2e00a46182c748a70b5d84841ef242a175ff629cb826fb",
+          "size_bytes": 26213693
+        },
+        "probability_layout": {
+          "sha256": "31567d1f81368984e856cdb1b8ba277d254813a05d288438dcff9f27296131dd",
+          "size_bytes": 559
+        }
+      },
+      "parents": {
+        "evaluate": {
+          "sha256": "77054b82c67445769eea696e1c78aa2dbbbc6d3f34324e9bb9f5021098c5d6e2",
+          "size_bytes": 1739
+        }
+      },
+      "outputs": {
+        "report": {
+          "sha256": "519f42053eabc5ca91a572ef7385b931de9131ce1b3264a269ea8ac3478e03ab",
+          "size_bytes": 4983
+        }
+      },
+      "config": {
+        "sha256": "48bcf4e30549cc282d4c82382414e20c146730c814d136c7e754ec0d6065ad80",
+        "size_bytes": 109
+      }
+    }
+  },
+  "input_contract_sha256": "5a409f2ab9f3c573bf0b2c2e78e8e040edeb564162793e1db3cce9557459ec7d",
+  "label_order": [
+    "Inc18",
+    "IncC",
+    "IncFIA",
+    "IncFIB",
+    "IncFIC",
+    "IncFII",
+    "IncHI1",
+    "IncHI2",
+    "IncI",
+    "IncK",
+    "IncL",
+    "IncN",
+    "IncP",
+    "IncQ",
+    "IncR",
+    "IncU",
+    "IncX1",
+    "IncX3",
+    "IncX_other",
+    "IncY",
+    "Inc_other"
+  ]
+}

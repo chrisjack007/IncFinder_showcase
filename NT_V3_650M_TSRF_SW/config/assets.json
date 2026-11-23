@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "models/rf/stage1.joblib",
+      "size_bytes": 1883287385,
+      "sha256": "c72909c77c219fce16a17b58439c00d140153065deb5017143d0060050b1396e",
+      "source_project": "IncFinder research",
+      "source_relative_path": "runs/train_stage1/c7cd8b4949c04465a176d7879fca1b22/output/stage1.joblib"
+    },
+    {
+      "path": "models/rf/stage2.joblib",
+      "size_bytes": 22864832025,
+      "sha256": "e54dac5245b3f74281ae2c0243e956cfbc32202c0e51b4c35527886d1c8cb567",
+      "source_project": "IncFinder research",
+      "source_relative_path": "runs/train_stage2/55afe6be9045472a9a65da40f0440f6a/output/stage2.joblib"
+    },
+    {
+      "path": "models/ntv3/config.json",
+      "size_bytes": 1755,
+      "sha256": "2cc294adf8868f3f116e4a136ae06ac90d0d367edaecd56288ac11bd60bbe68a",
+      "source_project": "DNAembedding/Nucleotide_Transformer_v3",
+      "source_relative_path": "model/NTv3_650M_pre/config.json"
+    },
+    {
+      "path": "models/ntv3/model.safetensors",
+      "size_bytes": 2607356620,
+      "sha256": "4052aeda062de895e3734e3fac2aea10d1b40149995543cf4f6a9fba0a996b8c",
+      "source_project": "DNAembedding/Nucleotide_Transformer_v3",
+      "source_relative_path": "model/NTv3_650M_pre/model.safetensors"
+    },
+    {
+      "path": "models/ntv3/tokenizer_config.json",
+      "size_bytes": 1479,
+      "sha256": "07019b4b8964bc28c08c23bf1e1704a2dcdf686d1b99ad211008429b34d1d0fb",
+      "source_project": "DNAembedding/Nucleotide_Transformer_v3",
+      "source_relative_path": "model/NTv3_650M_pre/tokenizer_config.json"
+    },
+    {
+      "path": "models/ntv3/special_tokens_map.json",
+      "size_bytes": 149,
+      "sha256": "4f98fb3de0902c87821f2e518a9f808ea1ffe3810882e4d429758a55dfbff009",
+      "source_project": "DNAembedding/Nucleotide_Transformer_v3",
+      "source_relative_path": "model/NTv3_650M_pre/special_tokens_map.json"
+    },
+    {
+      "path": "models/ntv3/vocab.json",
+      "size_bytes": 138,
+      "sha256": "dafebcb0654e403cc30269f52bed31f07fd8c55a1370be63a54d82b917c61153",
+      "source_project": "DNAembedding/Nucleotide_Transformer_v3",
+      "source_relative_path": "model/NTv3_650M_pre/vocab.json"
+    },
+    {
+      "path": "models/ntv3/MODEL-LICENSE.md",
+      "size_bytes": 9003,
+      "sha256": "2c0ac3efbf59efbdfdf15bd0ac99d3093dfa87d50748d4635aef563cd46f76cb",
+      "source_project": "DNAembedding/Nucleotide_Transformer_v3",
+      "source_relative_path": "model/NTv3_650M_pre/MODEL-LICENSE.md"
+    },
+    {
+      "path": "models/ntv3/README.md",
+      "size_bytes": 6749,
+      "sha256": "720bf43edca9472a457d6e3e4cd3b4b9a2f49c15b92c2d55c85b81e1a23bd845",
+      "source_project": "DNAembedding/Nucleotide_Transformer_v3",
+      "source_relative_path": "model/NTv3_650M_pre/README.md"
+    },
+    {
+      "path": "vendor/ntv3/__init__.py",
+      "size_bytes": 66,
+      "sha256": "fc4dddbc65256840ee2b84a6be3f4662c4318b22b3bc1bf7878acbd6a7bfe380",
+      "source_project": "DNAembedding/Nucleotide_Transformer_v3",
+      "source_relative_path": "model/ntv3_base_model/__init__.py"
+    },
+    {
+      "path": "vendor/ntv3/configuration_ntv3_pretrained.py",
+      "size_bytes": 8090,
+      "sha256": "e210b5ec18ebe626d8dd91b408a83fc20afc59bf6c5382084ee91b9b8be69df3",
+      "source_project": "DNAembedding/Nucleotide_Transformer_v3",
+      "source_relative_path": "model/ntv3_base_model/configuration_ntv3_pretrained.py"
+    },
+    {
+      "path": "vendor/ntv3/modeling_ntv3_pretrained.py",
+      "size_bytes": 35193,
+      "sha256": "bc2157369fd9c73cc24323be8c38943871a2a7f1aaa1ca92a8945c1a65c4757a",
+      "source_project": "DNAembedding/Nucleotide_Transformer_v3",
+      "source_relative_path": "model/ntv3_base_model/modeling_ntv3_pretrained.py"
+    },
+    {
+      "path": "vendor/ntv3/tokenization_ntv3.py",
+      "size_bytes": 7851,
+      "sha256": "59e507620a65cebaab59e977c8f2840ff2f208f0f1a6ec38ece6b53cb3eebda3",
+      "source_project": "DNAembedding/Nucleotide_Transformer_v3",
+      "source_relative_path": "model/ntv3_base_model/tokenization_ntv3.py"
+    },
+    {
+      "path": "config/thresholds.tsv",
+      "size_bytes": 458,
+      "sha256": "29d6b71918a2a6eacb3d5ee6034b3d749617d0d4a98627c898953183cbd2260b",
+      "source_project": "IncFinder research",
+      "source_relative_path": "runs/thresholds/e140ff1459df48c79f7946eb8593253d/output/thresholds.tsv"
+    }
+  ]
+}

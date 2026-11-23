@@ -1,0 +1,10 @@
+include README.md pyproject.toml setup.py environment.yml install.sh
+recursive-include config *.json *.tsv
+recursive-include vendor *.py
+recursive-include tests/fixtures *.json *.npy *.npz *.fasta
+recursive-include environments *.yml *.txt *.lock
+recursive-include models *.md
+prune dist
+prune build
+prune results
+global-exclude *.pyc

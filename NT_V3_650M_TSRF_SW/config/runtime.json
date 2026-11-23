@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "python": ["3.11", "3.12"],
+  "requirements": {
+    "numpy": "==2.4.*", "scipy": "==1.17.*", "scikit-learn": "==1.9.0",
+    "joblib": "==1.5.*", "torch": "==2.11.*", "transformers": "==4.57.*",
+    "openpyxl": "==3.1.*", "packaging": ">=20",
+    "safetensors": "", "huggingface-hub": "", "tokenizers": ""
+  },
+  "roles": {
+    "embedding": ["numpy", "torch", "transformers", "safetensors", "huggingface-hub", "tokenizers", "packaging"],
+    "rf": ["numpy", "scipy", "scikit-learn", "joblib", "packaging"],
+    "report": ["openpyxl", "packaging"]
+  },
+  "transformers_managed": ["safetensors", "huggingface-hub", "tokenizers"],
+  "meaning": "Allowed runtime ranges are not numerical-equivalence evidence; frozen contract.json is unchanged."
+}

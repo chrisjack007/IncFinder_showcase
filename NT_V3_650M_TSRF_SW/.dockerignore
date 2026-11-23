@@ -1,0 +1,9 @@
+**
+!Dockerfile
+!environments/
+!environments/linux-64.lock
+!dist/
+!dist/channel/
+!dist/channel/**
+dist/channel/**/.cache/
+dist/channel/**/*.lock
