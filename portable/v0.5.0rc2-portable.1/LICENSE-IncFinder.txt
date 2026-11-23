@@ -1,0 +1,7 @@
+# IncFinder non-commercial research software licence
+
+Copyright 2026 the IncFinder contributors.
+
+The copyright holders grant permission to use, copy, study, modify and redistribute the original IncFinder inference software and its documentation for non-commercial research. Copies and modifications must retain this notice and identify material changes. Commercial use requires separate permission from the copyright holders. The software is provided as is, without warranties, to the extent permitted by law.
+
+This grant covers only material authored by the IncFinder contributors. Both RF weight files derived from NTv3 outputs are offered under the InstaDeep Open Model Licence v1.0, including section 3(d). Its complete text is supplied in models/ntv3/MODEL-LICENSE.md. The official NTv3 checkpoint and implementation are obtained from their respective upstream repositories at the revisions in config/model_delivery.json. Third-party dependencies retain their own licences. The genome records and original training labels retain their respective source terms.

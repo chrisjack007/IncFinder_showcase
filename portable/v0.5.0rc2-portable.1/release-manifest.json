@@ -1,0 +1,331 @@
+{
+  "schema": "incfinder.research-release.v1",
+  "project": "IncFinder",
+  "version": "0.5.0rc2",
+  "tag": "v0.5.0rc2",
+  "scope": "Per-sequence observational research typing",
+  "repository": "chrisjack007/IncFinder_showcase",
+  "source": {
+    "engineering_commit": "c52384af36e2d9d2a7bf534bbac50f66afa40cea",
+    "engineering_parent": "6a3b6d23738bd760e4cba007417904a5c87a8d79",
+    "research_commit": "d174440bfe5a044eaa742575cd9d6a605ce490ac",
+    "public_source_tree": "public-source-tree.json",
+    "public_source_tree_sha256": "aad8a63e05bcb688ad32f72527b18243c5bca69345c8019b4b1561eb40dda88a",
+    "package_manifest_sha256": "c1d0428a17c8889b4547e5c5b42926e9cb40c89d073e2e02ab8b1c6be8a83717",
+    "research_index_sha256": "642827ef2acc9b272ab97cfcc0545112b5d4c7dfc1ea85b46a0814f9e0eaa47c"
+  },
+  "software_artifacts": {
+    "incfinder-0.5.0rc2-win-64.zip": "553139273d29990da55467202e7129cdc597a980a7cbdc5440ee627462ffc466",
+    "incfinder-0.5.0rc2-linux-64.tar.gz": "25f0eaaa6896f121188623ec7ee581b226e34b0b429e24cf5eacd7c85c44ab07",
+    "incfinder-0.5.0rc2-py_0.conda": "34cae07ba79aeded0c844716bbeb72269318f420bbd946aa9aaea54f9f87de3a",
+    "incfinder_ntv3_tsrf-0.5.0rc2-py3-none-any.whl": "909bcaac10b1a5f3f8d32028b41f40f424eb664176d70d0d558f8b9efab4f127"
+  },
+  "models": {
+    "rf_whole_files": {
+      "stage1": {
+        "size_bytes": 1883287385,
+        "sha256": "c72909c77c219fce16a17b58439c00d140153065deb5017143d0060050b1396e"
+      },
+      "stage2": {
+        "size_bytes": 22864832025,
+        "sha256": "e54dac5245b3f74281ae2c0243e956cfbc32202c0e51b4c35527886d1c8cb567"
+      }
+    },
+    "part_bytes": 1073741824,
+    "parts": [
+      {
+        "name": "stage1.joblib",
+        "size_bytes": 1883287385,
+        "sha256": "c72909c77c219fce16a17b58439c00d140153065deb5017143d0060050b1396e"
+      },
+      {
+        "name": "stage2.joblib.part-001",
+        "size_bytes": 1073741824,
+        "sha256": "ebb699948a629c26aba5f83c4cd94e0560bc6965ef5ac9c0150b3b62d1d66974"
+      },
+      {
+        "name": "stage2.joblib.part-002",
+        "size_bytes": 1073741824,
+        "sha256": "47b688a3873e2b8deed9f0946e70358ea5130390b8eb94325a738036d2f6b948"
+      },
+      {
+        "name": "stage2.joblib.part-003",
+        "size_bytes": 1073741824,
+        "sha256": "ec02a2342221fdb19a291d920dfd791606f58afde7d02fc7cf4576c6f8ebc935"
+      },
+      {
+        "name": "stage2.joblib.part-004",
+        "size_bytes": 1073741824,
+        "sha256": "654863d78c68518d1cd14883e9623ada8ac6c50ae012061a158fc2ba4cdc2719"
+      },
+      {
+        "name": "stage2.joblib.part-005",
+        "size_bytes": 1073741824,
+        "sha256": "51e9b9b69120bc84adeff28756a6142cd26048cf9a0fb266f24729b7aed9d4c7"
+      },
+      {
+        "name": "stage2.joblib.part-006",
+        "size_bytes": 1073741824,
+        "sha256": "f270e418ff165c1070e596bd90b44cffb74a348e43811321061cedd2e6d4275d"
+      },
+      {
+        "name": "stage2.joblib.part-007",
+        "size_bytes": 1073741824,
+        "sha256": "87066f476d3ac2fbd1977957c7a287bcc25ffd49fc4a202fba96842930ed9528"
+      },
+      {
+        "name": "stage2.joblib.part-008",
+        "size_bytes": 1073741824,
+        "sha256": "62f28c3fa0217a3bf4a24ee6529a43e2156cbc4f4faf2957ca1f1a0462ba813f"
+      },
+      {
+        "name": "stage2.joblib.part-009",
+        "size_bytes": 1073741824,
+        "sha256": "085f7463c52d5bd49f9572f7372c5caaf5e3b30ee0d7a26d975d52f5080e1c9d"
+      },
+      {
+        "name": "stage2.joblib.part-010",
+        "size_bytes": 1073741824,
+        "sha256": "3fc1ed365724276951f592deb17ccae78455f6bdc6bd2a068183571eae3d8593"
+      },
+      {
+        "name": "stage2.joblib.part-011",
+        "size_bytes": 1073741824,
+        "sha256": "df1a098d7c55304ebe1b55e95ead2ace1f5c15c5868e4e6205740523d220db1f"
+      },
+      {
+        "name": "stage2.joblib.part-012",
+        "size_bytes": 1073741824,
+        "sha256": "90ad2d26d03126cb0f840b9ca7e5ba1c854ec35378c27ecf6c63cab9b0d6c1a3"
+      },
+      {
+        "name": "stage2.joblib.part-013",
+        "size_bytes": 1073741824,
+        "sha256": "62e12157906508a0ece49846c482eabc01eac302e997711743cff678d08a8c7a"
+      },
+      {
+        "name": "stage2.joblib.part-014",
+        "size_bytes": 1073741824,
+        "sha256": "1068ff17cf448a3392cec1ebed006aca5138aff0c3334e19564e2364a9879aaa"
+      },
+      {
+        "name": "stage2.joblib.part-015",
+        "size_bytes": 1073741824,
+        "sha256": "452785c7044e77bfb3cf77de2e8aac94c34b6fe12479d08432a0fcaf638c2e7f"
+      },
+      {
+        "name": "stage2.joblib.part-016",
+        "size_bytes": 1073741824,
+        "sha256": "267cd383d2e94069fca7dba60da09f1bbfb006561a296f641a5b33378cf33aae"
+      },
+      {
+        "name": "stage2.joblib.part-017",
+        "size_bytes": 1073741824,
+        "sha256": "5ee5b76b3d432b0077e8b5893d961ecfda97c928b049e24c1b65fde89f7e5f1e"
+      },
+      {
+        "name": "stage2.joblib.part-018",
+        "size_bytes": 1073741824,
+        "sha256": "65c99e909f4d366009d6a4a3d7499010ab726928f84560755657718289ce9820"
+      },
+      {
+        "name": "stage2.joblib.part-019",
+        "size_bytes": 1073741824,
+        "sha256": "f1672178a062f46ddd0c49240e641cbfb9707b8c8f9ac612f0937f71f572f399"
+      },
+      {
+        "name": "stage2.joblib.part-020",
+        "size_bytes": 1073741824,
+        "sha256": "4147754326ffdb620d7255830ad2b2cb9fb46fd9f3c843b536b858ba07671d6d"
+      },
+      {
+        "name": "stage2.joblib.part-021",
+        "size_bytes": 1073741824,
+        "sha256": "15fbdef2e607723528a6fa6a1b287675755e3ddda8c4323c1f24914f89de3eee"
+      },
+      {
+        "name": "stage2.joblib.part-022",
+        "size_bytes": 316253721,
+        "sha256": "28f8acfa49118ce49fa0f5a6c1b050922fcc8fc7eda0b47e29f871f4b4b9692b"
+      }
+    ],
+    "ntv3": {
+      "repository": "InstaDeepAI/NTv3_650M_pre",
+      "revision": "5e6050bed864a5a8fb32481096bf555495316b31"
+    },
+    "ntv3_code": {
+      "repository": "InstaDeepAI/ntv3_base_model",
+      "revision": "27682ed2f537a4c4fcc356b6b8201e7dfceca602"
+    },
+    "learned_thresholds": {
+      "sha256": "29d6b71918a2a6eacb3d5ee6034b3d749617d0d4a98627c898953183cbd2260b",
+      "size_bytes": 458
+    }
+  },
+  "science": {
+    "records": 200095,
+    "plasmid_groups": 9236,
+    "holdout_previously_used_for_version_comparisons": true,
+    "overlap_original_sequence_hashes": 1,
+    "holdout_rows_with_overlap": 1,
+    "inc18_true_positives_and_support": [
+      1,
+      326
+    ],
+    "platforms": {
+      "windows": {
+        "status": "PASS",
+        "environment": "IncFinder_Test1",
+        "python": "3.12.15",
+        "conda_sha256": "34cae07ba79aeded0c844716bbeb72269318f420bbd946aa9aaea54f9f87de3a",
+        "threshold_sha256": "29d6b71918a2a6eacb3d5ee6034b3d749617d0d4a98627c898953183cbd2260b",
+        "fixed_features": [
+          "c11-ct",
+          "c11-u05",
+          "c82-ct",
+          "c82-u05"
+        ],
+        "raw_examples": [
+          "fasta-ct",
+          "fasta-u05",
+          "fastq-ct",
+          "fastq-u05"
+        ],
+        "independent_expected_output_arrays_exact": true,
+        "single_row_verified": true,
+        "example_run_id": "babbf381-981c-4a5f-bb5c-29733e75abba"
+      },
+      "wsl2": {
+        "status": "PASS",
+        "environment": "IncFinder_Test1",
+        "python": "3.12.15",
+        "conda_sha256": "34cae07ba79aeded0c844716bbeb72269318f420bbd946aa9aaea54f9f87de3a",
+        "threshold_sha256": "29d6b71918a2a6eacb3d5ee6034b3d749617d0d4a98627c898953183cbd2260b",
+        "fixed_features": [
+          "c11-ct",
+          "c11-u05",
+          "c82-ct",
+          "c82-u05"
+        ],
+        "raw_examples": [
+          "fasta-ct",
+          "fasta-u05",
+          "fastq-ct",
+          "fastq-u05"
+        ],
+        "independent_expected_output_arrays_exact": true,
+        "single_row_verified": true,
+        "example_run_id": "d7612658-7de1-43f0-abbb-b9f2f8603f24"
+      },
+      "linux": {
+        "status": "PASS",
+        "environment": "IncFinder_Test1",
+        "python": "3.12.15",
+        "conda_sha256": "34cae07ba79aeded0c844716bbeb72269318f420bbd946aa9aaea54f9f87de3a",
+        "threshold_sha256": "29d6b71918a2a6eacb3d5ee6034b3d749617d0d4a98627c898953183cbd2260b",
+        "fixed_features": [
+          "c11-ct",
+          "c11-u05",
+          "c82-ct",
+          "c82-u05"
+        ],
+        "raw_examples": [
+          "fasta-ct",
+          "fasta-u05",
+          "fastq-ct",
+          "fastq-u05"
+        ],
+        "independent_expected_output_arrays_exact": true,
+        "single_row_verified": true,
+        "example_run_id": "4c0e7ba3-b087-4649-a43a-347c1d7eca67"
+      },
+      "docker": {
+        "status": "PASS",
+        "environment": "IncFinder_Test1",
+        "python": "3.12.15",
+        "conda_sha256": "34cae07ba79aeded0c844716bbeb72269318f420bbd946aa9aaea54f9f87de3a",
+        "threshold_sha256": "29d6b71918a2a6eacb3d5ee6034b3d749617d0d4a98627c898953183cbd2260b",
+        "fixed_features": [
+          "c11-ct",
+          "c11-u05",
+          "c82-ct",
+          "c82-u05"
+        ],
+        "raw_examples": [
+          "fasta-ct",
+          "fasta-u05",
+          "fastq-ct",
+          "fastq-u05"
+        ],
+        "independent_expected_output_arrays_exact": true,
+        "single_row_verified": true,
+        "example_run_id": "76955160-b21e-492e-8fad-084f0ebe369e"
+      }
+    },
+    "holdout": {
+      "ct": {
+        "status": "PASS",
+        "rows": 200095,
+        "run_id": "2825277d-e8cb-467d-8203-19b230717ac0",
+        "threshold_mode": "ct",
+        "probabilities_sha256": "913b6a72af0c54cc2533e5b14e9c4db73e631c0eacb0fda7cdda76186ad3891e",
+        "micro_f1": 0.5786835859667734,
+        "macro_f1": 0.44518072711221407,
+        "per_class_21_matches": true
+      },
+      "u05": {
+        "status": "PASS",
+        "rows": 200095,
+        "run_id": "3610bf21-fb0e-4264-a884-2630fd823b65",
+        "threshold_mode": "u05",
+        "probabilities_sha256": "f4eeb6deed4147749e7ad3c30bc3d16c630224f3d8d683fa401728330f0e8574",
+        "micro_f1": 0.5209194075089758,
+        "macro_f1": 0.35077947715013336,
+        "per_class_21_matches": true
+      }
+    },
+    "source_regression_tests": {
+      "windows": 366,
+      "wsl2": 366
+    },
+    "docker_platform_manifest": "sha256:321fb77681df63bd6dc1d49c0fe677c7d7fd4ade9eca73ecea1ab5983f6509b0",
+    "sboms": [
+      {
+        "file": "SBOM-linux-64-conda.cdx.json",
+        "sha256": "8199f45323f04742bee41a27287f927f0fba4ebc8e7726102aed176c618b8842",
+        "components": 105,
+        "schema": "CycloneDX 1.6",
+        "validation": "PASS"
+      },
+      {
+        "file": "SBOM-linux-64-wheel.cdx.json",
+        "sha256": "4c6f4977847b9cb0b048692046376c2c90a16018f9ed2f0f6a3cf3aab92030bc",
+        "components": 105,
+        "schema": "CycloneDX 1.6",
+        "validation": "PASS"
+      },
+      {
+        "file": "SBOM-win-64-conda.cdx.json",
+        "sha256": "c8e40cacc6cb838b88b40cdffaf17250627061461d759d9106457d1705c1c69f",
+        "components": 98,
+        "schema": "CycloneDX 1.6",
+        "validation": "PASS"
+      },
+      {
+        "file": "SBOM-win-64-wheel.cdx.json",
+        "sha256": "b3b2d969b9898212842d25fca89cb6fa52e02233828acee65eb0b40788f4433f",
+        "components": 98,
+        "schema": "CycloneDX 1.6",
+        "validation": "PASS"
+      }
+    ]
+  },
+  "publication_validation": "Public download and cache-free installation are recorded separately after prerelease publication.",
+  "release_signature": {
+    "file": "SHA256SUMS.sig",
+    "signed_file": "SHA256SUMS",
+    "principal": "incfinder-release",
+    "namespace": "incfinder-release",
+    "public_key_fingerprint": "SHA256:MoIhr1BXeQBxbBFtycnWNica1CWnm/uguMkVGUnJGXY"
+  }
+}

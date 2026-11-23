@@ -1,0 +1,3054 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "IncFinder-Windows-x64.zip",
+      "version": "0.5.0rc2-portable.1"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "conda:_python_abi3_support-1.0-hd8ed1ab_3.conda",
+      "name": "_python_abi3_support",
+      "version": "1.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2a7204314663eeda5dec482a956f0e2eaf289bd5b9953eaaaad0e81aa64638f2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "hd8ed1ab_3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/_python_abi3_support-1.0-hd8ed1ab_3.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:backports.zstd-1.8.0-py312h06d0912_0.conda",
+      "name": "backports.zstd",
+      "version": "1.8.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bde30c9d99a650fe3b137e1ba5a0ec80e051e689dc2bc37690f5e5982fc697f6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312h06d0912_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause AND MIT AND EPL-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/backports.zstd-1.8.0-py312h06d0912_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:brotli-python-1.2.0-py312ha763cb9_4.conda",
+      "name": "brotli-python",
+      "version": "1.2.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7405f86135a42bd82fe79abc8f9bfdc0dde866b96d600dc51150f24aef09da36"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312ha763cb9_4"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/brotli-python-1.2.0-py312ha763cb9_4.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:bzip2-1.0.8-h0ad9c76_10.conda",
+      "name": "bzip2",
+      "version": "1.0.8",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "04767466ee9227c9c57ab2c6503e0149177d34111c7418d2f420297acb1eb229"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h0ad9c76_10"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "bzip2-1.0.6"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/bzip2-1.0.8-h0ad9c76_10.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:ca-certificates-2026.7.22-h4c7d964_0.conda",
+      "name": "ca-certificates",
+      "version": "2026.7.22",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "95e8e74062a5fe5f870ac8c90302b6e89945165fdaed7810606e84ddee6aac12"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h4c7d964_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "ISC"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2026.7.22-h4c7d964_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:certifi-2026.7.22-pyhd8ed1ab_0.conda",
+      "name": "certifi",
+      "version": "2026.7.22",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fb167de4388e64e52aa3907ed099afab944c1fa6e5f74b281a312dae1bcf7f3b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "ISC"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/certifi-2026.7.22-pyhd8ed1ab_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:charset-normalizer-3.5.2-h308a848_0.conda",
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "15ef0ff35f316beeb8d0ab045cb3c29655f0e38ed1ea49c56f5606d2ff2bc3e4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h308a848_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/charset-normalizer-3.5.2-h308a848_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:colorama-0.4.6-pyhd8ed1ab_1.conda",
+      "name": "colorama",
+      "version": "0.4.6",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ab29d57dc70786c1269633ba3dff20288b81664d3ff8d21af995742e2bb03287"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/colorama-0.4.6-pyhd8ed1ab_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:cpython-3.12.15-py312hd8ed1ab_2.conda",
+      "name": "cpython",
+      "version": "3.12.15",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "69444bf2d39b7385194cf3481ed1910f39a5d0c86c8f6ca3884e761f6e6dedee"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312hd8ed1ab_2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Python-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/cpython-3.12.15-py312hd8ed1ab_2.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:et_xmlfile-2.0.0-pyhd8ed1ab_1.conda",
+      "name": "et_xmlfile",
+      "version": "2.0.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2209534fbf2f70c20661ff31f57ab6a97b82ee98812e8a2dcb2b36a0d345727c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/et_xmlfile-2.0.0-pyhd8ed1ab_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:filelock-4.2.0-pyhd8ed1ab_0.conda",
+      "name": "filelock",
+      "version": "4.2.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d403ff057b7b3368008636a2695b579a6e3afbfc6c08af62fe3bf33394a212ce"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/filelock-4.2.0-pyhd8ed1ab_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:fmt-12.1.0-h1ced75a_1.conda",
+      "name": "fmt",
+      "version": "12.1.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1d6d6f1bf284e50cf617ce9a6250e0bf70bd0d30b068568364d6b1852aad9466"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h1ced75a_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/fmt-12.1.0-h1ced75a_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:fsspec-2026.9.0-pyhd8ed1ab_0.conda",
+      "name": "fsspec",
+      "version": "2026.9.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7d17272012e7479ba58f8a72b522d3e88e6837a04a111a278ff417aa82364255"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/fsspec-2026.9.0-pyhd8ed1ab_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:h2-4.4.1-pyhcf101f3_0.conda",
+      "name": "h2",
+      "version": "4.4.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "307dd6ec90140c3cf4171071b0e5e870abec314f4565c1edd5bc433e942cdcc0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhcf101f3_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/h2-4.4.1-pyhcf101f3_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:hf-xet-1.7.0-py311h9f2c75e_0.conda",
+      "name": "hf-xet",
+      "version": "1.7.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a2aa23d6b4b4d6ea0499d1e336560dba8754357553443ee2e56b0c306fee3ccc"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py311h9f2c75e_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/hf-xet-1.7.0-py311h9f2c75e_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:hpack-4.2.0-pyhd8ed1ab_0.conda",
+      "name": "hpack",
+      "version": "4.2.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fdcea5d7cb314485d3907192ef024c704311548c5b0cbeb390cd1951051e29d2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/hpack-4.2.0-pyhd8ed1ab_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:huggingface_hub-0.36.0-pyhd8ed1ab_0.conda",
+      "name": "huggingface_hub",
+      "version": "0.36.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7ba53c55530b8bbbd64805b5820a9f4dd35b3d749cdd57092b09f07f71447da6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/huggingface_hub-0.36.0-pyhd8ed1ab_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:hyperframe-6.1.0-pyhd8ed1ab_0.conda",
+      "name": "hyperframe",
+      "version": "6.1.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "77af6f5fe8b62ca07d09ac60127a30d9069fdc3c68d6b256754d0ffb1f7779f8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:icu-78.3-h5112557_2.conda",
+      "name": "icu",
+      "version": "78.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "75c549b55b673e15de8785a8e5dd85bca7eb612eee0ff4dc8d7bdaa15eacbdbb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h5112557_2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/icu-78.3-h5112557_2.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:idna-3.20-pyh5ded981_0.conda",
+      "name": "idna",
+      "version": "3.20",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e044b1ec829e2e24f971fa3f3408eb26f1db836e521a58f08b0fd9a03fee47be"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyh5ded981_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/idna-3.20-pyh5ded981_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:jinja2-3.1.6-pyhcf101f3_1.conda",
+      "name": "jinja2",
+      "version": "3.1.6",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fc9ca7348a4f25fed2079f2153ecdcf5f9cf2a0bc36c4172420ca09e1849df7b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhcf101f3_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/jinja2-3.1.6-pyhcf101f3_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:joblib-1.5.3-pyhd8ed1ab_0.conda",
+      "name": "joblib",
+      "version": "1.5.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "301539229d7be6420c084490b8145583291123f0ce6b92f56be5948a2c83a379"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/joblib-1.5.3-pyhd8ed1ab_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libabseil-20260526.0-cxx17_h04e5de1_3.conda",
+      "name": "libabseil",
+      "version": "20260526.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "744c2701428f014352403034ad47b37fda7835e5899a2083eb6fc4cc83b6fdb5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "cxx17_h04e5de1_3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libabseil-20260526.0-cxx17_h04e5de1_3.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libblas-3.11.0-11_h8455456_mkl.conda",
+      "name": "libblas",
+      "version": "3.11.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "51a38b02bacb5a4b546d41aeb0f7921ee85c0ec1009fdcb58635bcad06f2eb1a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "11_h8455456_mkl"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libblas-3.11.0-11_h8455456_mkl.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libcblas-3.11.0-11_h2a3cdd5_mkl.conda",
+      "name": "libcblas",
+      "version": "3.11.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9a2d431ead1463a7a96a38bedc901705c325c5bbafd7a2bcc5a198fbfcdea29e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "11_h2a3cdd5_mkl"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libcblas-3.11.0-11_h2a3cdd5_mkl.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libexpat-2.8.5-hac47afa_0.conda",
+      "name": "libexpat",
+      "version": "2.8.5",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "70c73d9fd24ad996f2821d1501adae2ca70984b4e2d8faed76227f348ce86078"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "hac47afa_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libexpat-2.8.5-hac47afa_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libffi-3.7.0-h3d046cb_1.conda",
+      "name": "libffi",
+      "version": "3.7.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "613e8077c5cca5df7fe84ade7d5050301bee3c6c4c450ffe61d34a349ab4f11c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h3d046cb_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libffi-3.7.0-h3d046cb_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libhwloc-2.15.0-default_hae90fe0_1001.conda",
+      "name": "libhwloc",
+      "version": "2.15.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "240368b73a984a1812dab5f7964ed03304950ad97466cd7ee347df9cc707629d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "default_hae90fe0_1001"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libhwloc-2.15.0-default_hae90fe0_1001.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libiconv-1.18-hc1393d2_3.conda",
+      "name": "libiconv",
+      "version": "1.18",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "35e04e3ddac7720fc7c550a1c9f998604299d6a7bd1f3ec9b2825d825061daa2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "hc1393d2_3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "LGPL-2.1-only"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libiconv-1.18-hc1393d2_3.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:liblapack-3.11.0-11_hf9ab0e9_mkl.conda",
+      "name": "liblapack",
+      "version": "3.11.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "460a2b9896bbee9a3cdfef26d1fdce056028291eef104564082de9e9f566bba6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "11_hf9ab0e9_mkl"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/liblapack-3.11.0-11_hf9ab0e9_mkl.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:liblzma-5.8.3-hfd05255_1.conda",
+      "name": "liblzma",
+      "version": "5.8.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d36c4a1e1f80fd08e18a407e03622ff2f34dfdd022da6488ad19603dea19e6d5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "hfd05255_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "0BSD"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/liblzma-5.8.3-hfd05255_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libprotobuf-7.35.1-h1a71995_3.conda",
+      "name": "libprotobuf",
+      "version": "7.35.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ad39d17df4384bacc106e18a3446ac18a4eab57f4f2da15fa58cdc63cb61957b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h1a71995_3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libprotobuf-7.35.1-h1a71995_3.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libpython-3.12.15-hfb4101e_2_cpython.conda",
+      "name": "libpython",
+      "version": "3.12.15",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1b0a0afd12f3b4c207cd8b03ed9a5e577adb761d3b1c46a3e5ae14f149ec49b5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "hfb4101e_2_cpython"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Python-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libpython-3.12.15-hfb4101e_2_cpython.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libsqlite-3.54.0-hf5d6505_101.conda",
+      "name": "libsqlite",
+      "version": "3.54.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "210405f21c300e72287281979bbb4be8a7aeb5f31329b8afffc6a1a2cae67427"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "hf5d6505_101"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "blessing"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libsqlite-3.54.0-hf5d6505_101.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libtorch-2.11.0-cpu_mkl_hce2d539_102.conda",
+      "name": "libtorch",
+      "version": "2.11.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "777b31d303842b07dbc75e84c2eea8910d4aed7ac6ffe773404b1b2b7e4ed76a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "cpu_mkl_hce2d539_102"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libtorch-2.11.0-cpu_mkl_hce2d539_102.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libuv-1.52.1-h6a83c73_1.conda",
+      "name": "libuv",
+      "version": "1.52.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0d62467380061cd0fa4b27e579c805a95c7ef55a41ecb067de0c4d2d42490c66"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h6a83c73_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libuv-1.52.1-h6a83c73_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libwinpthread-12.0.0.r4.gg4f2fc60ca-h57928b3_10.conda",
+      "name": "libwinpthread",
+      "version": "12.0.0.r4.gg4f2fc60ca",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0fccf2d17026255b6e10ace1f191d0a2a18f2d65088fd02430be17c701f8ffe0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h57928b3_10"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT AND BSD-3-Clause-Clear"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libwinpthread-12.0.0.r4.gg4f2fc60ca-h57928b3_10.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libxml2-16-2.15.4-h3cfd58e_1.conda",
+      "name": "libxml2-16",
+      "version": "2.15.4",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "819c4edd7b7bcfa9461aeccb56c0a7e9fa7c251163333e64222c142499822958"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h3cfd58e_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libxml2-16-2.15.4-h3cfd58e_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libxml2-2.15.4-he095d88_1.conda",
+      "name": "libxml2",
+      "version": "2.15.4",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "81e8cace5c3cb62c4125882b4a6df33ab48c16349231d8ea5008bbe0ee93c10f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "he095d88_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libxml2-2.15.4-he095d88_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:libzlib-1.3.2-hfd05255_3.conda",
+      "name": "libzlib",
+      "version": "1.3.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0629c2cc0404d3bb29d6baa7b4ba62da80797015e86de050db81ea5a07050527"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "hfd05255_3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Zlib"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/libzlib-1.3.2-hfd05255_3.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:llvm-openmp-23.1.3-h49e36cd_1.conda",
+      "name": "llvm-openmp",
+      "version": "23.1.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3eed860d303cff84c3ab771312ebb3e0b26ad10d92b38ed98a33f3bef7edd01b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h49e36cd_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 WITH LLVM-exception"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/llvm-openmp-23.1.3-h49e36cd_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:markupsafe-3.0.4-py312h6fa65f5_1.conda",
+      "name": "markupsafe",
+      "version": "3.0.4",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fd2cc166414630b22cae346c597162e05d786d9ace0e9932e6339953099c7b96"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312h6fa65f5_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/markupsafe-3.0.4-py312h6fa65f5_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:mkl-2026.1.0-hac47afa_235.conda",
+      "name": "mkl",
+      "version": "2026.1.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bb8abe071f73765446df62924031e6599577e8ac9003264dc4569e78c0fea16d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "hac47afa_235"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "LicenseRef-IntelSimplifiedSoftwareOct2022"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/mkl-2026.1.0-hac47afa_235.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:mpmath-1.4.1-pyhd8ed1ab_0.conda",
+      "name": "mpmath",
+      "version": "1.4.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5bbf2f8179ec43d34d67ca8e4989d216c1bdb4b749fe6cb40e86ebf88c1b5300"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/mpmath-1.4.1-pyhd8ed1ab_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:narwhals-2.27.1-pyh5ded981_0.conda",
+      "name": "narwhals",
+      "version": "2.27.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a30afe9e3c83e5730b3517c38637f5ca2d09e0c6140f241b23b3ca070c7490c9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyh5ded981_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/narwhals-2.27.1-pyh5ded981_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:networkx-3.7-pyhc364b38_0.conda",
+      "name": "networkx",
+      "version": "3.7",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9458e13767779d5db48c035ba27a1af843fde5187d34c17b60076e18835e8637"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhc364b38_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/networkx-3.7-pyhc364b38_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:numpy-2.4.6-py312ha3f287d_0.conda",
+      "name": "numpy",
+      "version": "2.4.6",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9abf760418f2497f87715fa35d1c9cea5416be9edd1b166a218dfabe3b16e5be"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312ha3f287d_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/numpy-2.4.6-py312ha3f287d_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:openpyxl-3.1.5-py312h83acffa_4.conda",
+      "name": "openpyxl",
+      "version": "3.1.5",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "12889c0643ba9920b9d6f45ed3839d93cccde8e6315219f834383a09f34bf01c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312h83acffa_4"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/openpyxl-3.1.5-py312h83acffa_4.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:openssl-3.6.5-hf411b9b_0.conda",
+      "name": "openssl",
+      "version": "3.6.5",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bc44625e0c6d83f3e02b5f6adc01e0e3ca7001d3d94e24959591a57f5a011b9a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "hf411b9b_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/openssl-3.6.5-hf411b9b_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:optree-0.20.0-py312hf90b1b7_1.conda",
+      "name": "optree",
+      "version": "0.20.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "663682f86c77f7929caacc3de58a14cda82140a9bffeca7fcabc4abe7cc5727b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312hf90b1b7_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/optree-0.20.0-py312hf90b1b7_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:packaging-26.3-pyhc364b38_0.conda",
+      "name": "packaging",
+      "version": "26.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c432626b16768b8dab228bfb706f7060c2d462a21c516d240f68f2f902b5a044"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhc364b38_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/packaging-26.3-pyhc364b38_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:pip-26.2.1-pyh8b19718_0.conda",
+      "name": "pip",
+      "version": "26.2.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c205bae42eb11b364fe3663a817cbcbc20a8ef544c6b2ff6f391013487117259"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyh8b19718_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/pip-26.2.1-pyh8b19718_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:psutil-7.2.2-py312he5662c2_3.conda",
+      "name": "psutil",
+      "version": "7.2.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "499b676620082970d0972b22415ebe241fd455075b130e8cb4694ba7f68dbd33"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312he5662c2_3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/psutil-7.2.2-py312he5662c2_3.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:pybind11-3.0.1-pyh7a1b43c_0.conda",
+      "name": "pybind11",
+      "version": "3.0.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2558727093f13d4c30e124724566d16badd7de532fd8ee7483628977117d02be"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyh7a1b43c_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/pybind11-3.0.1-pyh7a1b43c_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:pybind11-abi-11-hc364b38_1.conda",
+      "name": "pybind11-abi",
+      "version": "11",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9e7fe12f727acd2787fb5816b2049cef4604b7a00ad3e408c5e709c298ce8bf1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "hc364b38_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/pybind11-abi-11-hc364b38_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:pybind11-global-3.0.1-pyh5e4992e_0.conda",
+      "name": "pybind11-global",
+      "version": "3.0.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fff9c4f726644a1889a4b631aca547d8f302c72109d75518ae32997a3d54f23a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyh5e4992e_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/pybind11-global-3.0.1-pyh5e4992e_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:pysocks-1.7.1-pyh09c184e_7.conda",
+      "name": "pysocks",
+      "version": "1.7.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d016e04b0e12063fbee4a2d5fbb9b39a8d191b5a0042f0b8459188aedeabb0ca"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyh09c184e_7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/pysocks-1.7.1-pyh09c184e_7.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:python-3.12.15-hb12b558_2_cpython.conda",
+      "name": "python",
+      "version": "3.12.15",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "39d230c501c2c82a61689e5e3d2d88b84bcd85bc4f2e1429f6bc6264082ef958"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "hb12b558_2_cpython"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Python-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/python-3.12.15-hb12b558_2_cpython.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:python-gil-3.12.15-hd8ed1ab_2.conda",
+      "name": "python-gil",
+      "version": "3.12.15",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5369e1ec176100bb10ba6ec38cab261347ea470d95788e52e6008d1a7605165d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "hd8ed1ab_2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Python-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/python-gil-3.12.15-hd8ed1ab_2.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:python_abi-3.12-9_cp312.conda",
+      "name": "python_abi",
+      "version": "3.12",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ee9c2922e07afc85fc82d5fa82c9ac2c79da3be3283a5e17bf2f2ae38dbd02fb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "9_cp312"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/python_abi-3.12-9_cp312.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:pytorch-2.11.0-cpu_mkl_py312_he443d45_102.conda",
+      "name": "pytorch",
+      "version": "2.11.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3c7fdfe890613fad66fbb8ae77f0c67fb0d0ab61da6c70f3f28f1097344bdf93"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "cpu_mkl_py312_he443d45_102"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/pytorch-2.11.0-cpu_mkl_py312_he443d45_102.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:pyyaml-6.0.3-py312h05f76fc_1.conda",
+      "name": "pyyaml",
+      "version": "6.0.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1cab6cbd6042b2a1d8ee4d6b4ec7f36637a41f57d2f5c5cf0c12b7c4ce6a62f6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312h05f76fc_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/pyyaml-6.0.3-py312h05f76fc_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:regex-2026.9.29-py312he06e257_0.conda",
+      "name": "regex",
+      "version": "2026.9.29",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f72fb4de97ef296385d94ac0b69edc125a750b791704613f748185d7b4a49da9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312he06e257_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 AND CNRI-Python"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/regex-2026.9.29-py312he06e257_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:requests-2.34.2-pyhcf101f3_0.conda",
+      "name": "requests",
+      "version": "2.34.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1715246b19c9f85ee022933b4845f2fc14ac9184981b7b7d9b728bec8e9588da"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhcf101f3_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/requests-2.34.2-pyhcf101f3_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:safetensors-0.7.0-py312hb0142fd_0.conda",
+      "name": "safetensors",
+      "version": "0.7.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "dd1eb308c1eada17ff956b18ee3f57956c8da1a3500b1f7156cef351b8e9d813"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312hb0142fd_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/safetensors-0.7.0-py312hb0142fd_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:scikit-learn-1.9.0-np2py312hea30aaf_0.conda",
+      "name": "scikit-learn",
+      "version": "1.9.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c89cfc61bd6c690154ff7a7c9029b9dd83aae1049dc1f84c25c37cafa0b5f69d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "np2py312hea30aaf_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/scikit-learn-1.9.0-np2py312hea30aaf_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:scipy-1.17.1-py312h9b3c559_1.conda",
+      "name": "scipy",
+      "version": "1.17.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b8a13caeb04f2b943e7c617a4b76805450618716b38688ee8d3f79b60d529e84"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312h9b3c559_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/scipy-1.17.1-py312h9b3c559_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:setuptools-81.0.0-pyh332efcf_0.conda",
+      "name": "setuptools",
+      "version": "81.0.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6ecf738d5590bf228f09c4ecd1ea91d811f8e0bd9acdef341bc4d6c36beb13a3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyh332efcf_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/setuptools-81.0.0-pyh332efcf_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:sleef-3.9.0-h67fd636_0.conda",
+      "name": "sleef",
+      "version": "3.9.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1ad2f42ff6c94256ab79ab1c5725d322a4e11737bd4dd91454feeff978f4cf38"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h67fd636_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSL-1.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/sleef-3.9.0-h67fd636_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:sympy-1.14.0-pyh04b8f61_6.conda",
+      "name": "sympy",
+      "version": "1.14.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "772a39271b96ce77fbaf169f43c1097b8e2c8d34c2685e5048cd72459a38ea24"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyh04b8f61_6"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/sympy-1.14.0-pyh04b8f61_6.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:tbb-2023.1.0-h272cf33_2.conda",
+      "name": "tbb",
+      "version": "2023.1.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "65f5a52eb5250ca0d627e6958e703583dca008988695284fc2181b3a0a790efd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h272cf33_2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/tbb-2023.1.0-h272cf33_2.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:threadpoolctl-3.7.0-pyhc455866_0.conda",
+      "name": "threadpoolctl",
+      "version": "3.7.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a32d17fe979e59fe1295875b5d4f0431a76dfbbfcee5b01e657a8aa3c4a1b5d1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhc455866_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/threadpoolctl-3.7.0-pyhc455866_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:tk-8.6.13-h967ab96_4.conda",
+      "name": "tk",
+      "version": "8.6.13",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f19618a3a82cc483dacf1c70a30367ee7b0c7e71b90f1f80e14feff44fbd3688"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h967ab96_4"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "TCL"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/tk-8.6.13-h967ab96_4.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:tokenizers-0.22.2-py312h362b069_0.conda",
+      "name": "tokenizers",
+      "version": "0.22.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "025c14f99f9227d5002ec3106ec9e429617cefadcd24b68e4038e02024f6a049"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "py312h362b069_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/tokenizers-0.22.2-py312h362b069_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:tqdm-4.70.1-pyh6be1c34_0.conda",
+      "name": "tqdm",
+      "version": "4.70.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8221a7b1cf63171db3a81fddd1d9e58502dc65c6938e64901c01815f63fe4210"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyh6be1c34_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MPL-2.0 and MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/tqdm-4.70.1-pyh6be1c34_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:transformers-4.57.6-pyhd8ed1ab_1.conda",
+      "name": "transformers",
+      "version": "4.57.6",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f9d90fd9ebf2005b3e38e51da57a43213dba4595d834fdeff438646ff8d8111e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/transformers-4.57.6-pyhd8ed1ab_1.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:typing-extensions-4.16.0-h69aa097_0.conda",
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b141933ece3518f6d7b75dfb59451e2f26b405a44c18e2518a83e9a02e09315c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h69aa097_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "PSF-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/typing-extensions-4.16.0-h69aa097_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:typing_extensions-4.16.0-pyhcf101f3_0.conda",
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2d888f90af0686044882c74193ec80a90ec1943145d94a7b1b048958acda1848"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhcf101f3_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "PSF-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/typing_extensions-4.16.0-pyhcf101f3_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:tzdata-2026c-h151e31d_0.conda",
+      "name": "tzdata",
+      "version": "2026c",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b928c30ddcb0e3f544c6eade8352737e6e610e263276b90232db6a578ef899d8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h151e31d_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "LicenseRef-Public-Domain"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/tzdata-2026c-h151e31d_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:ucrt-10.0.26100.0-h57928b3_0.conda",
+      "name": "ucrt",
+      "version": "10.0.26100.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3005729dce6f3d3f5ec91dfc49fc75a0095f9cd23bab49efb899657297ac91a5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h57928b3_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "LicenseRef-MicrosoftWindowsSDK10"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/ucrt-10.0.26100.0-h57928b3_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:urllib3-2.8.0-pyhd8ed1ab_0.conda",
+      "name": "urllib3",
+      "version": "2.8.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c5511c190ab55168ca412f3c54592fbf677ae6250784cb72b227a7cf3f538f7d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/urllib3-2.8.0-pyhd8ed1ab_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:vc-14.5-ha367084_41.conda",
+      "name": "vc",
+      "version": "14.5",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "35444c55a92e2f7f7ba26bc70f81e56e52344f7d064c0fd4b40a46a58517b79c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "ha367084_41"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/vc-14.5-ha367084_41.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:vc14_runtime-14.51.36247-habf1de7_41.conda",
+      "name": "vc14_runtime",
+      "version": "14.51.36247",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4e4cb599cdc41bf2109d1464c127b5bcbddf548ce3e322e612afb691338b48f8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "habf1de7_41"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "LicenseRef-MicrosoftVisualCpp2015-2022Runtime"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/vc14_runtime-14.51.36247-habf1de7_41.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:vcomp14-14.51.36247-habf1de7_41.conda",
+      "name": "vcomp14",
+      "version": "14.51.36247",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "731e043390c9457299484d39e427221fc868a9249540a498a5a4f6456c7744d1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "habf1de7_41"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "LicenseRef-MicrosoftVisualCpp2015-2022Runtime"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/vcomp14-14.51.36247-habf1de7_41.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:wheel-0.48.0-pyhd8ed1ab_0.conda",
+      "name": "wheel",
+      "version": "0.48.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ba64b29b6d418024cb565081a1799262cb2780d2534ff4c14f76aa858c4286cd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyhd8ed1ab_0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/wheel-0.48.0-pyhd8ed1ab_0.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:win_inet_pton-1.1.0-pyh7428d3b_8.conda",
+      "name": "win_inet_pton",
+      "version": "1.1.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "93807369ab91f230cf9e6e2a237eaa812492fe00face5b38068735858fba954f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "pyh7428d3b_8"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "LicenseRef-Public-Domain"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/noarch/win_inet_pton-1.1.0-pyh7428d3b_8.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:yaml-0.2.5-h6a83c73_3.conda",
+      "name": "yaml",
+      "version": "0.2.5",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "80ee68c1e7683a35295232ea79bcc87279d31ffeda04a1665efdb43cbd50a309"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h6a83c73_3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/yaml-0.2.5-h6a83c73_3.conda"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "conda:zstd-1.5.7-h534d264_7.conda",
+      "name": "zstd",
+      "version": "1.5.7",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ca7daae4f218a11fab82cc2857f0ea518ec3f46acec60490485347a4c22c6b3e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:build",
+          "value": "h534d264_7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://conda.anaconda.org/conda-forge/win-64/zstd-1.5.7-h534d264_7.conda"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "scope": "required",
+      "bom-ref": "upstream:models/ntv3/README.md",
+      "name": "models/ntv3/README.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "720bf43edca9472a457d6e3e4cd3b4b9a2f49c15b92c2d55c85b81e1a23bd845"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:delivery",
+          "value": "authenticated upstream"
+        },
+        {
+          "name": "incfinder:repository",
+          "value": "InstaDeepAI/NTv3_650M_pre"
+        },
+        {
+          "name": "incfinder:revision",
+          "value": "5e6050bed864a5a8fb32481096bf555495316b31"
+        },
+        {
+          "name": "incfinder:verification",
+          "value": "models install or models verify"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "scope": "required",
+      "bom-ref": "upstream:models/ntv3/config.json",
+      "name": "models/ntv3/config.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2cc294adf8868f3f116e4a136ae06ac90d0d367edaecd56288ac11bd60bbe68a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:delivery",
+          "value": "authenticated upstream"
+        },
+        {
+          "name": "incfinder:repository",
+          "value": "InstaDeepAI/NTv3_650M_pre"
+        },
+        {
+          "name": "incfinder:revision",
+          "value": "5e6050bed864a5a8fb32481096bf555495316b31"
+        },
+        {
+          "name": "incfinder:verification",
+          "value": "models install or models verify"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "scope": "required",
+      "bom-ref": "upstream:models/ntv3/model.safetensors",
+      "name": "models/ntv3/model.safetensors",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4052aeda062de895e3734e3fac2aea10d1b40149995543cf4f6a9fba0a996b8c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:delivery",
+          "value": "authenticated upstream"
+        },
+        {
+          "name": "incfinder:repository",
+          "value": "InstaDeepAI/NTv3_650M_pre"
+        },
+        {
+          "name": "incfinder:revision",
+          "value": "5e6050bed864a5a8fb32481096bf555495316b31"
+        },
+        {
+          "name": "incfinder:verification",
+          "value": "models install or models verify"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "scope": "required",
+      "bom-ref": "upstream:models/ntv3/special_tokens_map.json",
+      "name": "models/ntv3/special_tokens_map.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4f98fb3de0902c87821f2e518a9f808ea1ffe3810882e4d429758a55dfbff009"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:delivery",
+          "value": "authenticated upstream"
+        },
+        {
+          "name": "incfinder:repository",
+          "value": "InstaDeepAI/NTv3_650M_pre"
+        },
+        {
+          "name": "incfinder:revision",
+          "value": "5e6050bed864a5a8fb32481096bf555495316b31"
+        },
+        {
+          "name": "incfinder:verification",
+          "value": "models install or models verify"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "scope": "required",
+      "bom-ref": "upstream:models/ntv3/tokenizer_config.json",
+      "name": "models/ntv3/tokenizer_config.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "07019b4b8964bc28c08c23bf1e1704a2dcdf686d1b99ad211008429b34d1d0fb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:delivery",
+          "value": "authenticated upstream"
+        },
+        {
+          "name": "incfinder:repository",
+          "value": "InstaDeepAI/NTv3_650M_pre"
+        },
+        {
+          "name": "incfinder:revision",
+          "value": "5e6050bed864a5a8fb32481096bf555495316b31"
+        },
+        {
+          "name": "incfinder:verification",
+          "value": "models install or models verify"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "scope": "required",
+      "bom-ref": "upstream:models/ntv3/vocab.json",
+      "name": "models/ntv3/vocab.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "dafebcb0654e403cc30269f52bed31f07fd8c55a1370be63a54d82b917c61153"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:delivery",
+          "value": "authenticated upstream"
+        },
+        {
+          "name": "incfinder:repository",
+          "value": "InstaDeepAI/NTv3_650M_pre"
+        },
+        {
+          "name": "incfinder:revision",
+          "value": "5e6050bed864a5a8fb32481096bf555495316b31"
+        },
+        {
+          "name": "incfinder:verification",
+          "value": "models install or models verify"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "scope": "required",
+      "bom-ref": "upstream:vendor/ntv3/__init__.py",
+      "name": "vendor/ntv3/__init__.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fc4dddbc65256840ee2b84a6be3f4662c4318b22b3bc1bf7878acbd6a7bfe380"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:delivery",
+          "value": "authenticated upstream"
+        },
+        {
+          "name": "incfinder:repository",
+          "value": "InstaDeepAI/ntv3_base_model"
+        },
+        {
+          "name": "incfinder:revision",
+          "value": "27682ed2f537a4c4fcc356b6b8201e7dfceca602"
+        },
+        {
+          "name": "incfinder:verification",
+          "value": "models install or models verify"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "scope": "required",
+      "bom-ref": "upstream:vendor/ntv3/configuration_ntv3_pretrained.py",
+      "name": "vendor/ntv3/configuration_ntv3_pretrained.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e210b5ec18ebe626d8dd91b408a83fc20afc59bf6c5382084ee91b9b8be69df3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:delivery",
+          "value": "authenticated upstream"
+        },
+        {
+          "name": "incfinder:repository",
+          "value": "InstaDeepAI/ntv3_base_model"
+        },
+        {
+          "name": "incfinder:revision",
+          "value": "27682ed2f537a4c4fcc356b6b8201e7dfceca602"
+        },
+        {
+          "name": "incfinder:verification",
+          "value": "models install or models verify"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "scope": "required",
+      "bom-ref": "upstream:vendor/ntv3/modeling_ntv3_pretrained.py",
+      "name": "vendor/ntv3/modeling_ntv3_pretrained.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bc2157369fd9c73cc24323be8c38943871a2a7f1aaa1ca92a8945c1a65c4757a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:delivery",
+          "value": "authenticated upstream"
+        },
+        {
+          "name": "incfinder:repository",
+          "value": "InstaDeepAI/ntv3_base_model"
+        },
+        {
+          "name": "incfinder:revision",
+          "value": "27682ed2f537a4c4fcc356b6b8201e7dfceca602"
+        },
+        {
+          "name": "incfinder:verification",
+          "value": "models install or models verify"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "scope": "required",
+      "bom-ref": "upstream:vendor/ntv3/tokenization_ntv3.py",
+      "name": "vendor/ntv3/tokenization_ntv3.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "59e507620a65cebaab59e977c8f2840ff2f208f0f1a6ec38ece6b53cb3eebda3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "incfinder:delivery",
+          "value": "authenticated upstream"
+        },
+        {
+          "name": "incfinder:repository",
+          "value": "InstaDeepAI/ntv3_base_model"
+        },
+        {
+          "name": "incfinder:revision",
+          "value": "27682ed2f537a4c4fcc356b6b8201e7dfceca602"
+        },
+        {
+          "name": "incfinder:verification",
+          "value": "models install or models verify"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "conda-pack relocation scripts",
+      "version": "0.9.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ]
+    }
+  ]
+}

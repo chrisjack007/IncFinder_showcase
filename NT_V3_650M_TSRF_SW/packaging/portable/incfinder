@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+base=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+unset PYTHONHOME PYTHONPATH
+exec "$base/runtime/bin/python" -I -B -X utf8 "$base/portable/bootstrap.py" "$@"
