@@ -1,5 +1,7 @@
 # IncFinder 0.5.0rc2
 
+**[Recommended download · 0.5.0rc2 research preview](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2)**
+
 This research preview returns Inc candidate labels, probabilities and a run summary per sequenced record. Extract the Windows ZIP on Windows or the Linux TAR.GZ on native Linux or WSL2. Create a new environment before installing IncFinder.
 
 ## Verify downloads
@@ -58,5 +60,15 @@ MSYS_NO_PATHCONV=1 docker run --name incfinder-demo --network none \
   --model-dir /models --allow-encoder-drift --output /results/demo
 docker cp incfinder-demo:/results/demo ./demo
 ```
+
+## Download and installation issues
+
+If Miniconda stops on terms for its default channels, add `--override-channels -c conda-forge` to the environment creation and local package installation commands. All 95 entries in the Linux lock come from conda-forge.
+
+If the project homepage opens but the GitHub download page times out, select the file in the [public release asset list](https://api.github.com/repos/chrisjack007/IncFinder_showcase/releases/tags/v0.5.0rc2). Request its `url` with the `Accept: application/octet-stream` header and verify the downloaded bytes as described above.
+
+If GitHub limits anonymous API requests, download `stage1.joblib` and the 22 `stage2.joblib.part-001` through `part-022` assets from the release page into a single `rf-parts` directory. After checking their signed hashes, run `incfinder models install --model-dir ./models --parts-dir ./rf-parts --download-ntv3`.
+
+On Windows, use your usual user Conda directory. The acceptance run found missing Python standard-library files in a system temporary prefix. Reinstalling in a dedicated user Conda directory worked.
 
 [Model card](docs/MODEL_CARD.en.md) · [Research licence](NT_V3_650M_TSRF_SW/LICENSE) · [Release](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [Official checkpoint](https://huggingface.co/InstaDeepAI/NTv3_650M_pre/tree/5e6050bed864a5a8fb32481096bf555495316b31) · [Official implementation](https://huggingface.co/InstaDeepAI/ntv3_base_model/tree/27682ed2f537a4c4fcc356b6b8201e7dfceca602) · [Output tables](NT_V3_650M_TSRF_SW/docs/output_policy.md)

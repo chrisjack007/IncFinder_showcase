@@ -13,7 +13,7 @@
 </head>
 <body><div class="app">
 <header class="header"><div class="brand"><strong>IncFinder</strong><span class="version">NTv3 650M + TSRF · 0.5.0rc2</span></div>
-<nav class="tabs" aria-label="内容 / Content"><a id="release-link" href="https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2">下载科研预览版</a><a id="installation-link" href="https://github.com/chrisjack007/IncFinder_showcase/blob/main/README.zh-CN.md">安装说明</a><a id="architecture-link" href="?lang=zh-CN&amp;view=architecture" aria-current="page">V2 架构</a><a id="explainer-link" href="?lang=zh-CN&amp;view=explainer">V2 软件说明</a></nav>
+<nav class="tabs" aria-label="内容 / Content"><a id="release-link" href="https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2">推荐下载</a><a id="installation-link" href="https://github.com/chrisjack007/IncFinder_showcase/blob/main/README.zh-CN.md">安装说明</a><a id="architecture-link" href="?lang=zh-CN&amp;view=architecture" aria-current="page">V2 架构</a><a id="explainer-link" href="?lang=zh-CN&amp;view=explainer">V2 软件说明</a></nav>
 <nav class="languages" aria-label="语言 / Language"><a id="zh-link" lang="zh-CN" href="?lang=zh-CN&amp;view=architecture" aria-current="page">中文</a><span aria-hidden="true">/</span><a id="en-link" lang="en" href="?lang=en&amp;view=architecture">English</a></nav></header>
 <iframe id="reader" class="reader" title="IncFinder 中文交互架构" src="architecture.zh-CN.html" allow="clipboard-write; fullscreen" allowfullscreen></iframe>
 <footer class="footer"><span class="status" id="scope">逐序列预测 · RESEARCH_PREVIEW / NOT_ESTABLISHED</span><span class="footer-links"><a id="direct-link" href="architecture.zh-CN.html" target="_blank" rel="noopener">独立打开 ↗</a><a id="notices-link" href="notices.html" target="_blank" rel="noopener">声明与许可</a></span></footer>
@@ -33,7 +33,7 @@ function render(){
  const arch=get('architecture-link'),expl=get('explainer-link');arch.textContent=zh?'V2 架构':'V2 architecture';expl.textContent=zh?'V2 软件说明':'V2 software guide';
  arch.href=address(s.lang,'architecture');expl.href=address(s.lang,'explainer');
  get('installation-link').textContent=zh?'安装说明':'Installation';get('installation-link').href='https://github.com/chrisjack007/IncFinder_showcase/blob/main/'+(zh?'README.zh-CN.md':'README.md');
- get('release-link').textContent=zh?'下载科研预览版':'Download research preview';
+ get('release-link').textContent=zh?'推荐下载':'Recommended download';
  get('zh-link').href=address('zh-CN',s.view);get('en-link').href=address('en',s.view);
  select(arch,s.view==='architecture');select(expl,s.view==='explainer');select(get('zh-link'),zh);select(get('en-link'),!zh);
  get('scope').textContent=zh?'逐序列预测 · RESEARCH_PREVIEW / NOT_ESTABLISHED':'Sequence-level prediction · RESEARCH_PREVIEW / NOT_ESTABLISHED';

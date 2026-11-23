@@ -1,5 +1,7 @@
 # IncFinder 0.5.0rc2
 
+**[推荐下载 0.5.0rc2 科研预览版](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2)**
+
 科研预览版对每条已有序列提供 Inc 候选标签、概率和运行摘要。Windows 使用 ZIP，WSL2 和原生 Linux 使用 TAR.GZ。解压发行包后，新建独立 Conda 环境。
 
 ## 核验下载文件
@@ -58,5 +60,15 @@ MSYS_NO_PATHCONV=1 docker run --name incfinder-demo --network none \
   --model-dir /models --allow-encoder-drift --output /results/demo
 docker cp incfinder-demo:/results/demo ./demo
 ```
+
+## 下载与安装问题
+
+若 Miniconda 因默认频道的条款提示中止，可在创建环境和安装本地包的两条 Conda 命令中加入 `--override-channels -c conda-forge`。Linux 锁内的 95 项依赖均来自 conda-forge。
+
+若服务器能打开项目首页，但访问 GitHub 下载网页超时，可从[公开发行附件清单](https://api.github.com/repos/chrisjack007/IncFinder_showcase/releases/tags/v0.5.0rc2)选取文件，以 `Accept: application/octet-stream` 请求其 `url`，下载后按上文验签和核对摘要。
+
+如果 GitHub 的匿名 API 配额用尽，可从发行页将 `stage1.joblib` 和 `stage2.joblib.part-001` 至 `part-022` 共 23 个文件下载到同一 `rf-parts` 目录。核对签名清单后执行 `incfinder models install --model-dir ./models --parts-dir ./rf-parts --download-ntv3`。
+
+Windows 可将同名环境建在用户 Conda 目录中。本次验收中，建在系统临时目录的环境一度缺失 Python 标准库文件，在用户 Conda 目录重装后通过。
 
 [Model card](docs/MODEL_CARD.zh-CN.md) · [Research licence](NT_V3_650M_TSRF_SW/LICENSE) · [Release](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [Official checkpoint](https://huggingface.co/InstaDeepAI/NTv3_650M_pre/tree/5e6050bed864a5a8fb32481096bf555495316b31) · [Official implementation](https://huggingface.co/InstaDeepAI/ntv3_base_model/tree/27682ed2f537a4c4fcc356b6b8201e7dfceca602) · [Output tables](NT_V3_650M_TSRF_SW/docs/output_policy.md)
