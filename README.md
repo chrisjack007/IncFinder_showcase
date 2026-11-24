@@ -8,6 +8,59 @@ IncFinder assigns candidate plasmid incompatibility (Inc) labels to individual s
 
 ## Quick start
 
+Choose a release and download **one script** for your computer. The original release uses Conda. The portable release includes its runtime. Docker needs a running Linux container engine.
+
+| Platform (x86-64) | Original rc2 | Portable rc2 | Open the menu |
+| --- | --- | --- | --- |
+| Windows | [Windows script](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/IncFinder-Start.cmd) | [Windows script](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/IncFinder-Start.cmd) | Double-click `IncFinder-Start.cmd` |
+| WSL2 | [WSL2 script](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [WSL2 script](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | In WSL2, run `bash incfinder-start.sh` |
+| Native Linux | [Linux script](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [Linux script](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | Run `bash incfinder-start.sh` |
+| Docker | [Windows](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/IncFinder-Start.cmd) · [Linux](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [Windows](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/IncFinder-Start.cmd) · [Linux](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | Open the host script and select **2 · Docker** |
+
+**For your first run, choose a runtime, then choose 2 · Install + demo.** At the first prompt, press Enter for native execution or enter 2 for Docker. The script selects the correct archive, verifies its release signature and SHA-256, prepares the environment and official models, runs `version`, `doctor`, and `models verify`, and analyzes the two records in `sample.fasta`. It prints both calls and the full paths to the CSV and Excel workbook. The raw-read preview uses CPU, batch size 1, four threads and one RF job. The run records encoder equivalence as `NOT_ESTABLISHED`.
+
+| Menu | Short command | Action |
+| --- | --- | --- |
+| 1 · Download | `download` | Verify and unpack the selected software. Use this to prepare the package in advance. |
+| 2 · Install + demo | `install` | Complete setup and run the bundled FASTA using official `ct` thresholds. |
+| 3 · Run | `run` | Enter a FASTA/FASTQ path, including gzip input. On Windows, press Enter to choose a file. Each run gets a new folder. |
+| 4 · Config | `config` | Edit settings, choose a verified model directory, or review an existing run with different thresholds. |
+
+From the directory containing your downloaded script, use one short command for your own file. For Docker, add `--docker` before `run`.
+
+```powershell
+.\IncFinder-Start.cmd run reads.fasta
+```
+
+```bash
+bash incfinder-start.sh run reads.fasta
+```
+
+**Models and offline use.** Request access to NTv3 before first setup. The official models occupy about 27.36 GB. Allow 60 GB of free space for initial preparation. Enter your token in the official login prompt. A complete, verified model directory can be reused by both releases. In native Conda mode, install Conda first if the launcher prompts, then reopen it to resume. After preparation, inference and threshold review run offline. [NTv3 access](https://huggingface.co/InstaDeepAI/NTv3_650M_pre) · [Miniforge](https://github.com/conda-forge/miniforge)
+
+**Thresholds and reports.** Menu 4 saves settings for this release and platform or applies them to the next run only. `ct` uses the 21 official class thresholds. `0.5` is the official `u05` mode. To use custom thresholds, enter a number in [0, 1], edit a named class, or export and re-import the 21-row UTF-8 TSV. Choose **Review** and give it a completed rc2 results directory to reapply thresholds without rerunning the models. A new `review-…` directory holds the summary CSV, 21-class decisions CSV, actual thresholds, a three-sheet Excel workbook and `review.json` with the source run ID and hashes. Stage 1 still requires a probability of at least 0.5. [Official threshold table](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/config/thresholds.tsv)
+
+The script verifies its host helper before starting. To prepare it offline, place the matching helper from the same release beside the script. The software archives retain their original signed manifests. [Original launcher checksums](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/LAUNCHER-SHA256SUMS) · [Portable launcher checksums](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/LAUNCHER-SHA256SUMS) · [Original signature](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/LAUNCHER-SHA256SUMS.sig) · [Portable signature](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/LAUNCHER-SHA256SUMS.sig) · [Launcher source](launcher/)
+
+<details>
+<summary>Short configuration commands and offline preparation</summary>
+
+Append these arguments to the launcher script name, or use the corresponding menu items.
+
+| Task | Arguments |
+| --- | --- |
+| Show current settings | `config show` |
+| Use the official 0.5 mode for the next run | `config --once threshold 0.5` |
+| Export or import all 21 thresholds | `config export thresholds.tsv` or `config import thresholds.tsv` |
+| Restore defaults | `config reset` |
+| Review existing results with current thresholds | `review "results directory"` |
+
+By default, results go under `IncFinder/results/<release tag>/<platform>/` in your home directory. For offline extraction, point `INCFINDER_START_ASSETS` to the directory holding your downloaded release archive. The original edition also needs the locked Conda environment or its cached dependencies. Docker uses the `incfinder-rc2-model-store` model volume by default. Set `INCFINDER_START_MODEL_VOLUME` to use another volume containing `models/`.
+
+</details>
+
+## Manual installation and use
+
 Choose your platform. Each guide starts in an empty writable working directory and ends with the two records supplied in the signed archive. Keep the same terminal open while following a guide.
 
 | Platform | Installation archive | Copy commands | Watch · WebM |
@@ -45,6 +98,9 @@ Request access to the official NTv3 checkpoint before the first model install. T
 The commands pin the SHA-256 of the public signer file, verify the detached signature on `SHA256SUMS`, and then check the exact archive being extracted. Expect an ED25519 signature from `incfinder-release` with fingerprint `SHA256:MoIhr1BXeQBxbBFtycnWNica1CWnm/uguMkVGUnJGXY` and an `OK` for your archive. [Registered signer](https://github.com/chrisjack007/IncFinder_showcase/blob/046307df31d02dd5e66986f73f22bcad0b58eab7/licenses/incfinder-release-allowed-signers)
 
 ## Windows
+
+<details>
+<summary>Windows — manual installation and prediction commands</summary>
 
 Use a Conda-enabled PowerShell terminal on Windows x64. [Watch this platform](https://chrisjack007.github.io/IncFinder_showcase/docs/media/rc2/windows.webm)
 
@@ -146,7 +202,12 @@ incfinder lineage "$Runs/fasta-ct" --row 0 > "$Runs/lineage.json"
 
 Open `fasta-ct/inc_predictions.xlsx` inside the result directory to browse the same two records in Excel. [Interpret the example](#sample-results)
 
+</details>
+
 ## WSL2
+
+<details>
+<summary>WSL2 — manual installation and prediction commands</summary>
 
 Open Bash inside the WSL2 distribution. Run `cd ~` first so extraction and output publication use its native Linux filesystem. [Watch this platform](https://chrisjack007.github.io/IncFinder_showcase/docs/media/rc2/wsl2.webm)
 
@@ -242,7 +303,12 @@ python -c 'import json, sys; r=json.load(open(sys.argv[1]))["row"]; print(r["int
 
 Open `fasta-ct/inc_predictions.xlsx` inside the result directory to browse the same two records in Excel. [Interpret the example](#sample-results)
 
+</details>
+
 ## Linux
+
+<details>
+<summary>Linux — manual installation and prediction commands</summary>
 
 Open a Conda-enabled Bash terminal on native x86-64 Linux. [Watch this platform](https://chrisjack007.github.io/IncFinder_showcase/docs/media/rc2/linux.webm)
 
@@ -338,7 +404,12 @@ python -c 'import json, sys; r=json.load(open(sys.argv[1]))["row"]; print(r["int
 
 Open `fasta-ct/inc_predictions.xlsx` inside the result directory to browse the same two records in Excel. [Interpret the example](#sample-results)
 
+</details>
+
 ## Docker
+
+<details>
+<summary>Docker — manual installation and prediction commands</summary>
 
 These commands run in PowerShell on a Windows host with Docker Desktop set to Linux containers. The image contains its own Conda environment. Use the signed Linux archive as the build context. [Watch this platform](https://chrisjack007.github.io/IncFinder_showcase/docs/media/rc2/docker.webm)
 
@@ -464,6 +535,8 @@ docker run @Mounts $Image lineage /results/fasta-ct --row 0 > "$Runs/lineage.jso
 Open `fasta-ct/inc_predictions.xlsx` inside the result directory to browse the same two records in Excel. [Interpret the example](#sample-results)
 
 For Docker Engine on a Linux host, the tagged guide also provides a Bash example with read-only model and input mounts. [Docker / Bash](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/README.md)
+
+</details>
 
 <a id="sample-results"></a>
 

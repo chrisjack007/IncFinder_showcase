@@ -8,6 +8,59 @@ IncFinder 对 FASTA 或 FASTQ 中的每条序列给出候选质粒不相容群�
 
 ## 快速开始
 
+按版本和平台下载**一个脚本**。原版使用 Conda，便携版自带运行环境。使用 Docker 时，先启动 Linux 容器引擎。
+
+| 平台（x86-64） | 原版 rc2 | 便携版 rc2 | 打开菜单 |
+| --- | --- | --- | --- |
+| Windows | [下载 Windows 脚本](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/IncFinder-Start.cmd) | [下载 Windows 脚本](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/IncFinder-Start.cmd) | 双击 `IncFinder-Start.cmd` |
+| WSL2 | [下载 WSL2 脚本](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [下载 WSL2 脚本](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | 在 WSL2 内运行 `bash incfinder-start.sh` |
+| 原生 Linux | [下载 Linux 脚本](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [下载 Linux 脚本](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | 运行 `bash incfinder-start.sh` |
+| Docker | [Windows 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/IncFinder-Start.cmd) · [Linux 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [Windows 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/IncFinder-Start.cmd) · [Linux 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | 打开宿主脚本，运行方式选 **2 · Docker** |
+
+**首次使用，先选运行方式，再选菜单 2“安装并试跑”。** 本机运行时在第一个提示按 Enter，使用 Docker 时输入 2。 脚本会下载并核对安装包签名与 SHA-256，准备环境和官方模型，依次执行 `version`、`doctor`、`models verify`，然后分析随包 `sample.fasta` 的两条记录。完成后，终端会显示两条分型结果以及 CSV 和 Excel 的完整路径。默认使用 CPU、批大小 1、4 个线程、1 个 RF 任务，原始序列编码的跨平台等价状态记为 `NOT_ESTABLISHED`。
+
+| 菜单 | 短命令 | 用途 |
+| --- | --- | --- |
+| 1 下载 | `download` | 校验并解压对应的软件包，适合提前准备。 |
+| 2 安装并试跑 | `install` | 完成配置，用官方 `ct` 阈值跑通随包 FASTA。 |
+| 3 使用 | `run` | 输入 FASTA、FASTQ 或 gzip 文件路径。Windows 也可按 Enter 打开文件选择框。每次运行写入新目录。 |
+| 4 修改配置 | `config` | 修改默认参数、切换已校验的模型目录，或给已有结果换一套阈值重新判读。 |
+
+要分析自己的文件，也可以在脚本所在目录直接运行一行命令。使用 Docker 时，在 `run` 前加 `--docker`。
+
+```powershell
+.\IncFinder-Start.cmd run reads.fasta
+```
+
+```bash
+bash incfinder-start.sh run reads.fasta
+```
+
+**模型与离线使用。** 首次准备模型前，请先取得 NTv3 访问权限。官方模型约 27.36 GB，建议首次准备时预留 60 GB 空间。令牌只在官方交互登录提示中输入。两版可共用一个已通过哈希校验的模型目录。原版提示缺少 Conda 时，先安装 Conda，再打开脚本接着运行。准备完成后，预测和阈值重判均可离线运行。[NTv3 授权入口](https://huggingface.co/InstaDeepAI/NTv3_650M_pre) · [Miniforge](https://github.com/conda-forge/miniforge)
+
+**阈值与结果。** 菜单 4 的修改可以保存为该版本和平台的默认值，也可仅用于下次运行。`ct` 使用官方逐类阈值，`0.5` 对应官方 `u05`。自定义时，可以设置 [0, 1] 内的统一阈值、按类别名修改，或导出并重新导入完整的 21 行 UTF-8 TSV。选择“对已有结果重新判读”，输入已完成的 rc2 结果目录，即可直接使用原始概率计算。新建的 `review-…` 目录包含分型汇总 CSV、21 项判定 CSV、实际阈值、三个工作表的 Excel，以及记录原运行 ID 和文件摘要的 `review.json`。第一层仍需达到 0.5 才会进入第二层。[官方阈值表](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/config/thresholds.tsv)
+
+脚本会先核对本机启动程序的 SHA-256。离线准备时，可预先将同一发行页的对应启动程序放在脚本旁。软件包继续使用原有签名清单。[原版启动器校验清单](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/LAUNCHER-SHA256SUMS) · [便携版启动器校验清单](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/LAUNCHER-SHA256SUMS) · [原版签名](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/LAUNCHER-SHA256SUMS.sig) · [便携版签名](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/LAUNCHER-SHA256SUMS.sig) · [启动器源码](launcher/)
+
+<details>
+<summary>常用配置短命令与离线准备</summary>
+
+下表是启动脚本名后面的参数。双击打开菜单也能完成这些操作。
+
+| 用途 | 参数 |
+| --- | --- |
+| 查看当前设置 | `config show` |
+| 仅下次切换到统一 0.5 | `config --once threshold 0.5` |
+| 导出或导入 21 项阈值 | `config export thresholds.tsv` 或 `config import thresholds.tsv` |
+| 恢复默认设置 | `config reset` |
+| 用当前阈值重判已有结果 | `review "结果目录"` |
+
+默认结果写入用户主目录下的 `IncFinder/results/<发行标签>/<平台>/`。如需离线解压，让 `INCFINDER_START_ASSETS` 指向已下载的本版安装包目录。原版还需要已准备的锁定 Conda 环境或依赖缓存。Docker 的默认模型卷为 `incfinder-rc2-model-store`，也可用 `INCFINDER_START_MODEL_VOLUME` 指定包含 `models/` 的数据卷。
+
+</details>
+
+## 手动安装与运行
+
 选择平台后，从一个可写工作目录开始，在同一终端中按顺序复制命令。各平台都使用签名包内的两条示例序列，跑完即可对照下方结果。
 
 | 平台 | 原 rc2 安装包 | 可复制命令 | 使用视频 · WebM |
@@ -45,6 +98,9 @@ flowchart LR
 下方命令固定发行公钥文件的 SHA-256，先验证 `SHA256SUMS` 的分离签名，再核对所选安装包。成功时会看到签名者 `incfinder-release`、ED25519 公钥指纹 `SHA256:MoIhr1BXeQBxbBFtycnWNica1CWnm/uguMkVGUnJGXY`，以及所选安装包的 `OK`。[登记的发行公钥](https://github.com/chrisjack007/IncFinder_showcase/blob/046307df31d02dd5e66986f73f22bcad0b58eab7/licenses/incfinder-release-allowed-signers)
 
 ## Windows
+
+<details>
+<summary>Windows 手动安装、检查与预测命令</summary>
 
 在 Windows x64 上打开可激活 Conda 环境的 PowerShell。 [观看本平台实录](https://chrisjack007.github.io/IncFinder_showcase/docs/media/rc2/windows.webm)
 
@@ -146,7 +202,12 @@ incfinder lineage "$Runs/fasta-ct" --row 0 > "$Runs/lineage.json"
 
 打开结果目录下的 `fasta-ct/inc_predictions.xlsx`，即可在 Excel 中查看这两条记录。[对照示例结果](#sample-results)
 
+</details>
+
 ## WSL2
+
+<details>
+<summary>WSL2 手动安装、检查与预测命令</summary>
 
 在 WSL2 发行版内打开 Bash，先运行 `cd ~`。解压目录和结果目录都放在发行版自己的 Linux 文件系统。 [观看本平台实录](https://chrisjack007.github.io/IncFinder_showcase/docs/media/rc2/wsl2.webm)
 
@@ -242,7 +303,12 @@ python -c 'import json, sys; r=json.load(open(sys.argv[1]))["row"]; print(r["int
 
 打开结果目录下的 `fasta-ct/inc_predictions.xlsx`，即可在 Excel 中查看这两条记录。[对照示例结果](#sample-results)
 
+</details>
+
 ## Linux
+
+<details>
+<summary>Linux 手动安装、检查与预测命令</summary>
 
 在原生 x86-64 Linux 上打开可激活 Conda 环境的 Bash。 [观看本平台实录](https://chrisjack007.github.io/IncFinder_showcase/docs/media/rc2/linux.webm)
 
@@ -338,7 +404,12 @@ python -c 'import json, sys; r=json.load(open(sys.argv[1]))["row"]; print(r["int
 
 打开结果目录下的 `fasta-ct/inc_predictions.xlsx`，即可在 Excel 中查看这两条记录。[对照示例结果](#sample-results)
 
+</details>
+
 ## Docker
+
+<details>
+<summary>Docker 手动安装、检查与预测命令</summary>
 
 以下命令在 Windows 宿主的 PowerShell 中执行，Docker Desktop 使用 Linux 容器引擎。镜像自带 Conda 环境，构建目录取自已签名的 Linux 安装包。 [观看本平台实录](https://chrisjack007.github.io/IncFinder_showcase/docs/media/rc2/docker.webm)
 
@@ -464,6 +535,8 @@ docker run @Mounts $Image lineage /results/fasta-ct --row 0 > "$Runs/lineage.jso
 打开结果目录下的 `fasta-ct/inc_predictions.xlsx`，即可在 Excel 中查看这两条记录。[对照示例结果](#sample-results)
 
 在 Linux 宿主机上使用 Docker Engine 时，可参照标签版文档中用 Bash 挂载只读模型和输入的示例。[Docker / Bash](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/README.zh-CN.md)
+
+</details>
 
 <a id="sample-results"></a>
 

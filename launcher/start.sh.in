@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+release='@TAG@'
+expected='@HASH@'
+name=incfinder-start-linux-amd64
+base='https://github.com/chrisjack007/IncFinder_showcase/releases/download/'
+if [[ $(uname -s) != Linux || $(uname -m) != x86_64 ]]; then
+  echo 'Use Linux x86-64 or WSL2 x86-64. Windows users should download IncFinder-Start.cmd.' >&2
+  exit 1
+fi
+valid() { [[ -f "$1" ]] && [[ $(sha256sum -- "$1" | cut -c1-64) == "$expected" ]]; }
+here=$(cd -- "$(dirname -- "$0")" && pwd -P)
+cache=${INCFINDER_START_HOME:-${XDG_DATA_HOME:-"$HOME/.local/share"}/incfinder/start}/bootstrap/$expected
+binary=$cache/$name
+if ! valid "$binary"; then
+  mkdir -p -- "$cache"
+  temp=$(mktemp "$cache/partial.XXXXXXXX")
+  trap 'rm -f -- "$temp"' EXIT
+  if [[ -f "$here/$name" ]]; then
+    cp -- "$here/$name" "$temp"
+  else
+    curl --fail --location --retry 3 --connect-timeout 20 --output "$temp" "$base$release/$name"
+  fi
+  valid "$temp" || { echo 'Launcher SHA-256 mismatch / 启动器校验失败。' >&2; exit 1; }
+  chmod 700 "$temp"
+  mv -f -- "$temp" "$binary"
+  trap - EXIT
+fi
+exec "$binary" --release "$release" "$@"
