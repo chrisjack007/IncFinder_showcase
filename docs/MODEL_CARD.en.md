@@ -6,6 +6,14 @@ IncFinder assigns 21 candidate incompatibility labels per sequenced FASTA/FASTQ 
 
 The holdout has 200,095 records in 9,236 plasmid groups disjoint from training. It has already informed version comparisons. One original holdout sequence is identical to four training records. After excluding the holdout row, both F1 scores are unchanged at three decimals in both modes.
 
+<a id="aggregate"></a>
+
+## Overall performance
+
+Each row applies one stage-two threshold **Mode** to the same holdout set. Micro averaging pools true positives, false positives and false negatives across all 21 labels. **Precision (micro)** is the percentage of positive calls that match reference positives. **Recall (micro)** is the percentage of reference positives detected.
+
+**Micro-F1** is the harmonic mean of that pooled precision and recall. **Macro-F1** gives equal weight to the F1 of each of the 21 labels. Both F1 columns use a 0–1 scale. Parentheses give the 95% interval obtained by resampling source plasmid groups. Compare `ct` and `u05` within a column to see the effect of the thresholds.
+
 | Mode | Precision (micro) | Recall (micro) | Micro-F1 (95% CI) | Macro-F1 (95% CI) |
 |---|---:|---:|---:|---:|
 | ct | 54.87% | 61.21% | 0.579 (0.568–0.589) | 0.445 (0.429–0.460) |
@@ -14,6 +22,12 @@ The holdout has 200,095 records in 9,236 plasmid groups disjoint from training. 
 Percentile intervals resample whole plasmid groups 1,000 times with seed 20261123. Both modes detect only 1 of 326 reference-positive Inc18 records. A negative result cannot exclude Inc18. Raw-sequence embeddings vary between platforms and require `--allow-encoder-drift`.
 
 The earlier version-comparison readout reported group-bootstrap intervals of 0.569–0.589 and 0.429–0.461 for ct micro- and macro-F1, and 0.510–0.532 and 0.336–0.366 for u05. The table above reports an independently seeded resampling. The point estimates agree.
+
+<a id="per-label"></a>
+
+## Holdout results by label
+
+Each row is one **Inc** label. **Ref +** counts the holdout records carrying that reference label among all 200,095 records. The next six columns give precision, recall and F1 first for `ct`, then for `u05`. Within each group, precision is the fraction of calls for that label that are reference positives, recall is the fraction of its reference positives detected, and F1 is their harmonic mean. These three metrics use a 0–1 scale. A record can carry several reference labels, so summing **Ref +** across rows can count a record more than once.
 
 | Inc | Ref + | ct precision | ct recall | ct F1 | u05 precision | u05 recall | u05 F1 |
 |---|---:|---:|---:|---:|---:|---:|---:|

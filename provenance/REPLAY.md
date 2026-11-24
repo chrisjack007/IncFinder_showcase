@@ -35,6 +35,8 @@ python incfinder_provenance.py verify-edges --data frozen \
 
 ## Full replay and differences
 
+Each row compares one stage. Read **Frozen** for the archived rc2 reference, **Full replay** for the new computation and **Row-level comparison** for the fields checked on matched records. Zero reports an observed difference count of zero. The units change from directed query/reference rows in skani search to clusters and members, complete typed parents and sampled model records. Compare the two runs within the same row.
+
 | Stage | Frozen | Full replay | Row-level comparison |
 |---|---:|---:|---|
 | GenBank extraction | 97,904 plasmid records | 97,904 | All versioned accessions, lengths and sequence SHA-256 values match. |

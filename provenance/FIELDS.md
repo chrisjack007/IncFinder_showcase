@@ -1,6 +1,8 @@
 # Data dictionary and counting units
 
-The data files use UTF-8, tab separators and a header. Each table is gzip-compressed. Empty fields indicate an inapplicable value or an empty source field. SHA-256 values use lowercase hexadecimal. Frozen and replay views share the same table schema.
+The data files use UTF-8, tab separators and a header. The TSV files in the frozen and replay bundles are individually gzip-compressed. The repository’s 39-row subtype mapping is plain text. Empty fields indicate an inapplicable value or an empty source field. SHA-256 values use lowercase hexadecimal. Frozen and replay views share the same table schema.
+
+Each row describes a file or a related set of files. Find the file in the first column, identify what one row in that file represents in the second, then use the keys and definitions in the third to join or interpret it. Parent-plasmid counts and model-record counts have different units.
 
 | File | Unit of observation | Keys and interpretation |
 |---|---|---|
@@ -23,9 +25,24 @@ Counts within each label use distinct parent or record IDs. Multi-label membersh
 
 For a whole short plasmid the trace also returns a derived interval from 0 through the parent length, in the stored forward orientation. For sampled fragments it returns the recorded intervals in concatenation order. Both use zero-based, half-open endpoints.
 
+<a id="subtype-policy"></a>
+
+## The eight fields in the 39-row subtype mapping
+
+Each row is one original Inc subtype extracted from complete representative plasmids. Read the columns left to right to follow a subtype to its final label. [View or download the mapping](subtype-policy.tsv) · [Final class counts](README.md#class-counts)
+
+- `raw_subtype` names the observed subtype. `major_group` is its group under the historical rules, for example `IncH` for `IncHI1A`.
+- `major_plasmids` counts distinct parents carrying any member of that group. `subtype_plasmids` counts distinct parents carrying this particular subtype. Both use all 45,911 representatives. Rows in the same major group repeat its count.
+- `preliminary_label` is the first-round assignment. `preliminary_policy_count` sums member `subtype_plasmids` within the same major group and preliminary label for the subsequent 100-parent check. Each member row repeats this sum. A parent carrying two members contributes twice.
+- `final_label` is the assignment after all merge decisions. `rule` identifies the decision that explains the row's final assignment. [Nine original decisions](POLICY-SOURCES.md)
+
+Both the `IncHI1A` and `IncHI1B` rows show preliminary support of **716**, from 44 + 672. One parent carries both, giving **715 distinct parents** for the final `IncHI1` label. A parent with no extracted Inc subtype is assigned `No_Inc`, shown in the last row of the final class table.
+
 ## The 19 original record metadata fields
 
 train_source_metadata.tsv.gz and holdout_source_metadata.tsv.gz retain one row per original model record. Join each table to its model records by record_id.
+
+Each row below groups related fields. The left column gives the literal column names. The right column explains their values in the same order, including units and when a field is empty. Simulator read IDs and sampled segments are empty for the added complete short plasmids.
 
 | Historical fields | Meaning and missing values |
 |---|---|

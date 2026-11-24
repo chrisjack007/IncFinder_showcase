@@ -4,14 +4,16 @@
 
 IncFinder 对 FASTA 或 FASTQ 中的每条序列给出候选质粒不相容群（Inc）标签。运行后打开 **inc_results.csv** 即可逐条查看分型，也可以继续查看概率和结果来源。
 
-**科研预览版** · [rc2 签名发行包](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [模型卡](docs/MODEL_CARD.zh-CN.md) · [输入输出示例](#sample-results) · [软件架构](#rc2-architecture)
+**科研预览版** · [rc2 签名发行包](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [模型卡](docs/MODEL_CARD.zh-CN.md) · [软件包表格读法](docs/PACKAGE-TABLES.zh-CN.md) · [输入输出示例](#sample-results) · [软件架构](#rc2-architecture)
 
 **21 个 Inc 类别的来源**
 
-研究在完整质粒上用 skani 去冗余，再用 MOB-suite 分型，将 39 种原始亚型归并为 21 个阳性类别。MetaSim 在质粒按日期划分后抽样，每条训练或留出记录继承来源质粒的参考标签。可按片段 ID 反查版本化 GenBank 条目，也可按类别查归并理由及样本数。[中文溯源指南](provenance/README.zh-CN.md) · [39 行归并表](provenance/subtype-policy.tsv) · [逐行数据与复算结果](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2-provenance.1)
+研究在完整质粒上用 skani 去冗余，再用 MOB-suite 分型，将 39 种原始亚型归并为 21 个阳性类别。MetaSim 在质粒按日期划分后抽样，每条训练或留出记录继承来源质粒的参考标签。可按片段 ID 反查版本化 GenBank 条目，也可按类别查归并理由及样本数。[中文溯源指南](provenance/README.zh-CN.md) · [39 行归并表](provenance/subtype-policy.tsv) · [八个归并字段的读法](provenance/FIELDS.zh-CN.md#subtype-policy) · [逐行数据与复算结果](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2-provenance.1)
 
 <details>
 <summary>查看从 GenBank 到模型输入的四步与计数</summary>
+
+每行是研究的一步，从上到下按执行顺序读。左列是阶段，右列给出该步的输入、筛选规则和产物。ANI 是比对区域的平均核苷酸一致性，AF 是比对覆盖各自序列的比例。计数单位随阶段从质粒、簇变为模型记录，跨阶段相加会重复计数。
 
 | 阶段 | 研究中实际使用的数据与规则 |
 |---|---|
@@ -24,7 +26,7 @@ IncFinder 对 FASTA 或 FASTQ 中的每条序列给出候选质粒不相容群�
 
 ## 快速开始
 
-按版本和平台下载**一个脚本**。原版使用 Conda，便携版自带运行环境。使用 Docker 时，先启动 Linux 容器引擎。
+每行对应一种运行平台。在“原版 rc2”（使用 Conda）和“便携版 rc2”（自带运行环境）中选一列下载**一个脚本**，再按同行末列打开菜单。Docker 用户先启动 Linux 容器引擎，再按宿主系统选脚本。
 
 | 平台（x86-64） | 原版 rc2 | 便携版 rc2 | 打开菜单 |
 | --- | --- | --- | --- |
@@ -34,6 +36,8 @@ IncFinder 对 FASTA 或 FASTQ 中的每条序列给出候选质粒不相容群�
 | Docker | [Windows 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/IncFinder-Start.cmd) · [Linux 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [Windows 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/IncFinder-Start.cmd) · [Linux 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | 打开宿主脚本，运行方式选 **2 · Docker** |
 
 **首次使用，先选运行方式，再选菜单 2“安装并试跑”。** 本机运行时在第一个提示按 Enter，使用 Docker 时输入 2。 脚本会下载并核对安装包签名与 SHA-256，准备环境和官方模型，依次执行 `version`、`doctor`、`models verify`，然后分析随包 `sample.fasta` 的两条记录。完成后，终端会显示两条分型结果以及 CSV 和 Excel 的完整路径。默认使用 CPU、批大小 1、4 个线程、1 个 RF 任务，原始序列编码的跨平台等价状态记为 `NOT_ESTABLISHED`。
+
+每行是一项可单独选择的操作。第一列给出菜单编号和名称，第二列是在启动脚本名后输入的等效短命令，第三列说明执行后会得到什么。
 
 | 菜单 | 短命令 | 用途 |
 | --- | --- | --- |
@@ -61,7 +65,7 @@ bash incfinder-start.sh run reads.fasta
 <details>
 <summary>常用配置短命令与离线准备</summary>
 
-下表是启动脚本名后面的参数。双击打开菜单也能完成这些操作。
+每行对应一个配置或复查任务。按左列找到用途，把同行右列的参数接在启动脚本名后执行，也可在菜单中选择相应操作。
 
 | 用途 | 参数 |
 | --- | --- |
@@ -77,7 +81,7 @@ bash incfinder-start.sh run reads.fasta
 
 ## 手动安装与运行
 
-选择平台后，从一个可写工作目录开始，在同一终端中按顺序复制命令。各平台都使用签名包内的两条示例序列，跑完即可对照下方结果。
+按平台选一行，依次找到签名安装包、该终端可复制的命令和同平台实录。请从可写工作目录开始，在同一终端按顺序执行。各平台都用包内两条序列核对结果。
 
 | 平台 | 原 rc2 安装包 | 可复制命令 | 使用视频 · WebM |
 | --- | --- | --- | --- |
@@ -558,13 +562,15 @@ docker run @Mounts $Image lineage /results/fasta-ct --row 0 > "$Runs/lineage.jso
 
 ## 输入和输出是什么样
 
-签名包内的 FASTA 和 FASTQ 含有相同的两条记录，长度分别为 **889 bp** 和 **901 bp**。下表摘录第 1 条的前 20 个碱基，运行示例请使用完整文件。CLI 也支持 gzip 压缩的 FASTA 和 FASTQ。
+两列的文件各含相同的两条记录，长度分别为 **889 bp** 和 **901 bp**。表中一行对照同一条记录，摘录第 1 条的前 20 个碱基。左侧 FASTA 的 `>` 引出记录头，右侧 FASTQ 的 `@` 引出记录头，`+` 下方是逐碱基质量字符。点击表头下载完整文件。命令行也接受 gzip 压缩文件。
 
 | [sample.fasta](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/examples/sample.fasta) | [sample.fastq](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/examples/sample.fastq) |
 | --- | --- |
 | `>test_frag_000000001`<br>`TGCTTCTTCATTACGCCGGT…` | `@test_frag_000000001`<br>`TGCTTCTTCATTACGCCGGT…`<br>`+`<br>`IIIIIIIIIIIIIIIIIIII…` |
 
 **`sample.fasta` 在默认 `ct` 下的 `inc_results.csv` 节选**
+
+每行对应一条输入。`row_index` 是从 0 起的输入顺序，`Header` 是记录头。`Result` 列出达到阈值的标签或 `Inc Unclassified`，`final_status` 表示最终是否有标签，`predicted_label_count` 是该行的标签个数。`gate_pass` 为 1 表示第一层概率 ≥ 0.5，为 0 表示未通过。`internal_status` 进一步区分未通过门控（`Unclassified`）、通过但没有标签达标（`Inc_no_call`）、至少一个标签达标（`Inc_called`）。
 
 | row_index | Header | Result | final_status | predicted_label_count | gate_pass | internal_status |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -574,6 +580,8 @@ docker run @Mounts $Image lineage /results/fasta-ct --row 0 > "$Runs/lineage.jso
 第 0 行通过第一层。切换到 `u05` 后，它仍通过第一层，但 21 项概率均未达到 0.5，因此 `Result` 变成 `Inc Unclassified`，`internal_status` 变成 `Inc_no_call`。第 1 行在两种模式下均未通过第一层，其 21 项第二层概率在 CSV/XLSX 中为 `NA`，在 NPZ 中为 `NaN`。`row_index` 从 0 起，保持输入顺序。[两条原始序列的分平台 CPU 参考](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/examples/expected_outputs/raw_cpu.json)
 
 `expected_outputs` 下的 `ct/` 和 `u05/` 目录保存另一组 11 条冻结特征回归结果。核对上述两条原始序列时，请使用 `raw_cpu.json` 中对应平台的数值。
+
+每行列出同一次运行的一份文件或一组相关文件。左列是文件名，右列说明能查到的内容。CSV、Excel 和 NPZ 可以描述同一批记录，数组形状中的 `N` 是输入记录数，`21` 是第二层标签数。
 
 | 输出文件 | 查看内容 |
 | --- | --- |
@@ -604,7 +612,7 @@ flowchart TD
 
 编码器对原始碱基位置的最后一层表示取均值，再平均正向和反向互补序列的表示。第一层以 0.5 为门控阈值。第二层是多输出随机森林。默认 `ct` 的 21 个逐类阈值来自训练集的折外预测。`u05` 对全部标签使用 0.5。两层都按大于等于阈值判定。[编码与 RF 合同](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/config/contract.json) · [输出合同](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/config/output_contract.json)
 
-训练序列长度范围为 **200–10,000 bp**。在此前已用于版本比较的留出集上，200,095 条记录覆盖 9,236 个质粒组，`ct` 的 Micro-F1 / Macro-F1 为 **0.579 / 0.445**，`u05` 为 **0.521 / 0.351**。两种模式都只检出 **326 条 Inc18 参考阳性中的 1 条**，未检出不足以排除 Inc18。[逐类结果与模型卡](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/docs/MODEL_CARD.zh-CN.md)
+训练序列长度范围为 **200–10,000 bp**。在此前已用于版本比较的留出集上，200,095 条记录覆盖 9,236 个质粒组，`ct` 的 Micro-F1 / Macro-F1 为 **0.579 / 0.445**，`u05` 为 **0.521 / 0.351**。两种模式都只检出 **326 条 Inc18 参考阳性中的 1 条**，未检出不足以排除 Inc18。[逐类结果与模型卡](docs/MODEL_CARD.zh-CN.md#per-label)
 
 ## 安装与运行问题
 

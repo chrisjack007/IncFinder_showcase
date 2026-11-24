@@ -25,6 +25,8 @@ flowchart TD
 
 The original record key combines a versioned assembly accession and a versioned sequence accession. The extraction rule accepted records with a plasmid qualifier in the source feature, or descriptions containing plasmid and excluding chromosome. The frozen date catalog contained 143,513 distinct assemblies. Six recovered records belonged to assemblies absent from it. Their rows are included in accessions.tsv.gz.
 
+Each row is an assembly missing from the frozen date catalog. The left column identifies its versioned assembly accession. The right column lists the versioned plasmid sequence accessions excluded with it. Counting those accessions gives six records from two assemblies.
+
 | Assembly | Sequence accessions excluded from dereplication |
 |---|---|
 | GCA_006228425.1 | CP030165.1 |
@@ -32,11 +34,21 @@ The original record key combines a versioned assembly accession and a versioned 
 
 The skani query list contained sequences of at least 500 bp. Clustering initialized a node for each of the 97,898 dated records. Distinct records were connected when ANI was ≥80% and the smaller of the reference and query alignment fractions was ≥90%. The historical total of 3,544,354 qualifying non-self search rows preserves search direction. Connected components yielded 45,911 clusters. Each cluster contributed the plasmid with the earliest assembly release date. Ties were resolved by greater sequence length, then historical FASTA path in lexical order. Compare complete member sets and representative accessions across runs. The numeric cluster IDs identify clusters within a view. [skani 0.3.1](https://github.com/bluenote-1577/skani/releases/tag/v0.3.1)
 
+<a id="class-counts"></a>
+
 ## From the replicon field to 21 classes
 
-MOB-suite 3.1.9 typed the complete representative plasmids. Inc names were extracted from the replicon field, counting each distinct subtype once per plasmid. The table counts representatives over all 45,911 plasmids, including those later assigned to the holdout cohort. The support threshold was 100 distinct plasmids. Branch and rare-group decisions agreed on 2026-05-07 determined the final categories. The count for a merged label is the number of distinct parents carrying any member subtype. [Archived rules of 7 May 2026](POLICY-SOURCES.md) · [All 39 subtype decisions](subtype-policy.tsv) · [Field definitions](FIELDS.md) · [MOB-suite reference database](https://doi.org/10.5281/zenodo.10304948)
+MOB-suite 3.1.9 typed the complete representative plasmids. Only Inc subtypes entered the classification, with repeated occurrences of a subtype counted once per parent. The 7 May 2026 rules defined the categories over all representatives. [Archived rules of 7 May 2026](POLICY-SOURCES.md) · [All 39 subtype decisions](subtype-policy.tsv) · [Field definitions](FIELDS.md#subtype-policy) · [MOB-suite reference database](https://doi.org/10.5281/zenodo.10304948)
 
-| Stage-two index | Label | Original Inc subtypes | Decision | Parents | Training records | Holdout records |
+**Read down the rows for classes.** Each row is one final reference class. The first 21 follow rc2's stage-two output order. `No_Inc` in the last row means no Inc subtype was extracted from the complete parent. It is the stage-one negative reference class, so its stage-two index and original Inc subtypes are shown as `—`.
+
+**Read across the seven columns.**
+
+- **Stage-two index** is the position from 0 to 20 in the 21-value probability vector. **Final label** is the research category after merging. **Original Inc subtypes** lists the members extracted from MOB-suite's replicon field and assigned to that row.
+- **Decision** identifies the count threshold or branch rule used. The 100-parent threshold counts distinct plasmids. **Representative plasmids** counts distinct parents carrying the final label among all 45,911 complete representatives. A parent counts once within a row.
+- **Training records** counts records inheriting the label among 800,265 training records. **Holdout records** counts them among 200,095 holdout records. These columns include any label-bearing records among the 265 and 95 complete short plasmids added to the respective splits.
+
+| Stage-two index | Final label | Original Inc subtypes | Decision | Representative plasmids | Training records | Holdout records |
 |---:|---|---|---|---:|---:|---:|
 | 0 | Inc18 | Inc18 | Single observed subtype in a major group with at least 100 parents | 115 | 1,493 | 326 |
 | 1 | IncC | IncC | Single observed subtype in a major group with at least 100 parents | 348 | 7,773 | 1,839 |
@@ -61,9 +73,9 @@ MOB-suite 3.1.9 typed the complete representative plasmids. Inc names were extra
 | 20 | Inc_other | Inc10, Inc11, Inc13, Inc4, IncA, IncT, IncW | Each original major group had fewer than 100 parents | 202 | 3,197 | 875 |
 | — | No_Inc | — | No Inc subtype extracted | 35,247 | 631,608 | 161,382 |
 
-No_Inc supplies the negative class for stage one. Of 10,664 positive representatives, 5,046 carried multiple final labels. A plasmid carrying both IncHI1A and IncHI1B counts once toward IncHI1. Stage-two indices are zero-based and follow the rc2 model contract. The ct and u05 modes govern prediction. The labels here are the parent plasmid reference annotations.
+**Reading the `IncHI1` row.** Index 6 is the seventh value in the probability vector. `IncHI1A` occurs on 44 parents and `IncHI1B` on 672, with one parent carrying both. Preliminary support is 716. The final label covers **715 distinct parents**, and **18,416 training records** and **4,035 holdout records** inherit it. Establishing whether a particular fragment spans a replicon locus requires a separate check.
 
-The historical rule uses two counting steps. First it counts distinct plasmids per subtype and major group. Within each major group it then sums subtype counts assigned to each preliminary label. A preliminary total below 100 triggers the whole-major merge for eligible letter groups. The published parent count for a final label deduplicates plasmids again. IncHI1A occurred on 44 representatives and IncHI1B on 672. Their preliminary support was 716. One representative carried both, giving 715 distinct IncHI1 representatives.
+Of the 10,664 parents with a positive label, 5,046 have several final labels. Summing across classes can therefore count the same parent or record more than once. The historical rules first counted distinct parents per subtype and major group, then summed subtype counts within each preliminary label. A preliminary count below 100 triggered a whole-group merge for eligible letter groups. Final coverage counts distinct parents again. The software's `ct` and `u05` thresholds apply to predictions.
 
 ## From a representative to a model input
 
@@ -72,6 +84,8 @@ Plasmids with assembly release dates through 2024 entered training. Those releas
 The ten training folds follow the archived representative-level assignments. The frozen export checked those assignments against every row of the rc2 training-fold array and checked inherited labels against both label matrices. In the replay, the same representative accession carries its fixed fold. Holdout records have an empty fold.
 
 ## Three records to trace
+
+Each row traces one holdout fragment. **Example** names the case. **Fragment (length)** gives the ID accepted by `trace --record` and the length in base pairs. The next column follows the parent's replicon field to the reference label inherited by the fragment. The last column opens the versioned GenBank record of that parent.
 
 | Example | Fragment (length) | How its label was assigned | Parent plasmid (GenBank) |
 |---|---|---|---|

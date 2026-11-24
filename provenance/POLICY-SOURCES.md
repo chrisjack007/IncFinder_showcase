@@ -1,10 +1,10 @@
 # 2026-05-07 的归并依据 / The 7 May 2026 classification decisions
 
-[中文指南](README.zh-CN.md) · [English guide](README.md) · [39 行归并结果 / 39 subtype outcomes](subtype-policy.tsv)
+[中文指南](README.zh-CN.md) · [English guide](README.md) · [39 行归并结果 / 39 subtype outcomes](subtype-policy.tsv) · [八个字段的读法](FIELDS.zh-CN.md#subtype-policy) · [Mapping field definitions](FIELDS.md#subtype-policy)
 
-历史说明和分类脚本都将这次人工修订注明为 2026-05-07。下表的中文逐行摘自历史说明中的分类规则，英文概述同一决策。
+历史说明和分类脚本均将这次修订记为 2026-05-07。每行记录一项决策。左列写触发条件，中列写相应处理，均逐行引用历史说明，右列用英文概述同一条规则。数量门槛按不同质粒统计，另列的初步标签支持数按同组成员亚型的计数相加。
 
-The archived explanation and classification script both date this revision to 7 May 2026. The Chinese columns reproduce its nine decision rows. The English column summarizes each decision.
+The archived explanation and classifier both date the revision to 7 May 2026. Each row pairs a trigger with its action in the original Chinese wording. The right column summarizes that same decision in English. Subtype and major-group support count distinct parents. Preliminary support sums member subtype counts within a group.
 
 | 历史条件 | 历史处理 | English summary |
 |---|---|---|
@@ -23,6 +23,10 @@ The archived explanation and classification script both date this revision to 7 
 The original code sums subtype support within each preliminary label before applying the whole-major rule. Final label coverage counts distinct parent plasmids. The signed controls archive includes the preliminary labels and counts for all 39 subtypes in historical-policy-calculation.tsv.
 
 ## 原始文件的身份 / Archived source identities
+
+每行标识一份历史原件。左列是文件名，中列是该文件的精确字节数，右列是对整份文件计算的 SHA-256。核对原件时，请在同一行比较文件名、大小和摘要。
+
+Each row identifies one archived original. Read across for its filename, exact size in bytes and SHA-256 of the entire file. Compare the size and digest against that same file when verifying a copy.
 
 | 原件 / Archived file | 字节 / Bytes | SHA-256 |
 |---|---:|---|

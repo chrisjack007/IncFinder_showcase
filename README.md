@@ -4,14 +4,16 @@
 
 IncFinder assigns candidate plasmid incompatibility (Inc) labels to individual sequenced records. Give it a FASTA or FASTQ file. Open **inc_results.csv** for one row per record, then inspect the probabilities and run provenance as needed.
 
-**Research preview** · [Signed rc2 release](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [Model card](docs/MODEL_CARD.en.md) · [Input and output examples](#sample-results) · [Architecture](#rc2-architecture)
+**Research preview** · [Signed rc2 release](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [Model card](docs/MODEL_CARD.en.md) · [Package table guide](docs/PACKAGE-TABLES.en.md) · [Input and output examples](#sample-results) · [Architecture](#rc2-architecture)
 
 **Where the 21 Inc labels come from**
 
-The study used skani to dereplicate complete plasmids and MOB-suite to type their representatives. It grouped 39 original subtypes into 21 positive labels. After splitting the parents by date, it sampled fragments with MetaSim. Every training or holdout record inherits its parent’s reference labels. Look up a fragment ID to find its versioned GenBank record, or a label to see its members, rationale and counts. [Provenance guide](provenance/README.md) · [39 subtype decisions](provenance/subtype-policy.tsv) · [Row-level data and replay results](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2-provenance.1)
+The study used skani to dereplicate complete plasmids and MOB-suite to type their representatives. It grouped 39 original subtypes into 21 positive labels. After splitting the parents by date, it sampled fragments with MetaSim. Every training or holdout record inherits its parent’s reference labels. Look up a fragment ID to find its versioned GenBank record, or a label to see its members, rationale and counts. [Provenance guide](provenance/README.md) · [39 subtype decisions](provenance/subtype-policy.tsv) · [How to read the eight mapping fields](provenance/FIELDS.md#subtype-policy) · [Row-level data and replay results](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2-provenance.1)
 
 <details>
 <summary>Show the four stages and counts from GenBank to model records</summary>
+
+Read down the rows in execution order. The first column names the stage and the second gives its inputs, selection rules and outputs. ANI is average nucleotide identity over aligned regions. Each AF is the fraction of one sequence covered by the alignment. Counts change from plasmids to clusters to model records, so adding stages would count the same material more than once.
 
 | Stage | Data and decisions |
 |---|---|
@@ -24,7 +26,7 @@ The study used skani to dereplicate complete plasmids and MOB-suite to type thei
 
 ## Quick start
 
-Choose a release and download **one script** for your computer. The original release uses Conda. The portable release includes its runtime. Docker needs a running Linux container engine.
+Choose your platform row, download **one script** from either Original rc2 (Conda) or Portable rc2 (bundled runtime), then follow **Open the menu** in that row. For Docker, start a Linux container engine and choose the script for your host.
 
 | Platform (x86-64) | Original rc2 | Portable rc2 | Open the menu |
 | --- | --- | --- | --- |
@@ -34,6 +36,8 @@ Choose a release and download **one script** for your computer. The original rel
 | Docker | [Windows](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/IncFinder-Start.cmd) · [Linux](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [Windows](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/IncFinder-Start.cmd) · [Linux](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | Open the host script and select **2 · Docker** |
 
 **For your first run, choose a runtime, then choose 2 · Install + demo.** At the first prompt, press Enter for native execution or enter 2 for Docker. The script selects the correct archive, verifies its release signature and SHA-256, prepares the environment and official models, runs `version`, `doctor`, and `models verify`, and analyzes the two records in `sample.fasta`. It prints both calls and the full paths to the CSV and Excel workbook. The raw-read preview uses CPU, batch size 1, four threads and one RF job. The run records encoder equivalence as `NOT_ESTABLISHED`.
+
+Each row is one action you can choose. **Menu** gives its number and name, **Short command** gives the equivalent argument after the launcher filename, and **Action** describes the outcome.
 
 | Menu | Short command | Action |
 | --- | --- | --- |
@@ -61,7 +65,7 @@ The script verifies its host helper before starting. To prepare it offline, plac
 <details>
 <summary>Short configuration commands and offline preparation</summary>
 
-Append these arguments to the launcher script name, or use the corresponding menu items.
+Find the configuration or review task in the left column. Append the arguments from the same row to the launcher filename, or choose the corresponding menu item.
 
 | Task | Arguments |
 | --- | --- |
@@ -77,7 +81,7 @@ By default, results go under `IncFinder/results/<release tag>/<platform>/` in yo
 
 ## Manual installation and use
 
-Choose your platform. Each guide starts in an empty writable working directory and ends with the two records supplied in the signed archive. Keep the same terminal open while following a guide.
+Choose one platform row for its signed installation archive, copyable terminal commands and matching recording. Start in a writable working directory and keep using the same terminal. Each guide ends with the two records supplied in the archive.
 
 | Platform | Installation archive | Copy commands | Watch · WebM |
 | --- | --- | --- | --- |
@@ -558,13 +562,15 @@ For Docker Engine on a Linux host, the tagged guide also provides a Bash example
 
 ## What goes in and what comes out
 
-The signed examples contain the same two records in FASTA and FASTQ, **889 bp** and **901 bp** long. The table shows the first 20 bases of record 1. Use the complete linked files to run the examples. The CLI also accepts gzipped FASTA/FASTQ.
+The two linked files contain the same two records, **889 bp** and **901 bp** long. One row compares the first 20 bases of the first record across formats. In FASTA (left), `>` introduces the header. In FASTQ (right), `@` introduces the header and `+` precedes the per-base quality characters. Download the complete files from the column headings. The CLI also accepts gzipped files.
 
 | [sample.fasta](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/examples/sample.fasta) | [sample.fastq](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/examples/sample.fastq) |
 | --- | --- |
 | `>test_frag_000000001`<br>`TGCTTCTTCATTACGCCGGT…` | `@test_frag_000000001`<br>`TGCTTCTTCATTACGCCGGT…`<br>`+`<br>`IIIIIIIIIIIIIIIIIIII…` |
 
 **Selected columns of `inc_results.csv` for `sample.fasta`, default `ct`**
+
+Each row is one input. `row_index` gives its zero-based input position and `Header` its sequence header. `Result` lists the labels that meet their thresholds or reads `Inc Unclassified`. `final_status` indicates whether any label was called, and `predicted_label_count` counts the calls in that row. `gate_pass` is 1 when the stage-one probability is ≥ 0.5 and 0 otherwise. `internal_status` distinguishes rejection (`Unclassified`), passing the gate with no call (`Inc_no_call`) and at least one call (`Inc_called`).
 
 | row_index | Header | Result | final_status | predicted_label_count | gate_pass | internal_status |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -574,6 +580,8 @@ The signed examples contain the same two records in FASTA and FASTQ, **889 bp** 
 Row 0 passes stage 1. With `u05`, it still passes, but none of the 21 probabilities reaches 0.5. Its `Result` then becomes `Inc Unclassified` and its `internal_status` becomes `Inc_no_call`. Row 1 fails stage 1 in both modes. All 21 stage-2 probabilities for that row are `NA` in CSV/XLSX and `NaN` in NPZ. `row_index` starts at zero and follows input order. [Two-record CPU references by platform](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/examples/expected_outputs/raw_cpu.json)
 
 The `ct/` and `u05/` directories under `expected_outputs` contain a separate eleven-record frozen-feature regression. For the two raw sequence examples above, use the per-platform values in `raw_cpu.json`.
+
+Each row names a file or a group of related files from one run and describes what to read there. CSV, Excel and NPZ can describe the same records. In the array shapes, `N` is the number of inputs and `21` is the number of stage-two labels.
 
 | Output file | What to look for |
 | --- | --- |
@@ -604,7 +612,7 @@ flowchart TD
 
 The encoder averages the last hidden state over original bases and averages the forward and reverse-complement representations. Stage 1 uses a 0.5 gate. Stage 2 is a multi-output random forest. The default `ct` uses 21 label-specific thresholds selected from out-of-fold training predictions. `u05` uses 0.5 for every label. Both comparisons include equality. [Encoding and RF contract](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/config/contract.json) · [Output contract](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/config/output_contract.json)
 
-The training length range was **200–10,000 bp**. On 200,095 previously evaluated holdout records from 9,236 plasmid groups, micro-/macro-F1 were **0.579 / 0.445** for `ct` and **0.521 / 0.351** for `u05`. Both modes detected only **1 of 326** Inc18 reference positives. An uncalled Inc18 label cannot exclude that type. [Per-class results and model card](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/docs/MODEL_CARD.en.md)
+The training length range was **200–10,000 bp**. On 200,095 previously evaluated holdout records from 9,236 plasmid groups, micro-/macro-F1 were **0.579 / 0.445** for `ct` and **0.521 / 0.351** for `u05`. Both modes detected only **1 of 326** Inc18 reference positives. An uncalled Inc18 label cannot exclude that type. [Per-class results and model card](docs/MODEL_CARD.en.md#per-label)
 
 ## Installation and run issues
 
