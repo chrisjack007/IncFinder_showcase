@@ -4,7 +4,23 @@
 
 IncFinder 对 FASTA 或 FASTQ 中的每条序列给出候选质粒不相容群（Inc）标签。运行后打开 **inc_results.csv** 即可逐条查看分型，也可以继续查看概率和结果来源。
 
-**科研预览版** · [rc2 签名发行包](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [模型卡](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/docs/MODEL_CARD.zh-CN.md) · [输入输出示例](#sample-results) · [软件架构](#rc2-architecture)
+**科研预览版** · [rc2 签名发行包](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [模型卡](docs/MODEL_CARD.zh-CN.md) · [输入输出示例](#sample-results) · [软件架构](#rc2-architecture)
+
+**21 个 Inc 类别的来源**
+
+研究在完整质粒上用 skani 去冗余，再用 MOB-suite 分型，将 39 种原始亚型归并为 21 个阳性类别。MetaSim 在质粒按日期划分后抽样，每条训练或留出记录继承来源质粒的参考标签。可按片段 ID 反查版本化 GenBank 条目，也可按类别查归并理由及样本数。[中文溯源指南](provenance/README.zh-CN.md) · [39 行归并表](provenance/subtype-policy.tsv) · [逐行数据与复算结果](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2-provenance.1)
+
+<details>
+<summary>查看从 GenBank 到模型输入的四步与计数</summary>
+
+| 阶段 | 研究中实际使用的数据与规则 |
+|---|---|
+| 原始记录与去冗余 | 从 GenBank 提取 97,904 条质粒，6 条所在组装缺少日期。其余 97,898 条作为图节点，其中 97,750 条达到 500 bp 的搜索下限。ANI ≥80% 且两端 AF 均 ≥90% 时连边，得到 45,911 个簇。每簇依次按发布日期最早、序列最长、历史路径字典序选代表。 |
+| 完整质粒分型 | MOB-suite 对 45,911 条代表取复制子分型，同一质粒的同一 Inc 亚型只计一次。10,664 条有 Inc 标签，其中 5,046 条保留多个最终标签。其余 35,247 条归为 No_Inc，用于第一层判断。 |
+| 亚型归并 | 按不同质粒计数，以 100 条为门槛，结合 2026-05-07 的分支规则。IncHI1A 与 IncHI1B 合为 IncHI1，覆盖 715 条代表。7 个低频 IncX 亚型合为 IncX_other，覆盖 116 条。 |
+| 划分与片段 | 按组装发布日期，2024 年及以前的 36,527 条代表进入训练集，之后的 9,384 条进入留出集。MetaSim 分别抽样 800,000 和 200,000 条片段，再补入 265 和 95 条不足 1,000 bp 的完整质粒，共 1,000,360 条模型记录。 |
+
+</details>
 
 ## 快速开始
 

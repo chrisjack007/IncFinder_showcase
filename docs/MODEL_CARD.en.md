@@ -1,5 +1,7 @@
 # IncFinder 0.5.0rc2 research preview model card
 
+[Provenance guide](../provenance/README.md) · [Data and replay results](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2-provenance.1)
+
 IncFinder assigns 21 candidate incompatibility labels per sequenced FASTA/FASTQ record. Training lengths were 200–10,000 bp. Stage 1 gates at 0.5. Rejected records remain in the evaluation denominator and have NA stage-2 probabilities. The default ct selects label thresholds from training out-of-fold predictions. The u05 mode uses 0.5 throughout.
 
 The holdout has 200,095 records in 9,236 plasmid groups disjoint from training. It has already informed version comparisons. One original holdout sequence is identical to four training records. After excluding the holdout row, both F1 scores are unchanged at three decimals in both modes.

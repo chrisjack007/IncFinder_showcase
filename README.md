@@ -4,7 +4,23 @@
 
 IncFinder assigns candidate plasmid incompatibility (Inc) labels to individual sequenced records. Give it a FASTA or FASTQ file. Open **inc_results.csv** for one row per record, then inspect the probabilities and run provenance as needed.
 
-**Research preview** · [Signed rc2 release](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [Model card](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/docs/MODEL_CARD.en.md) · [Input and output examples](#sample-results) · [Architecture](#rc2-architecture)
+**Research preview** · [Signed rc2 release](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [Model card](docs/MODEL_CARD.en.md) · [Input and output examples](#sample-results) · [Architecture](#rc2-architecture)
+
+**Where the 21 Inc labels come from**
+
+The study used skani to dereplicate complete plasmids and MOB-suite to type their representatives. It grouped 39 original subtypes into 21 positive labels. After splitting the parents by date, it sampled fragments with MetaSim. Every training or holdout record inherits its parent’s reference labels. Look up a fragment ID to find its versioned GenBank record, or a label to see its members, rationale and counts. [Provenance guide](provenance/README.md) · [39 subtype decisions](provenance/subtype-policy.tsv) · [Row-level data and replay results](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2-provenance.1)
+
+<details>
+<summary>Show the four stages and counts from GenBank to model records</summary>
+
+| Stage | Data and decisions |
+|---|---|
+| Source records and dereplication | GenBank yielded 97,904 plasmid records. Six belonged to assemblies absent from the date catalog. All 97,898 dated records became graph nodes, of which 97,750 met the 500 bp search cutoff. ANI ≥80% with both alignment fractions ≥90% yielded 45,911 clusters. Representatives were chosen by earliest assembly release date, then greatest length, then historical path in lexical order. |
+| Typing complete plasmids | MOB-suite typed all 45,911 representatives. Each distinct Inc subtype was counted once per parent. Of 10,664 Inc-positive parents, 5,046 retained multiple final labels. The other 35,247 parents supply the stage-one No_Inc class. |
+| Grouping subtypes | Counts of distinct parents, a threshold of 100 and the branch decisions of 7 May 2026 determined the classes. IncHI1A and IncHI1B together covered 715 distinct IncHI1 parents. Seven low-count IncX subtypes together covered 116 IncX_other parents. |
+| Splitting and sampling | By assembly release date, 36,527 parents through 2024 entered training and the later 9,384 entered the holdout. MetaSim supplied 800,000 and 200,000 fragments respectively. Adding 265 and 95 complete plasmids shorter than 1,000 bp brought the total to 1,000,360 model records. |
+
+</details>
 
 ## Quick start
 
