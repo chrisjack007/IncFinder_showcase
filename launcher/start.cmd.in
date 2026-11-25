@@ -9,7 +9,7 @@ if not defined IFS_BASE set "IFS_BASE=%LOCALAPPDATA%\IncFinder\start"
 set "IFS_BIN=%IFS_BASE%\bootstrap\%IFS_HASH%\%IFS_NAME%"
 powershell.exe -NoProfile -NonInteractive -Command "$ErrorActionPreference='Stop'; function Good($p) { if (![IO.File]::Exists($p)) { return $false }; $f=[IO.File]::OpenRead($p); $h=[Security.Cryptography.SHA256]::Create(); try { [BitConverter]::ToString($h.ComputeHash($f)).Replace('-','') -eq $env:IFS_HASH } finally { $h.Dispose(); $f.Dispose() } }; if (!(Good $env:IFS_BIN)) { $d=[IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($env:IFS_BIN)); $t=[IO.Path]::Combine($d.FullName,[Guid]::NewGuid().ToString('N')+'.part'); try { if (Test-Path -LiteralPath $env:IFS_SIBLING -PathType Leaf) { [IO.File]::Copy($env:IFS_SIBLING,$t) } else { $u='https://github.com/chrisjack007/IncFinder_showcase/releases/download/'+$env:IFS_TAG+'/'+$env:IFS_NAME; curl.exe --fail --location --retry 3 --connect-timeout 20 --output $t $u; if ($LASTEXITCODE) { throw 'Launcher download failed' } }; if (!(Good $t)) { throw 'Launcher SHA-256 mismatch' }; try { if ([IO.File]::Exists($env:IFS_BIN)) { [IO.File]::Replace($t,$env:IFS_BIN,$null) } else { [IO.File]::Move($t,$env:IFS_BIN) } } catch { if (!(Good $env:IFS_BIN)) { throw } } } finally { if ([IO.File]::Exists($t)) { [IO.File]::Delete($t) } } }"
 if errorlevel 1 goto failed
-"%IFS_BIN%" --release "%IFS_TAG%" %*
+"%IFS_BIN%" --release "@PAYLOAD@" %*
 set "IFS_EXIT=%ERRORLEVEL%"
 goto finish
 :failed

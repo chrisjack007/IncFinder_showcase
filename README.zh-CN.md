@@ -4,7 +4,7 @@
 
 IncFinder 对 FASTA 或 FASTQ 中的每条序列给出候选质粒不相容群（Inc）标签。运行后打开 **inc_results.csv** 即可逐条查看分型，也可以继续查看概率和结果来源。
 
-**科研预览版** · [rc2 签名发行包](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [模型卡](docs/MODEL_CARD.zh-CN.md) · [软件包表格读法](docs/PACKAGE-TABLES.zh-CN.md) · [输入输出示例](#sample-results) · [软件架构](#rc2-architecture)
+**科研预览版** · [首次运行](#快速开始) · [rc2 签名发行包](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [模型卡](docs/MODEL_CARD.zh-CN.md) · [软件包表格读法](docs/PACKAGE-TABLES.zh-CN.md) · [输入输出示例](#sample-results) · [软件架构](#rc2-architecture)
 
 **21 个 Inc 类别的来源**
 
@@ -26,46 +26,52 @@ IncFinder 对 FASTA 或 FASTQ 中的每条序列给出候选质粒不相容群�
 
 ## 快速开始
 
-每行对应一种运行平台。在“原版 rc2”（使用 Conda）和“便携版 rc2”（自带运行环境）中选一列下载**一个脚本**，再按同行末列打开菜单。Docker 用户先启动 Linux 容器引擎，再按宿主系统选脚本。
+官方示例使用 **CPU**。官方模型共 **27.36 GB**，首次准备建议在模型盘预留 **60 GB**。首次下载需先用同一个 Hugging Face 账号取得 NTv3 权重和基础实现两个仓库的访问权限。已有校验通过的模型可在**菜单 4 → 模型目录**中选用。[NTv3 权重授权](https://huggingface.co/InstaDeepAI/NTv3_650M_pre) · [基础实现授权](https://huggingface.co/InstaDeepAI/ntv3_base_model)
 
-| 平台（x86-64） | 原版 rc2 | 便携版 rc2 | 打开菜单 |
-| --- | --- | --- | --- |
-| Windows | [下载 Windows 脚本](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/IncFinder-Start.cmd) | [下载 Windows 脚本](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/IncFinder-Start.cmd) | 双击 `IncFinder-Start.cmd` |
-| WSL2 | [下载 WSL2 脚本](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [下载 WSL2 脚本](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | 在 WSL2 内运行 `bash incfinder-start.sh` |
-| 原生 Linux | [下载 Linux 脚本](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [下载 Linux 脚本](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | 运行 `bash incfinder-start.sh` |
-| Docker | [Windows 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/IncFinder-Start.cmd) · [Linux 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [Windows 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/IncFinder-Start.cmd) · [Linux 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | 打开宿主脚本，运行方式选 **2 · Docker** |
+<!-- dist-table-zh -->
+| 平台（x86-64） | 下载启动器 | 打开菜单 |
+| --- | --- | --- |
+| Windows | [incfinder-start-0.5.0rc2-dist.1-windows-amd64.exe](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/incfinder-start-0.5.0rc2-dist.1-windows-amd64.exe) | 双击下载的程序，按 Enter 选择本机运行。 |
+| WSL2 | [incfinder-start-0.5.0rc2-dist.1-linux-amd64](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/incfinder-start-0.5.0rc2-dist.1-linux-amd64) | 在终端运行 `chmod +x incfinder-start-0.5.0rc2-dist.1-linux-amd64`，再运行 `./incfinder-start-0.5.0rc2-dist.1-linux-amd64`。 |
+| 原生 Linux | [incfinder-start-0.5.0rc2-dist.1-linux-amd64](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/incfinder-start-0.5.0rc2-dist.1-linux-amd64) | 在终端运行 `chmod +x incfinder-start-0.5.0rc2-dist.1-linux-amd64`，再运行 `./incfinder-start-0.5.0rc2-dist.1-linux-amd64`。 |
+| Docker | [Windows 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/incfinder-start-0.5.0rc2-dist.1-windows-amd64.exe) · [Linux / WSL2 宿主](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/incfinder-start-0.5.0rc2-dist.1-linux-amd64) | 启动 Linux 容器引擎，运行宿主启动器，在运行方式中选择 2。 |
+<!-- /dist-table-zh -->
 
-**首次使用，先选运行方式，再选菜单 2“安装并试跑”。** 本机运行时在第一个提示按 Enter，使用 Docker 时输入 2。 脚本会下载并核对安装包签名与 SHA-256，准备环境和官方模型，依次执行 `version`、`doctor`、`models verify`，然后分析随包 `sample.fasta` 的两条记录。完成后，终端会显示两条分型结果以及 CSV 和 Excel 的完整路径。默认使用 CPU、批大小 1、4 个线程、1 个 RF 任务，原始序列编码的跨平台等价状态记为 `NOT_ESTABLISHED`。
+1. 选好运行方式后，选**菜单 2 安装并试跑**。启动器核验软件和模型，用随包 `sample.fasta` 跑一次 CPU 预测，采用 `ct` 阈值、批大小 1、4 线程和 1 个 RF 作业。
+2. 在终端找到**官方示例核验通过 / Official example verified: 2/2**、平台和 `ct`。两条记录的顺序、两层概率、缺失位置、门控、21 类判定和 CSV 均须与该平台的签名参考相符。第一条显示 `IncFIA;IncFIB;IncFII`，第二条显示 `Inc Unclassified`，第二层 21 项概率均为 NA。从同屏给出的完整路径打开 `inc_results.csv`。
+3. 选**菜单 3 使用**，换入自己的 FASTA 或 FASTQ，并打开本次打印的新 CSV 路径。示例核验结论仅适用于随包的两条记录。自有序列保留 `RESEARCH_PREVIEW / NOT_ESTABLISHED` 标记。
 
-每行是一项可单独选择的操作。第一列给出菜单编号和名称，第二列是在启动脚本名后输入的等效短命令，第三列说明执行后会得到什么。
+每行是一项可单独选择的操作。第一列给出菜单编号和名称，第二列是在启动器名后输入的等效短命令，第三列说明执行后会得到什么。
 
 | 菜单 | 短命令 | 用途 |
 | --- | --- | --- |
 | 1 下载 | `download` | 校验并解压对应的软件包，适合提前准备。 |
-| 2 安装并试跑 | `install` | 完成配置，用官方 `ct` 阈值跑通随包 FASTA。 |
+| 2 安装并试跑 | `install` | 用官方 `ct` 阈值运行示例，核验两条记录并显示 CSV 完整路径。 |
 | 3 使用 | `run` | 输入 FASTA、FASTQ 或 gzip 文件路径。Windows 也可按 Enter 打开文件选择框。每次运行写入新目录。 |
 | 4 修改配置 | `config` | 修改默认参数、切换已校验的模型目录，或给已有结果换一套阈值重新判读。 |
 
-要分析自己的文件，也可以在脚本所在目录直接运行一行命令。使用 Docker 时，在 `run` 前加 `--docker`。
+要分析自己的文件，也可以在启动器所在目录直接运行一行命令。使用 Docker 时，在 `run` 前加 `--docker`。
 
 ```powershell
-.\IncFinder-Start.cmd run reads.fasta
+.\incfinder-start-0.5.0rc2-dist.1-windows-amd64.exe run reads.fasta
 ```
 
 ```bash
-bash incfinder-start.sh run reads.fasta
+./incfinder-start-0.5.0rc2-dist.1-linux-amd64 run reads.fasta
 ```
 
-**模型与离线使用。** 首次准备模型前，请先取得 NTv3 访问权限。官方模型约 27.36 GB，建议首次准备时预留 60 GB 空间。令牌只在官方交互登录提示中输入。两版可共用一个已通过哈希校验的模型目录。原版提示缺少 Conda 时，先安装 Conda，再打开脚本接着运行。准备完成后，预测和阈值重判均可离线运行。[NTv3 授权入口](https://huggingface.co/InstaDeepAI/NTv3_650M_pre) · [Miniforge](https://github.com/conda-forge/miniforge)
+**离线使用。** 模型准备完成后，预测和阈值重判可离线运行。授权令牌只在官方登录提示中输入。
 
 **阈值与结果。** 菜单 4 的修改可以保存为该版本和平台的默认值，也可仅用于下次运行。`ct` 使用官方逐类阈值，`0.5` 对应官方 `u05`。自定义时，可以设置 [0, 1] 内的统一阈值、按类别名修改，或导出并重新导入完整的 21 行 UTF-8 TSV。选择“对已有结果重新判读”，输入已完成的 rc2 结果目录，即可直接使用原始概率计算。新建的 `review-…` 目录包含分型汇总 CSV、21 项判定 CSV、实际阈值、三个工作表的 Excel，以及记录原运行 ID 和文件摘要的 `review.json`。第一层仍需达到 0.5 才会进入第二层。[官方阈值表](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/config/thresholds.tsv)
 
-脚本会先核对本机启动程序的 SHA-256。离线准备时，可预先将同一发行页的对应启动程序放在脚本旁。软件包继续使用原有签名清单。[原版启动器校验清单](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/LAUNCHER-SHA256SUMS) · [便携版启动器校验清单](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/LAUNCHER-SHA256SUMS) · [原版签名](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/LAUNCHER-SHA256SUMS.sig) · [便携版签名](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/LAUNCHER-SHA256SUMS.sig) · [启动器源码](launcher/)
+离线使用时，将已下载的运行包放在 `INCFINDER_START_ASSETS` 指定的目录。启动器按签名清单核验运行包、RF 索引及示例参考。[发行清单](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/SHA256SUMS) · [签名](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/SHA256SUMS.sig) · [证据索引](docs/distribution-evidence.md)
+
+发行签名公钥指纹 `SHA256:MoIhr1BXeQBxbBFtycnWNica1CWnm/uguMkVGUnJGXY`. [OpenSSH allowed signers](https://github.com/chrisjack007/IncFinder_showcase/blob/2c459af6795eac200a4ccbf45b9537bd2ff792bd/launcher/trust/allowed_signers)
 
 <details>
 <summary>常用配置短命令与离线准备</summary>
 
-每行对应一个配置或复查任务。按左列找到用途，把同行右列的参数接在启动脚本名后执行，也可在菜单中选择相应操作。
+每行对应一个配置或复查任务。按左列找到用途，把同行右列的参数接在启动器名后执行，也可在菜单中选择相应操作。
 
 | 用途 | 参数 |
 | --- | --- |
@@ -80,6 +86,8 @@ bash incfinder-start.sh run reads.fasta
 </details>
 
 ## 手动安装与运行
+
+**高级安装（Conda）。** 有自管 Conda 环境的用户可使用原版 rc2 脚本或分平台安装命令。[原版 rc2 发行页](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2)
 
 按平台选一行，依次找到签名安装包、该终端可复制的命令和同平台实录。请从可写工作目录开始，在同一终端按顺序执行。各平台都用包内两条序列核对结果。
 
@@ -615,6 +623,9 @@ flowchart TD
 训练序列长度范围为 **200–10,000 bp**。在此前已用于版本比较的留出集上，200,095 条记录覆盖 9,236 个质粒组，`ct` 的 Micro-F1 / Macro-F1 为 **0.579 / 0.445**，`u05` 为 **0.521 / 0.351**。两种模式都只检出 **326 条 Inc18 参考阳性中的 1 条**，未检出不足以排除 Inc18。[逐类结果与模型卡](docs/MODEL_CARD.zh-CN.md#per-label)
 
 ## 安装与运行问题
+
+- **模型核验失败。** 检查提示中的模型目录，在菜单 4 选用完整且已校验的模型，或恢复默认模型位置后重试菜单 2。
+- **官方示例存在差异。** 保留打印出的结果目录和首个差异项。核对平台、软件版本和签名参考后，从已校验的包重新执行菜单 2。如果差异重现，保留两次运行的 ID。
 
 - **模型访问。** Hugging Face 返回 401/403 时，检查当前账号是否已经取得官方模型访问权，并用该账号交互登录。Docker 的模型安装命令会在这一次容器会话中启用联网。[官方授权页](https://huggingface.co/InstaDeepAI/NTv3_650M_pre)
 - **GitHub 下载中断或限流。** 可重新运行模型安装命令。匿名 API 配额耗尽时，将同一发行页的 `stage1.joblib` 和 `stage2.joblib.part-001` 至 `part-022` 下载到 `rf-parts`，从解压目录执行 `incfinder models install --model-dir ./models --parts-dir ./rf-parts --download-ntv3`。安装器会核对各分卷和两层完整 RF。[发行附件](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2)

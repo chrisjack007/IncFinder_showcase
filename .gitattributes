@@ -1,0 +1,5 @@
+# Preserve bytes embedded in signed distribution artifacts on every build host.
+launcher/distribution.json text eol=lf
+distribution/models.py text eol=lf
+distribution/provenance.json text eol=lf
+docs/distribution-evidence.md text eol=lf

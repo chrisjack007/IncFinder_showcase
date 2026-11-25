@@ -4,7 +4,7 @@
 
 IncFinder assigns candidate plasmid incompatibility (Inc) labels to individual sequenced records. Give it a FASTA or FASTQ file. Open **inc_results.csv** for one row per record, then inspect the probabilities and run provenance as needed.
 
-**Research preview** · [Signed rc2 release](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [Model card](docs/MODEL_CARD.en.md) · [Package table guide](docs/PACKAGE-TABLES.en.md) · [Input and output examples](#sample-results) · [Architecture](#rc2-architecture)
+**Research preview** · [First run](#quick-start) · [Signed rc2 release](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2) · [Model card](docs/MODEL_CARD.en.md) · [Package table guide](docs/PACKAGE-TABLES.en.md) · [Input and output examples](#sample-results) · [Architecture](#rc2-architecture)
 
 **Where the 21 Inc labels come from**
 
@@ -26,41 +26,47 @@ Read down the rows in execution order. The first column names the stage and the 
 
 ## Quick start
 
-Choose your platform row, download **one script** from either Original rc2 (Conda) or Portable rc2 (bundled runtime), then follow **Open the menu** in that row. For Docker, start a Linux container engine and choose the script for your host.
+The example runs on **CPU**. Official model files total **27.36 GB**. Allow **60 GB** of free space on the model drive for initial setup. Your Hugging Face account needs access to both the NTv3 weights and the base implementation for the first download. If you already have verified weights, choose **4 · Config → models** and select that directory. [NTv3 weights](https://huggingface.co/InstaDeepAI/NTv3_650M_pre) · [Base implementation](https://huggingface.co/InstaDeepAI/ntv3_base_model)
 
-| Platform (x86-64) | Original rc2 | Portable rc2 | Open the menu |
-| --- | --- | --- | --- |
-| Windows | [Windows script](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/IncFinder-Start.cmd) | [Windows script](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/IncFinder-Start.cmd) | Double-click `IncFinder-Start.cmd` |
-| WSL2 | [WSL2 script](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [WSL2 script](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | In WSL2, run `bash incfinder-start.sh` |
-| Native Linux | [Linux script](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [Linux script](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | Run `bash incfinder-start.sh` |
-| Docker | [Windows](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/IncFinder-Start.cmd) · [Linux](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/incfinder-start.sh) | [Windows](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/IncFinder-Start.cmd) · [Linux](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/incfinder-start.sh) | Open the host script and select **2 · Docker** |
+<!-- dist-table-en -->
+| Platform (x86-64) | Download the launcher | Open the menu |
+| --- | --- | --- |
+| Windows | [incfinder-start-0.5.0rc2-dist.1-windows-amd64.exe](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/incfinder-start-0.5.0rc2-dist.1-windows-amd64.exe) | Double-click the downloaded program. Press Enter for native. |
+| WSL2 | [incfinder-start-0.5.0rc2-dist.1-linux-amd64](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/incfinder-start-0.5.0rc2-dist.1-linux-amd64) | Run `chmod +x incfinder-start-0.5.0rc2-dist.1-linux-amd64`, then `./incfinder-start-0.5.0rc2-dist.1-linux-amd64`. |
+| Native Linux | [incfinder-start-0.5.0rc2-dist.1-linux-amd64](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/incfinder-start-0.5.0rc2-dist.1-linux-amd64) | Run `chmod +x incfinder-start-0.5.0rc2-dist.1-linux-amd64`, then `./incfinder-start-0.5.0rc2-dist.1-linux-amd64`. |
+| Docker | [Windows host](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/incfinder-start-0.5.0rc2-dist.1-windows-amd64.exe) · [Linux / WSL2 host](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/incfinder-start-0.5.0rc2-dist.1-linux-amd64) | Start the Linux container engine. Run the host launcher and choose runtime 2. |
+<!-- /dist-table-en -->
 
-**For your first run, choose a runtime, then choose 2 · Install + demo.** At the first prompt, press Enter for native execution or enter 2 for Docker. The script selects the correct archive, verifies its release signature and SHA-256, prepares the environment and official models, runs `version`, `doctor`, and `models verify`, and analyzes the two records in `sample.fasta`. It prints both calls and the full paths to the CSV and Excel workbook. The raw-read preview uses CPU, batch size 1, four threads and one RF job. The run records encoder equivalence as `NOT_ESTABLISHED`.
+1. After choosing the runtime, select **2 · Install + demo**. The launcher verifies the software and models, then runs the bundled `sample.fasta` using CPU, `ct` thresholds, batch size 1, four threads and one RF job.
+2. Look for **Official example verified: 2/2** beside your platform and `ct`. Both records, their order, the two probability stages, missing values, gate, 21 class decisions and displayed CSV must match the signed platform reference. The first record reads `IncFIA;IncFIB;IncFII`, the second `Inc Unclassified` with 21 missing stage-two probabilities. Open the full `inc_results.csv` path printed on this screen.
+3. Choose **3 · Run** and enter your own FASTA or FASTQ. The launcher prints a new CSV path for this run. The example verification applies only to the two bundled records. Raw-sequence predictions retain `RESEARCH_PREVIEW / NOT_ESTABLISHED`.
 
 Each row is one action you can choose. **Menu** gives its number and name, **Short command** gives the equivalent argument after the launcher filename, and **Action** describes the outcome.
 
 | Menu | Short command | Action |
 | --- | --- | --- |
 | 1 · Download | `download` | Verify and unpack the selected software. Use this to prepare the package in advance. |
-| 2 · Install + demo | `install` | Complete setup and run the bundled FASTA using official `ct` thresholds. |
+| 2 · Install + demo | `install` | Run and verify the two official `ct` records and print the full CSV path. |
 | 3 · Run | `run` | Enter a FASTA/FASTQ path, including gzip input. On Windows, press Enter to choose a file. Each run gets a new folder. |
 | 4 · Config | `config` | Edit settings, choose a verified model directory, or review an existing run with different thresholds. |
 
 From the directory containing your downloaded script, use one short command for your own file. For Docker, add `--docker` before `run`.
 
 ```powershell
-.\IncFinder-Start.cmd run reads.fasta
+.\incfinder-start-0.5.0rc2-dist.1-windows-amd64.exe run reads.fasta
 ```
 
 ```bash
-bash incfinder-start.sh run reads.fasta
+./incfinder-start-0.5.0rc2-dist.1-linux-amd64 run reads.fasta
 ```
 
-**Models and offline use.** Request access to NTv3 before first setup. The official models occupy about 27.36 GB. Allow 60 GB of free space for initial preparation. Enter your token in the official login prompt. A complete, verified model directory can be reused by both releases. In native Conda mode, install Conda first if the launcher prompts, then reopen it to resume. After preparation, inference and threshold review run offline. [NTv3 access](https://huggingface.co/InstaDeepAI/NTv3_650M_pre) · [Miniforge](https://github.com/conda-forge/miniforge)
+**Offline use.** After setup, inference and threshold review work offline. Enter your access token only at the official login prompt.
 
 **Thresholds and reports.** Menu 4 saves settings for this release and platform or applies them to the next run only. `ct` uses the 21 official class thresholds. `0.5` is the official `u05` mode. To use custom thresholds, enter a number in [0, 1], edit a named class, or export and re-import the 21-row UTF-8 TSV. Choose **Review** and give it a completed rc2 results directory to reapply thresholds without rerunning the models. A new `review-…` directory holds the summary CSV, 21-class decisions CSV, actual thresholds, a three-sheet Excel workbook and `review.json` with the source run ID and hashes. Stage 1 still requires a probability of at least 0.5. [Official threshold table](https://github.com/chrisjack007/IncFinder_showcase/blob/v0.5.0rc2/NT_V3_650M_TSRF_SW/config/thresholds.tsv)
 
-The script verifies its host helper before starting. To prepare it offline, place the matching helper from the same release beside the script. The software archives retain their original signed manifests. [Original launcher checksums](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/LAUNCHER-SHA256SUMS) · [Portable launcher checksums](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/LAUNCHER-SHA256SUMS) · [Original signature](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2/LAUNCHER-SHA256SUMS.sig) · [Portable signature](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-portable.1/LAUNCHER-SHA256SUMS.sig) · [Launcher source](launcher/)
+For offline use, set `INCFINDER_START_ASSETS` to the directory containing the downloaded runtime archive. The launcher verifies the runtime, RF index and example reference. [Release checksums](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/SHA256SUMS) · [Signature](https://github.com/chrisjack007/IncFinder_showcase/releases/download/v0.5.0rc2-dist.1/SHA256SUMS.sig) · [Evidence index](docs/distribution-evidence.md)
+
+Release signing key fingerprint `SHA256:MoIhr1BXeQBxbBFtycnWNica1CWnm/uguMkVGUnJGXY`. [OpenSSH allowed signers](https://github.com/chrisjack007/IncFinder_showcase/blob/2c459af6795eac200a4ccbf45b9537bd2ff792bd/launcher/trust/allowed_signers)
 
 <details>
 <summary>Short configuration commands and offline preparation</summary>
@@ -80,6 +86,8 @@ By default, results go under `IncFinder/results/<release tag>/<platform>/` in yo
 </details>
 
 ## Manual installation and use
+
+**Advanced installation with Conda.** The original rc2 scripts and platform-specific installation commands remain available for a managed Conda environment. [Original rc2 release](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2)
 
 Choose one platform row for its signed installation archive, copyable terminal commands and matching recording. Start in a writable working directory and keep using the same terminal. Each guide ends with the two records supplied in the archive.
 
@@ -615,6 +623,9 @@ The encoder averages the last hidden state over original bases and averages the 
 The training length range was **200–10,000 bp**. On 200,095 previously evaluated holdout records from 9,236 plasmid groups, micro-/macro-F1 were **0.579 / 0.445** for `ct` and **0.521 / 0.351** for `u05`. Both modes detected only **1 of 326** Inc18 reference positives. An uncalled Inc18 label cannot exclude that type. [Per-class results and model card](docs/MODEL_CARD.en.md#per-label)
 
 ## Installation and run issues
+
+- **Model verification failed.** Check the model directory named in the message. Select a complete verified directory in menu 4 or restore the default model location and retry menu 2.
+- **Official example mismatch.** Save the printed results directory and first differing field. Check the platform, software version and signed reference, then rerun menu 2 from the verified package. Keep the two run IDs if the difference recurs.
 
 - **Model access.** A Hugging Face 401/403 requires access to the official checkpoint and login with the same approved account. The Docker model-install container uses the network. The prediction containers run offline. [Official access page](https://huggingface.co/InstaDeepAI/NTv3_650M_pre)
 - **GitHub download or rate limit.** If the public RF download is interrupted, rerun the model installer. If the anonymous API quota is exhausted, download `stage1.joblib` and `stage2.joblib.part-001` through `part-022` from the same signed release into `rf-parts`. From the extracted directory, use `incfinder models install --model-dir ./models --parts-dir ./rf-parts --download-ntv3`. The installer verifies the volumes and both reconstructed RFs. [Release assets](https://github.com/chrisjack007/IncFinder_showcase/releases/tag/v0.5.0rc2)

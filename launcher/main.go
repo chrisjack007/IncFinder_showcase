@@ -19,7 +19,7 @@ import (
 	"time"
 )
 
-//go:embed trust/* review.py
+//go:embed trust/* distribution.json review.py verify_example.py
 var resources embed.FS
 
 const original = "v0.5.0rc2"
@@ -163,7 +163,7 @@ func output(c *exec.Cmd) string {
 type app struct{ tag, target, home, root string }
 
 func newApp(tag string, docker bool) app {
-	if tag != original && tag != portable {
+	if tag != original && tag != portable && tag != dist.Tag {
 		stop("Unknown release / 发行版无效")
 	}
 	if runtime.GOARCH != "amd64" {
@@ -194,7 +194,7 @@ func newApp(tag string, docker bool) app {
 	mkdir(root)
 	return app{tag, target, home, root}
 }
-func (a app) isp() bool    { return a.tag == portable }
+func (a app) isp() bool    { return a.tag == portable || a.tag == dist.Tag }
 func (a app) docker() bool { return a.target == "docker" }
 func (a app) entry(args []string) {
 	if len(args) == 0 {
@@ -225,11 +225,17 @@ func help() {
 }
 func start() {
 	args := os.Args[1:]
-	if len(args) < 2 || args[0] != "--release" {
-		stop("Start from the .cmd or .sh release script")
+	tag := dist.Tag
+	if len(args) > 0 && args[0] == "--release" {
+		if len(args) < 2 {
+			stop("--release requires a tag")
+		}
+		tag, args = args[1], args[2:]
 	}
-	tag := args[1]
-	args = args[2:]
+	if len(args) == 1 && (args[0] == "--version" || args[0] == "version") {
+		fmt.Printf("IncFinder %s · engine %s\n", tag, dist.Engine)
+		return
+	}
 	docker := false
 	if len(args) > 0 && args[0] == "--docker" {
 		docker = true
@@ -269,6 +275,9 @@ func start() {
 			continue
 		}
 		if err := handle(func() { a.entry([]string{cmd}) }); err != nil {
+			if cmd == "install" {
+				check(err)
+			}
 			fmt.Fprintln(os.Stderr, "IncFinder:", err)
 		}
 	}
@@ -276,6 +285,12 @@ func start() {
 func main() {
 	if err := handle(start); err != nil {
 		fmt.Fprintln(os.Stderr, "IncFinder:", err)
+		if runtime.GOOS == "windows" && len(os.Args) == 1 {
+			if fi, e := os.Stdin.Stat(); e == nil && fi.Mode()&os.ModeCharDevice != 0 {
+				fmt.Fprintln(os.Stderr, "按 Enter 关闭窗口 / Press Enter to close.")
+				_, _ = input.ReadString('\n')
+			}
+		}
 		os.Exit(1)
 	}
 }

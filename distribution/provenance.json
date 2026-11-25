@@ -1,0 +1,37 @@
+{
+  "tag": "v0.5.0rc2-provenance.1",
+  "assets": [
+    {
+      "name": "IncFinder-0.5.0rc2-provenance.1-comparison.tar.gz",
+      "sha256": "0469da1699238947cd4af0564f4b3c31eb04725b49aaee1cb07aa1af3a663a3d"
+    },
+    {
+      "name": "IncFinder-0.5.0rc2-provenance.1-controls.tar.gz",
+      "sha256": "c830ab3e822380086b1fa63922bab7a938c5c51292b163c96af42a9e6b7c539b"
+    },
+    {
+      "name": "IncFinder-0.5.0rc2-provenance.1-frozen.tar.gz",
+      "sha256": "35ed644b654a51f402f6dcd9f50bd72cbc49e2cc5880332cd062e328bf4e0150"
+    },
+    {
+      "name": "IncFinder-0.5.0rc2-provenance.1-replay.tar.gz",
+      "sha256": "5f6ed883db03ec31a68b0060a7c6e515e14d779936b7697b75f6c99d08ff6870"
+    },
+    {
+      "name": "IncFinder-0.5.0rc2-provenance.1-tools.tar.gz",
+      "sha256": "826370097d495ef89e7d5dcf3a67dfb435ae4de362d289848f620e5edca417de"
+    },
+    {
+      "name": "incfinder_provenance.py",
+      "sha256": "8167df9d1ea2bd50c812b0fdbe2d09460d57e0eb6fecb41f15595067bc96e354"
+    },
+    {
+      "name": "PROVENANCE-SHA256SUMS",
+      "sha256": "8fb294318d785d79898697fab74d71a4dd94d9b79191ea4dff55df50613487fe"
+    },
+    {
+      "name": "PROVENANCE-SHA256SUMS.sig",
+      "sha256": "953677ae17cdd256025105a9beaef965af1c3df1fce163c4aa51738d7a94346d"
+    }
+  ]
+}

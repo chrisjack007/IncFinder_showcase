@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "tag": "v0.5.0rc2-dist.1",
+  "engine": "0.5.0rc2",
+  "repository": "chrisjack007/IncFinder_showcase",
+  "rf_tag": "rf-0.5.0rc2.1",
+  "upstream": "v0.5.0rc2-portable.1",
+  "launchers": {
+    "windows": "incfinder-start-0.5.0rc2-dist.1-windows-amd64.exe",
+    "linux": "incfinder-start-0.5.0rc2-dist.1-linux-amd64"
+  },
+  "packages": {
+    "windows": "incfinder-0.5.0rc2-dist.1-windows-amd64.zip",
+    "linux": "incfinder-0.5.0rc2-dist.1-linux-amd64.tar.gz",
+    "wsl2": "incfinder-0.5.0rc2-dist.1-wsl2-amd64.tar.gz",
+    "docker": "incfinder-0.5.0rc2-dist.1-docker-amd64.zip"
+  },
+  "evidence": "incfinder-0.5.0rc2-dist.1-evidence.zip"
+}

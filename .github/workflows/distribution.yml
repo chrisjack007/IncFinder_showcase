@@ -1,0 +1,80 @@
+name: IncFinder distribution
+on:
+  push:
+    paths: ['launcher/**', 'distribution/**', 'README*.md', 'index.html', 'docs/dist.1.md', '.github/workflows/distribution.yml']
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      step:
+        description: Protected release operation
+        type: choice
+        options: [build, draft-rf, publish-rf, draft-software, publish-software, gate]
+        required: true
+      engineering_sha:
+        description: Frozen engineering commit (optional check)
+        type: string
+      engineering_run:
+        description: Successful engineering candidate workflow run ID (optional)
+        type: string
+      layout:
+        description: Runtime layout qualified on both Linux hosts
+        type: choice
+        options: [split, shared]
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-24.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5
+        with:
+          go-version: '1.27.4'
+          cache: false
+      - run: go -C launcher test ./...
+      - run: python -B distribution/pages.py --check
+      - run: python -B distribution/test_gate.py
+  release:
+    if: github.event_name == 'workflow_dispatch' && github.repository == 'chrisjack007/IncFinder_showcase' && github.actor == github.repository_owner && (github.ref == 'refs/heads/feature/distribution-rc2-dist.1' || github.ref == 'refs/heads/main')
+    needs: regression
+    environment: incfinder-release
+    runs-on: [self-hosted, incfinder-frozen, linux]
+    concurrency: incfinder-dist-rc2
+    env:
+      STEP: ${{ inputs.step }}
+      LAYOUT: ${{ inputs.layout }}
+      ENGINEERING_SHA: ${{ inputs.engineering_sha }}
+      ENGINEERING_RUN: ${{ inputs.engineering_run }}
+      GH_TOKEN: ${{ secrets.INCFINDER_RELEASE_TOKEN }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify science, build or reconcile the requested release
+        shell: bash
+        run: |
+          set -euo pipefail
+          out="${INCFINDER_DIST_OUTPUT:?}/$GITHUB_SHA"
+          case "$STEP" in
+            build)
+              "${INCFINDER_QA_PYTHON:?}" -B distribution/test_distribution.py
+              "$INCFINDER_QA_PYTHON" -B launcher/test_verify_example.py "${INCFINDER_EXAMPLE_RECEIPT:?}"
+              evidence=()
+              if [[ -n "$ENGINEERING_RUN" ]]; then evidence+=(--engineering-run "$ENGINEERING_RUN"); fi
+              if [[ -n "$ENGINEERING_SHA" ]]; then evidence+=(--engineering-sha "$ENGINEERING_SHA"); fi
+              python3 -B distribution/pipeline.py build --out "$out" --legacy "${INCFINDER_RC2_ASSETS:?}" --portable "${INCFINDER_PORTABLE_ASSETS:?}" --key "${INCFINDER_RELEASE_PUBLIC_KEY:?}" --layout "$LAYOUT" "${evidence[@]}"
+              ;;
+            draft-rf|publish-rf|draft-software|publish-software)
+              python3 -B distribution/pipeline.py "${STEP%%-*}" --component "${STEP#*-}" --out "$out" --legacy "${INCFINDER_RC2_ASSETS:?}"
+              ;;
+            gate)
+              python3 -B distribution/acceptance.py gate --release-dir "$out/v0.5.0rc2-dist.1" "$out"/receipts/{windows,wsl2,linux,docker}.json
+              ;;
+          esac

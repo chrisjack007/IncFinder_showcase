@@ -28,15 +28,57 @@ func showChecks(e engine, s settings) {
 		fmt.Println(strings.Join(args, " ") + ": PASS")
 	}
 }
+func installStep(name, recovery string, action func()) {
+	if err := handle(action); err != nil {
+		stop("%s: %v\n%s", name, err, recovery)
+	}
+}
+
 func (a app) install() {
-	e := a.prepare()
+	var e engine
+	installStep("Runtime / 安装包与环境", "Check the signed download, available space and runtime, then retry menu 2. / 检查安装包来源、磁盘空间和运行环境，再选菜单 2。", func() { e = a.prepare() })
 	s := a.settings(false)
-	e.prepareModels(s)
-	showChecks(e, s)
+	installStep("Models / 模型准备", "NTv3 authorization / 授权问题: https://huggingface.co/InstaDeepAI/NTv3_650M_pre. Sign in with your approved account. If a transfer stopped, retry menu 2 with the same cache. / 请使用获准账号登录。传输中断时保留缓存，再选菜单 2。", func() { e.prepareModels(s) })
+	installStep("Identity / 软件与模型核验", "Check the model directory and the signed rc2 files reported above, then retry menu 2. / 核对上述模型目录与签名文件，再选菜单 2。", func() { showChecks(e, s) })
 	demo := a.defaults()
 	demo.Models = s.Models
 	demo.Results = s.Results
-	e.predict(demo, join(e.software, "examples", "sample.fasta"))
+	dir := e.predict(demo, join(e.software, "examples", "sample.fasta"))
+	recovery := fmt.Sprintf("Result directory / 结果目录: %s\nCheck the signed package and indicated field before using the demo. / 请按上述项目核对签名包与示例结果。", dir)
+	installStep("Example verification / 官方示例核验失败", recovery, func() {
+		var summary struct {
+			ID string `json:"run_id"`
+		}
+		readJSON(join(dir, "run_summary.json"), &summary)
+		if summary.ID == "" {
+			stop("Current run ID missing")
+		}
+		e.verifyExample(demo, dir, summary.ID)
+		displayResult(dir)
+	})
+	fmt.Printf("官方示例核验通过 / Official example verified: 2/2 · %s · CPU · ct\n", a.target)
+	fmt.Println("示例输入、记录顺序、两层概率、21 类判定与 CSV 均与签名参考相符。 / Input, row order, probabilities, 21 calls and CSV match the signed reference.")
+	fmt.Println("菜单 3 分析自己的 FASTA/FASTQ / Choose menu 3 to run your own file.")
+}
+
+func (e engine) verifyExample(s settings, dir, runID string) {
+	reference := join(e.software, "docs", "example-reference.json")
+	if !e.a.isp() {
+		reference = join(e.software, "examples", "expected_outputs", "raw_cpu.json")
+	}
+	sha := e.a.signedDigest("rc2", "example-reference.json")
+	stage := must(os.MkdirTemp(e.a.root, "verify-example-"))
+	defer os.RemoveAll(stage)
+	script := materialize(stage, "verify_example.py")
+	if e.a.docker() {
+		mounts := []string{"--read-only",
+			"--mount", mount("bind", dir, "/example-result", true),
+			"--mount", mount("bind", reference, "/reference.json", true),
+			"--mount", mount("bind", stage, "/helper", true)}
+		execute(e.dockerPython(s, false, false, mounts, "/helper/verify_example.py", "/example-result", "/reference.json", sha, e.a.target, "--run-id", runID))
+		return
+	}
+	execute(e.nativePython(false, script, dir, reference, sha, e.a.target, "--run-id", runID))
 }
 func (a app) runInput(args []string) {
 	if len(args) == 0 {
@@ -84,13 +126,20 @@ func (a app) runInput(args []string) {
 		stop("Input is not a regular file: %s", inputPath)
 	}
 	e.prepareModels(s)
-	e.predict(s, inputPath)
+	dir := e.predict(s, inputPath)
+	displayResult(dir)
+	if s.Mode == "custom" {
+		e.writeReview(s, dir)
+	}
 	success = true
 }
-func (e engine) predict(s settings, path string) {
+func (e engine) predict(s settings, path string) string {
 	fmt.Println("Research preview / 科研预览：原始序列运行使用 --allow-encoder-drift；跨平台编码等价性标记为 NOT_ESTABLISHED。")
 	dir := join(abs(s.Results), "run-"+unique())
 	mkdir(filepath.Dir(dir))
+	if exists(dir) {
+		stop("Output already exists: %s", dir)
+	}
 	mode := s.Mode
 	if mode == "custom" {
 		mode = "ct"
@@ -107,6 +156,10 @@ func (e engine) predict(s settings, path string) {
 	} else {
 		execute(e.science(s, args...))
 	}
+	return dir
+}
+
+func displayResult(dir string) {
 	fmt.Println("RESULT_DIR\t" + dir)
 	fmt.Println("CSV:", join(dir, "inc_results.csv"))
 	fmt.Println("Excel:", join(dir, "inc_predictions.xlsx"))
@@ -130,9 +183,6 @@ func (e engine) predict(s settings, path string) {
 		}
 		check(err)
 		fmt.Printf("  %s  →  %s\n", row[cols["Header"]], row[cols["Result"]])
-	}
-	if s.Mode == "custom" {
-		e.writeReview(s, dir)
 	}
 }
 func (a app) review(source string, s settings) { e := a.prepare(); e.writeReview(s, source) }

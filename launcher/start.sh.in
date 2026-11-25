@@ -26,4 +26,4 @@ if ! valid "$binary"; then
   mv -f -- "$temp" "$binary"
   trap - EXIT
 fi
-exec "$binary" --release "$release" "$@"
+exec "$binary" --release '@PAYLOAD@' "$@"

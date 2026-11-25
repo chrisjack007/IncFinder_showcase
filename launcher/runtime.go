@@ -14,16 +14,18 @@ type engine struct {
 	software, prefix, image string
 }
 type bundle struct {
-	RuntimePlatform string `json:"runtime_platform"`
-	RuntimeSHA      string `json:"runtime_sha256"`
-	Distribution    string `json:"distribution"`
-	Platform        string `json:"platform"`
-	PackageSHA      string `json:"scientific_conda_sha256"`
-	Tag             string `json:"repo_tag"`
-	Index           string `json:"image_index"`
-	Manifest        string `json:"linux_amd64_manifest"`
-	Config          string `json:"image_config"`
-	ArchiveSHA      string `json:"sha256"`
+	RuntimePlatform string   `json:"runtime_platform"`
+	RuntimeSHA      string   `json:"runtime_sha256"`
+	Distribution    string   `json:"distribution"`
+	Platform        string   `json:"platform"`
+	Supported       []string `json:"supported_targets"`
+	ModelSet        string   `json:"model_set_sha256"`
+	PackageSHA      string   `json:"scientific_conda_sha256"`
+	Tag             string   `json:"repo_tag"`
+	Index           string   `json:"image_index"`
+	Manifest        string   `json:"linux_amd64_manifest"`
+	Config          string   `json:"image_config"`
+	ArchiveSHA      string   `json:"sha256"`
 }
 
 func pythonAt(prefix string) string {
@@ -91,7 +93,17 @@ func (a app) prepare() engine {
 	var b bundle
 	if a.isp() {
 		readJSON(join(base, "portable", "bundle.json"), &b)
-		if b.Distribution != a.tag || b.Platform != a.target || b.PackageSHA != packageSHA {
+		validTarget := b.Platform == a.target
+		if a.tag == dist.Tag {
+			a.checkModelIndex(base)
+			validTarget = false
+			for _, target := range b.Supported {
+				if target == a.target {
+					validTarget = true
+				}
+			}
+		}
+		if b.Distribution != a.tag || !validTarget || b.PackageSHA != packageSHA {
 			stop("Portable package identity mismatch")
 		}
 	}
@@ -159,7 +171,22 @@ func (e engine) model(s settings) string {
 	if s.Models != "" {
 		return abs(s.Models)
 	}
-	return join(e.a.home, "models", "0.5.0rc2")
+	legacy := join(e.a.home, "models", "0.5.0rc2")
+	if e.a.tag == dist.Tag {
+		var b bundle
+		readJSON(join(e.software, "portable", "bundle.json"), &b)
+		if len(b.ModelSet) != 64 || strings.Trim(b.ModelSet, "0123456789abcdef") != "" {
+			stop("Invalid model set digest")
+		}
+		if !modelFiles(legacy, false) {
+			oldPortable := join(portableHome(), "models", "0.5.0rc2")
+			if modelFiles(oldPortable, false) {
+				return oldPortable
+			}
+			return join(portableHome(), "models", b.ModelSet)
+		}
+	}
+	return legacy
 }
 func (e engine) env(online bool) []string {
 	off := "1"
@@ -178,10 +205,45 @@ func (e engine) science(s settings, args ...string) *exec.Cmd {
 	}
 	return e.nativePython(false, append([]string{"-m", "incfinder"}, args...)...)
 }
+func (e engine) hasModels(path string) bool {
+	if e.a.tag != dist.Tag {
+		return modelFiles(path, false)
+	}
+	var index struct {
+		Files map[string]struct {
+			Size int64 `json:"size_bytes"`
+		}
+	}
+	readJSON(join(e.software, "portable", "trust", "rf-index.json"), &index)
+	if len(index.Files) == 0 {
+		stop("Empty RF and NTv3 content manifest")
+	}
+	for name, file := range index.Files {
+		stat, err := os.Stat(join(path, filepath.FromSlash(name)))
+		if os.IsNotExist(err) {
+			return false
+		}
+		check(err)
+		if !stat.Mode().IsRegular() || stat.Size() != file.Size {
+			stop("Official model size mismatch: %s", name)
+		}
+	}
+	return true
+}
+
 func (e engine) prepareModels(s settings) {
 	target := e.model(s)
 	ready := false
-	if e.a.docker() && s.Models == "" {
+	if e.a.docker() && s.Models == "" && e.a.tag == dist.Tag {
+		err := e.dockerPython(s, false, false, nil, "/portable/app.py", "portable", "ready", "--model-dir", target).Run()
+		if err != nil {
+			failed, ok := err.(*exec.ExitError)
+			if !ok || failed.ExitCode() != 3 {
+				check(err)
+			}
+		}
+		ready = err == nil
+	} else if e.a.docker() && s.Models == "" {
 		mounts := e.dockerMounts(s, false)
 		// Docker creates the named model volume before the probe.
 		args := append([]string{"run", "--rm", "--network", "none", "--entrypoint", containerPython}, mounts...)
@@ -192,10 +254,13 @@ func (e engine) prepareModels(s settings) {
 		if e.a.docker() {
 			p = abs(s.Models)
 		}
-		ready = modelFiles(p, false)
+		ready = e.hasModels(p)
 	}
 	if ready {
 		return
+	}
+	if os.Getenv("INCFINDER_OFFLINE") == "1" {
+		stop("Offline model cache is incomplete: %s", target)
 	}
 	if s.Models != "" {
 		stop("Selected model cache is incomplete. Select a complete official cache or use 'config models default'.")
